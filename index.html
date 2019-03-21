@@ -138,6 +138,55 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-21T10:57:10.505Z">2019-03-21</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 364 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/21/JavaSearch/">查找Java版</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><hr>
+<p><strong>基本思想：</strong><br>　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 顺序查找</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> 数组；查找的元素</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> 下标</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">SequenceSearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a,<span class="hljs-keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(a[i]==num)</span><br><span class="line">                    <span class="hljs-keyword">return</span> i+<span class="hljs-number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="折半（二分）查找"><a href="#折半（二分）查找" class="headerlink" title="折半（二分）查找"></a>折半（二分）查找</h3><hr>
+<p><strong>基本思想：</strong><br>　　搜索过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜索过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组为空，则代表找不到。这种搜索算法每一次比较都使搜索范围缩小一半。仅限有序数组</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">* 二分查找(只能查找有序数组)</span></span><br><span class="line"><span class="hljs-comment">* <span class="hljs-doctag">@param</span> 数组；查找的元素</span></span><br><span class="line"><span class="hljs-comment">* <span class="hljs-doctag">@return</span> 下标</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">BinarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a,<span class="hljs-keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="hljs-keyword">int</span> low = <span class="hljs-number">0</span>;</span><br><span class="line">       <span class="hljs-keyword">int</span> high = a.length-<span class="hljs-number">1</span>;</span><br><span class="line">       <span class="hljs-keyword">int</span> mid;</span><br><span class="line">       <span class="hljs-keyword">while</span>(low&lt;=high) &#123;</span><br><span class="line">           mid = (low + high) / <span class="hljs-number">2</span>;</span><br><span class="line">           <span class="hljs-keyword">if</span>(a[mid] &gt; num) &#123;</span><br><span class="line">                   high=mid-<span class="hljs-number">1</span>;</span><br><span class="line">           &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a[mid] &lt; num) &#123;</span><br><span class="line">                   low=mid+<span class="hljs-number">1</span>;</span><br><span class="line">           &#125;<span class="hljs-keyword">else</span> &#123;</span><br><span class="line">                   <span class="hljs-keyword">return</span> mid+<span class="hljs-number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;    </span><br><span class="line">       <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-03-21T06:21:32.278Z">2019-03-21</time>
                 
                 <div class="level-item">
@@ -401,7 +450,7 @@ content
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Grammar/">
@@ -423,7 +472,7 @@ content
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Sort/" style="font-size: 10px;">Sort</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a>
+        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/Sort/" style="font-size: 10px;">Sort</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a>
     </div>
 </div>
 
@@ -434,6 +483,19 @@ content
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-21T10:57:10.505Z">2019-03-21</time></div>
+                    <a href="/2019/03/21/JavaSearch/" class="has-link-black-ter is-size-6">查找Java版</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -505,7 +567,7 @@ content
                     <span class="level-item">三月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -537,6 +599,13 @@ content
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Markdown/">
                         <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Search/">
+                        <span class="tag">Search</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -594,7 +663,7 @@ content
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -614,7 +683,7 @@ content
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -759,7 +828,7 @@ content
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -779,7 +848,7 @@ content
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -1067,5 +1136,5 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</body>
 </html>
