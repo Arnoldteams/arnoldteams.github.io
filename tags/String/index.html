@@ -2,16 +2,15 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>分类 - Arnoldteams</title>
+<title>标签: String - Arnoldteams</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
     
-    <meta name="keywords" content="ArrayList,Arrays,DFS,励志,感动,鸡汤,HashMap,TreeMap,Test,排序,Sort,查找,Search,LinkedList,Markdown,Math_Java,BigInteger,BigDecimal,String,EverMonkey,印象笔记,递归,Recursion,类型转换">
-<meta property="og:type" content="website">
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Arnoldteams">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/String/index.html">
 <meta property="og:site_name" content="Arnoldteams">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -101,7 +100,7 @@
                 
                 <a class="navbar-item" href="/archives">Archives</a>
                 
-                <a class="navbar-item is-active" href="/categories">Categories</a>
+                <a class="navbar-item" href="/categories">Categories</a>
                 
                 <a class="navbar-item" href="/tags">Tags</a>
                 
@@ -132,59 +131,64 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-<div class="card widget">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/Algorithm/">
-            <span class="level-start">
-                <span class="level-item">Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">4</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Grammar/">
-            <span class="level-start">
-                <span class="level-item">Grammar</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Java-Notes/">
-            <span class="level-start">
-                <span class="level-item">Java Notes</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">7</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/KeepThinking/">
-            <span class="level-start">
-                <span class="level-item">KeepThinking</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Tools/">
-            <span class="level-start">
-                <span class="level-item">Tools</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li>
-            </ul>
-        </div>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">String</a></li>
+        </ul>
+        </nav>
     </div>
-</div></div>
+</div>
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 543 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/23/String/">String常用方法</a>
+            
+        </h1>
+        <div class="content">
+            <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">1</span> length（）字符串的长度;    </span><br><span class="line">  isEmpty()判空</span><br><span class="line"></span><br><span class="line"><span class="hljs-number">2</span> charAt（）截取一个字符</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.charAt(<span class="hljs-number">1</span>));<span class="hljs-comment">//输出的结果是字符串a的下标为1的字符e。</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">3</span> getchars（）截取多个字符并由其他字符串接收</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   <span class="hljs-keyword">char</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">10</span>];</span><br><span class="line">   a.getChars(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>, b, <span class="hljs-number">0</span>);</span><br><span class="line">   System.out.println(b);<span class="hljs-comment">//输出的结果为Hello</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">4</span> getBytes()将字符串变成一个<span class="hljs-keyword">byte</span>数组</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   <span class="hljs-keyword">byte</span> b[] = a.getBytes();</span><br><span class="line">   System.out.println(<span class="hljs-keyword">new</span> String(b));<span class="hljs-comment">//输出的结果为Hello Word的byte数组。</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">5</span> toCharArray()将字符串变成一个字符数组</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   <span class="hljs-keyword">char</span>[]b = a.toCharArray();</span><br><span class="line">   System.out.println(b);<span class="hljs-comment">//输出的结果为Hello Word字符数组。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">6</span> equals()和equalsIgnoreCase()比较两个字符串是否相等，前者区分大小写，后者不区分</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   String b = <span class="hljs-string">"hello word"</span>;</span><br><span class="line">   System.out.println(a.equals(b));<span class="hljs-comment">//false</span></span><br><span class="line">   System.out.println(a.equalsIgnoreCase(b));<span class="hljs-comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">7</span> startsWith()和endsWith()判断字符串是不是以特定的字符开头或结束</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.startsWith(<span class="hljs-string">"ee"</span>));<span class="hljs-comment">//false</span></span><br><span class="line">   System.out.println(a.endsWith(<span class="hljs-string">"rd"</span>));<span class="hljs-comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">8</span> toUpperCase()和toLowerCase()将字符串转换为大写或小写</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.toUpperCase());<span class="hljs-comment">//HELLO WORD</span></span><br><span class="line">   System.out.println(a.toLowerCase());<span class="hljs-comment">//hello word</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">9</span> concat() 连接两个字符串</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   String b = <span class="hljs-string">"你好"</span>;</span><br><span class="line">   System.out.println(b.concat(a));<span class="hljs-comment">//你好Hello Word</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">10</span> trim()去掉起始和结束的空格</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">" Hello Word "</span>;</span><br><span class="line">   System.out.println(a.trim());<span class="hljs-comment">//Hello Word</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">11</span> substring（）截取字符串</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.substring(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>));<span class="hljs-comment">//Hello</span></span><br><span class="line">   System.out.println(a.substring(<span class="hljs-number">6</span>));<span class="hljs-comment">//World</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">12</span> indexOf()和lastIndexOf()前者是查找字符或字符串第一次出现的地方，后者是查找字符或字符串最后一次出现的地方</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.indexOf(<span class="hljs-string">"o"</span>));<span class="hljs-comment">//4</span></span><br><span class="line">   System.out.println(a.lastIndexOf(<span class="hljs-string">"o"</span>));<span class="hljs-comment">//7</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">13</span> compareTo()和compareToIgnoreCase(）按字典顺序比较两个字符串的大小，前者区分大小写，后者不区分</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   String b = <span class="hljs-string">"hello word"</span>;</span><br><span class="line">   System.out.println(a.compareTo(b));<span class="hljs-comment">//-32</span></span><br><span class="line">   System.out.println(a.compareToIgnoreCase(b));<span class="hljs-comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">14</span> replace() 替换</span><br><span class="line"></span><br><span class="line">    String s=<span class="hljs-string">"abc"</span>;</span><br><span class="line">    System.out.println(s.replace(<span class="hljs-string">'a'</span>, <span class="hljs-string">'w'</span>));<span class="hljs-comment">//wbc</span></span><br><span class="line">    System.out.println(s.replaceFirst(<span class="hljs-string">"bc"</span>,  <span class="hljs-string">"cde"</span>));<span class="hljs-comment">//acde</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">15</span> contains() 字符串匹配</span><br><span class="line"></span><br><span class="line">    String s=<span class="hljs-string">"ab,cd,ef"</span>;</span><br><span class="line">    System.out.println(s.contains(<span class="hljs-string">"ef"</span>));<span class="hljs-comment">//true</span></span><br><span class="line">    System.out.println(s.contains(<span class="hljs-string">"ecf"</span>));<span class="hljs-comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">16</span>  split 拆分字符串</span><br><span class="line"></span><br><span class="line">       String s=<span class="hljs-string">"sa sf gaf asd"</span>;</span><br><span class="line">       String[] a=s.split(<span class="hljs-string">" "</span>);<span class="hljs-comment">//[sa, sf, gaf,asd]</span></span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
                 
 
 
