@@ -2,24 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>排序Java版 - Arnoldteams</title>
+<title>Math数学常用方法 - Arnoldteams</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
     
-    <meta name="description" content="冒泡排序 基本思想：　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。 12345678910111213141516171819/**   * 冒泡排序   * @param 数组   * @return 排好序的数组   */   stati">
-<meta name="keywords" content="排序,Sort">
+    <meta name="description" content="Math 1234567891011Math.sqrt()//计算平方根Math.cbrt()//计算立方根Math.pow(a, b)//计算a的b次方Math.max( , );//计算最大值Math.min( , );//计算最小值Math.abs()//abs求绝对值Math.ceil()//向上取整Math.floor()//向下取整Math.random()//随机数Math.roun">
+<meta name="keywords" content="Math_Java,BigInteger,BigDecimal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序Java版">
-<meta property="og:url" content="http://yoursite.com/2019/03/21/JavaSort/index.html">
+<meta property="og:title" content="Math数学常用方法">
+<meta property="og:url" content="http://yoursite.com/2019/03/23/Math/index.html">
 <meta property="og:site_name" content="Arnoldteams">
-<meta property="og:description" content="冒泡排序 基本思想：　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。 12345678910111213141516171819/**   * 冒泡排序   * @param 数组   * @return 排好序的数组   */   stati">
+<meta property="og:description" content="Math 1234567891011Math.sqrt()//计算平方根Math.cbrt()//计算立方根Math.pow(a, b)//计算a的b次方Math.max( , );//计算最大值Math.min( , );//计算最小值Math.abs()//abs求绝对值Math.ceil()//向上取整Math.floor()//向下取整Math.random()//随机数Math.roun">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-23T08:12:23.421Z">
+<meta property="og:updated_time" content="2019-03-23T08:10:36.110Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序Java版">
-<meta name="twitter:description" content="冒泡排序 基本思想：　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。 12345678910111213141516171819/**   * 冒泡排序   * @param 数组   * @return 排好序的数组   */   stati">
+<meta name="twitter:title" content="Math数学常用方法">
+<meta name="twitter:description" content="Math 1234567891011Math.sqrt()//计算平方根Math.cbrt()//计算立方根Math.pow(a, b)//计算a的b次方Math.max( , );//计算最大值Math.min( , );//计算最小值Math.abs()//abs求绝对值Math.ceil()//向上取整Math.floor()//向下取整Math.random()//随机数Math.roun">
 
 
 
@@ -93,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="排序Java版" height="28">
+                <img src="/images/logo.svg" alt="Math数学常用方法" height="28">
             
             </a>
         </div>
@@ -142,17 +142,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-21T06:21:32.278Z">2019-03-21</time>
+                <time class="level-item has-text-grey" datetime="2019-03-23T07:52:47.386Z">2019-03-23</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 282 个字)
+                    1 分钟 读完 (大约 157 个字)
                 </span>
                 
                 
@@ -161,78 +161,13 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                排序Java版
+                Math数学常用方法
             
         </h1>
         <div class="content">
-            <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><hr>
-<p><strong>基本思想：</strong><br>　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">   * 冒泡排序</span></span><br><span class="line"><span class="hljs-comment">   * <span class="hljs-doctag">@param</span> 数组</span></span><br><span class="line"><span class="hljs-comment">   * <span class="hljs-doctag">@return</span> 排好序的数组</span></span><br><span class="line"><span class="hljs-comment">   */</span></span><br><span class="line">   <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] BubbleSort(<span class="hljs-keyword">int</span>[] a) &#123;</span><br><span class="line">   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = a.length-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;</span><br><span class="line">               <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &gt; <span class="hljs-number">0</span>; j--) &#123;</span><br><span class="line">                   <span class="hljs-keyword">if</span>(a[j]&lt;a[j-<span class="hljs-number">1</span>])</span><br><span class="line">                       swap(a, j, j-<span class="hljs-number">1</span>);</span><br><span class="line">               &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   <span class="hljs-keyword">return</span> a;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a,<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">       <span class="hljs-keyword">int</span> t=a[i];</span><br><span class="line">       a[i]=a[j];</span><br><span class="line">       a[j]=t;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><hr>
-<p><strong>基本思想：</strong><br>　　把n个待排序的元素看成一个有序表和一个无序表，开始时有序表中只有一个元素，无序表中有n-1个元素；排序过程即每次从无序表中取出第一个元素，将它插入到有序表中，使之成为新的有序表，重复n-1次完成整个排序过程。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> *  插入排序Eg：</span></span><br><span class="line"><span class="hljs-comment">         [9| 7, 4, 0, 5]</span></span><br><span class="line"><span class="hljs-comment">        [7, 9| 4, 0, 5]</span></span><br><span class="line"><span class="hljs-comment">        [4, 7, 9| 0, 5]</span></span><br><span class="line"><span class="hljs-comment">        [0, 4, 7, 9| 5]</span></span><br><span class="line"><span class="hljs-comment">        [0, 4, 5, 7, 9]</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] InsertSort (<span class="hljs-keyword">int</span> a[]) &#123;    </span><br><span class="line">    <span class="hljs-keyword">int</span> t=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">        t=a[i];</span><br><span class="line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i-<span class="hljs-number">1</span> ; j &gt;= <span class="hljs-number">0</span>; j--) &#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span>(t&lt;a[j])</span><br><span class="line">                        swap(a,j,j+<span class="hljs-number">1</span>);</span><br><span class="line">                    <span class="hljs-keyword">else</span></span><br><span class="line">                        <span class="hljs-keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="hljs-comment">//  System.out.println(Arrays.toString(a));</span></span><br><span class="line">    &#125;     </span><br><span class="line">    <span class="hljs-keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a><strong>时间复杂度</strong></h2><table>
-<thead>
-<tr>
-<th>排序法</th>
-<th>最差时间分析</th>
-<th>平均时间复杂度</th>
-<th>稳定度</th>
-<th>空间复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>冒泡排序</td>
-<td>O(n2)</td>
-<td>O(n2)</td>
-<td>稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>O(n2)</td>
-<td>O(n*log2n)</td>
-<td>不稳定</td>
-<td>O(log2n)~O(n)</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>O(n2)</td>
-<td>O(n2)</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>二叉树排序</td>
-<td>O(n2)</td>
-<td>O(n*log2n)</td>
-<td>不一定</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>O(n2)</td>
-<td>O(n2)</td>
-<td>稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>O(n*log2n)</td>
-<td>O(n*log2n)</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td>O</td>
-<td>O</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
+            <p><strong>Math </strong><br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Math.sqrt()<span class="hljs-comment">//计算平方根</span></span><br><span class="line">Math.cbrt()<span class="hljs-comment">//计算立方根</span></span><br><span class="line">Math.pow(a, b)<span class="hljs-comment">//计算a的b次方</span></span><br><span class="line">Math.max( , );<span class="hljs-comment">//计算最大值</span></span><br><span class="line">Math.min( , );<span class="hljs-comment">//计算最小值</span></span><br><span class="line">Math.abs()<span class="hljs-comment">//abs求绝对值</span></span><br><span class="line">Math.ceil()<span class="hljs-comment">//向上取整</span></span><br><span class="line">Math.floor()<span class="hljs-comment">//向下取整</span></span><br><span class="line">Math.random()<span class="hljs-comment">//随机数</span></span><br><span class="line">Math.round()<span class="hljs-comment">//四舍五入</span></span><br><span class="line">Math.rint<span class="hljs-comment">//四舍六入五凑偶</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>BigInteger (BigDecimal 用法相同)</strong><br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> BigInteger <span class="hljs-title">add</span><span class="hljs-params">(BigInteger val)</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> BigInteger <span class="hljs-title">subtract</span><span class="hljs-params">(BigInteger val)</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> BigInteger <span class="hljs-title">multiply</span><span class="hljs-params">(BigInteger val)</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> BigInteger <span class="hljs-title">divide</span><span class="hljs-params">(BigInteger val)</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function">"<span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(Biglnteger other)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//如果这个大整数与另一个大整数相等，返回0; 如果这个大整数小于另一个大整数, 返回负数；否则，返回正数</span></span></span><br></pre></td></tr></table></figure></p>
 
         </div>
         
@@ -240,7 +175,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Sort/">Sort</a>, <a class="has-link-grey -link" href="/tags/排序/">排序</a>
+                    <a class="has-link-grey -link" href="/tags/BigDecimal/">BigDecimal</a>, <a class="has-link-grey -link" href="/tags/BigInteger/">BigInteger</a>, <a class="has-link-grey -link" href="/tags/Math-Java/">Math_Java</a>
                 </div>
             </div>
         </div>
@@ -257,17 +192,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/21/JavaSearch/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">查找Java版</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/20/Hexo/">
-                <span class="level-item">HexoTest</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/23/DFS/">
+                <span class="level-item">DFS深度优先搜索</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -949,7 +877,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="排序Java版" height="28">
+                    <img src="/images/logo.svg" alt="Math数学常用方法" height="28">
                 
                 </a>
                 <p class="is-size-7">

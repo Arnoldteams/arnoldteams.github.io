@@ -2,24 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>排序Java版 - Arnoldteams</title>
+<title>DFS深度优先搜索 - Arnoldteams</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
     
-    <meta name="description" content="冒泡排序 基本思想：　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。 12345678910111213141516171819/**   * 冒泡排序   * @param 数组   * @return 排好序的数组   */   stati">
-<meta name="keywords" content="排序,Sort">
+    <meta name="description" content="递归解法(可能导致堆栈溢出)12345678910boolean DFS(Node cur, Node target, Set&amp;lt;Node&amp;gt; visited) &amp;#123;    return true if cur is target;    for (next : each neighbor of cur) &amp;#123;        if (next is not in visit">
+<meta name="keywords" content="DFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序Java版">
-<meta property="og:url" content="http://yoursite.com/2019/03/21/JavaSort/index.html">
+<meta property="og:title" content="DFS深度优先搜索">
+<meta property="og:url" content="http://yoursite.com/2019/03/23/DFS/index.html">
 <meta property="og:site_name" content="Arnoldteams">
-<meta property="og:description" content="冒泡排序 基本思想：　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。 12345678910111213141516171819/**   * 冒泡排序   * @param 数组   * @return 排好序的数组   */   stati">
+<meta property="og:description" content="递归解法(可能导致堆栈溢出)12345678910boolean DFS(Node cur, Node target, Set&amp;lt;Node&amp;gt; visited) &amp;#123;    return true if cur is target;    for (next : each neighbor of cur) &amp;#123;        if (next is not in visit">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-23T08:12:23.421Z">
+<meta property="og:updated_time" content="2019-03-23T07:47:43.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序Java版">
-<meta name="twitter:description" content="冒泡排序 基本思想：　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。 12345678910111213141516171819/**   * 冒泡排序   * @param 数组   * @return 排好序的数组   */   stati">
+<meta name="twitter:title" content="DFS深度优先搜索">
+<meta name="twitter:description" content="递归解法(可能导致堆栈溢出)12345678910boolean DFS(Node cur, Node target, Set&amp;lt;Node&amp;gt; visited) &amp;#123;    return true if cur is target;    for (next : each neighbor of cur) &amp;#123;        if (next is not in visit">
 
 
 
@@ -93,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="排序Java版" height="28">
+                <img src="/images/logo.svg" alt="DFS深度优先搜索" height="28">
             
             </a>
         </div>
@@ -142,7 +142,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-21T06:21:32.278Z">2019-03-21</time>
+                <time class="level-item has-text-grey" datetime="2019-03-23T07:37:19.210Z">2019-03-23</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
@@ -152,7 +152,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 282 个字)
+                    2 分钟 读完 (大约 310 个字)
                 </span>
                 
                 
@@ -161,86 +161,33 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                排序Java版
+                DFS深度优先搜索
             
         </h1>
         <div class="content">
-            <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><hr>
-<p><strong>基本思想：</strong><br>　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">   * 冒泡排序</span></span><br><span class="line"><span class="hljs-comment">   * <span class="hljs-doctag">@param</span> 数组</span></span><br><span class="line"><span class="hljs-comment">   * <span class="hljs-doctag">@return</span> 排好序的数组</span></span><br><span class="line"><span class="hljs-comment">   */</span></span><br><span class="line">   <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] BubbleSort(<span class="hljs-keyword">int</span>[] a) &#123;</span><br><span class="line">   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = a.length-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;</span><br><span class="line">               <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &gt; <span class="hljs-number">0</span>; j--) &#123;</span><br><span class="line">                   <span class="hljs-keyword">if</span>(a[j]&lt;a[j-<span class="hljs-number">1</span>])</span><br><span class="line">                       swap(a, j, j-<span class="hljs-number">1</span>);</span><br><span class="line">               &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   <span class="hljs-keyword">return</span> a;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a,<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">       <span class="hljs-keyword">int</span> t=a[i];</span><br><span class="line">       a[i]=a[j];</span><br><span class="line">       a[j]=t;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><hr>
-<p><strong>基本思想：</strong><br>　　把n个待排序的元素看成一个有序表和一个无序表，开始时有序表中只有一个元素，无序表中有n-1个元素；排序过程即每次从无序表中取出第一个元素，将它插入到有序表中，使之成为新的有序表，重复n-1次完成整个排序过程。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> *  插入排序Eg：</span></span><br><span class="line"><span class="hljs-comment">         [9| 7, 4, 0, 5]</span></span><br><span class="line"><span class="hljs-comment">        [7, 9| 4, 0, 5]</span></span><br><span class="line"><span class="hljs-comment">        [4, 7, 9| 0, 5]</span></span><br><span class="line"><span class="hljs-comment">        [0, 4, 7, 9| 5]</span></span><br><span class="line"><span class="hljs-comment">        [0, 4, 5, 7, 9]</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] InsertSort (<span class="hljs-keyword">int</span> a[]) &#123;    </span><br><span class="line">    <span class="hljs-keyword">int</span> t=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">        t=a[i];</span><br><span class="line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i-<span class="hljs-number">1</span> ; j &gt;= <span class="hljs-number">0</span>; j--) &#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span>(t&lt;a[j])</span><br><span class="line">                        swap(a,j,j+<span class="hljs-number">1</span>);</span><br><span class="line">                    <span class="hljs-keyword">else</span></span><br><span class="line">                        <span class="hljs-keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="hljs-comment">//  System.out.println(Arrays.toString(a));</span></span><br><span class="line">    &#125;     </span><br><span class="line">    <span class="hljs-keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a><strong>时间复杂度</strong></h2><table>
-<thead>
-<tr>
-<th>排序法</th>
-<th>最差时间分析</th>
-<th>平均时间复杂度</th>
-<th>稳定度</th>
-<th>空间复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>冒泡排序</td>
-<td>O(n2)</td>
-<td>O(n2)</td>
-<td>稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>O(n2)</td>
-<td>O(n*log2n)</td>
-<td>不稳定</td>
-<td>O(log2n)~O(n)</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>O(n2)</td>
-<td>O(n2)</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>二叉树排序</td>
-<td>O(n2)</td>
-<td>O(n*log2n)</td>
-<td>不一定</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>O(n2)</td>
-<td>O(n2)</td>
-<td>稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>O(n*log2n)</td>
-<td>O(n*log2n)</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td>O</td>
-<td>O</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-
+            <h3 id="递归解法-可能导致堆栈溢出"><a href="#递归解法-可能导致堆栈溢出" class="headerlink" title="递归解法(可能导致堆栈溢出)"></a>递归解法(可能导致堆栈溢出)</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">DFS</span><span class="hljs-params">(Node cur, Node target, Set&lt;Node&gt; visited)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">if</span> cur is target;</span><br><span class="line">    <span class="hljs-keyword">for</span> (next : each neighbor of cur) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (next is not in visited) &#123;</span><br><span class="line">            add next to visted;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">true</span> <span class="hljs-keyword">if</span> <span class="hljs-title">DFS</span><span class="hljs-params">(next, target, visited)</span> </span>== <span class="hljs-keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="非递归解法"><a href="#非递归解法" class="headerlink" title="非递归解法"></a>非递归解法</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">DFS</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root,<span class="hljs-keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    Set&lt;Node&gt; visited;</span><br><span class="line">    Stack&lt;Node&gt; s;</span><br><span class="line">    add root to s;</span><br><span class="line">    <span class="hljs-keyword">while</span>(s is not empty)&#123;</span><br><span class="line">        Node cur = the top element in s;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">if</span> cur is target;</span><br><span class="line">        <span class="hljs-keyword">for</span>(Node next : the neighbors of cur)&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(next is not in visited)&#123;</span><br><span class="line">                add next to s;</span><br><span class="line">                add next to visited;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        remove cur from s ; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里，只要深刻的理解了栈的概念就很容易理解。</p>
+<hr>
+<p><strong>我们来看一个简单的问题</strong></p>
+<p>二叉树的中序遍历输出TreeNode中节点的值</p>
+<pre><code>中序遍历：左-&gt;中-&gt;右
+</code></pre><figure class="highlight java hljs"><figcaption><span>树的节点</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line">    TreeNode(<span class="hljs-keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>递归解法：</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList();</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title">inorderTraversal</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        f1(root);</span><br><span class="line">       <span class="hljs-keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f1</span><span class="hljs-params">(TreeNode root)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> ;</span><br><span class="line">        <span class="hljs-comment">//当有左节点的时候就一直递归到没有左节点为止。</span></span><br><span class="line">        inorderTraversal(root.left);</span><br><span class="line">        <span class="hljs-comment">//第一次运行到这里的时候，这一定是最左边的节点。</span></span><br><span class="line">        list.add(root.val);</span><br><span class="line">        <span class="hljs-comment">//第一次运行到这里的时候，左边节点和父节点已经遍历了。</span></span><br><span class="line">        inorderTraversal(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>迭代解法：</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Sort/">Sort</a>, <a class="has-link-grey -link" href="/tags/排序/">排序</a>
+                    <a class="has-link-grey -link" href="/tags/DFS/">DFS</a>
                 </div>
             </div>
         </div>
@@ -258,16 +205,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/21/JavaSearch/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/23/Math/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">查找Java版</span>
+                <span class="level-item">Math数学常用方法</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/20/Hexo/">
-                <span class="level-item">HexoTest</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/23/HashMap&TreeMap/">
+                <span class="level-item">HashMap&amp;TreeMap</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -949,7 +896,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="排序Java版" height="28">
+                    <img src="/images/logo.svg" alt="DFS深度优先搜索" height="28">
                 
                 </a>
                 <p class="is-size-7">

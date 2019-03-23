@@ -2,7 +2,7 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Arnoldteams</title>
+<title>分类: Java Notes - Arnoldteams</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -10,7 +10,7 @@
     
     <meta property="og:type" content="website">
 <meta property="og:title" content="Arnoldteams">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/Java-Notes/index.html">
 <meta property="og:site_name" content="Arnoldteams">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -96,7 +96,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item is-active" href="/">Home</a>
+                <a class="navbar-item" href="/">Home</a>
                 
                 <a class="navbar-item" href="/archives">Archives</a>
                 
@@ -131,7 +131,18 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">分类</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">Java Notes</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
     <div class="card">
     
     <div class="card-content article ">
@@ -165,65 +176,6 @@
 <hr>
 <p><strong>BigInteger (BigDecimal 用法相同)</strong><br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> BigInteger <span class="hljs-title">add</span><span class="hljs-params">(BigInteger val)</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> BigInteger <span class="hljs-title">subtract</span><span class="hljs-params">(BigInteger val)</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> BigInteger <span class="hljs-title">multiply</span><span class="hljs-params">(BigInteger val)</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> BigInteger <span class="hljs-title">divide</span><span class="hljs-params">(BigInteger val)</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function">"<span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(Biglnteger other)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//如果这个大整数与另一个大整数相等，返回0; 如果这个大整数小于另一个大整数, 返回负数；否则，返回正数</span></span></span><br></pre></td></tr></table></figure></p>
 
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-23T07:37:19.210Z">2019-03-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 310 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/23/DFS/">DFS深度优先搜索</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="递归解法-可能导致堆栈溢出"><a href="#递归解法-可能导致堆栈溢出" class="headerlink" title="递归解法(可能导致堆栈溢出)"></a>递归解法(可能导致堆栈溢出)</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">DFS</span><span class="hljs-params">(Node cur, Node target, Set&lt;Node&gt; visited)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">if</span> cur is target;</span><br><span class="line">    <span class="hljs-keyword">for</span> (next : each neighbor of cur) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (next is not in visited) &#123;</span><br><span class="line">            add next to visted;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">true</span> <span class="hljs-keyword">if</span> <span class="hljs-title">DFS</span><span class="hljs-params">(next, target, visited)</span> </span>== <span class="hljs-keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="非递归解法"><a href="#非递归解法" class="headerlink" title="非递归解法"></a>非递归解法</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">DFS</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root,<span class="hljs-keyword">int</span> target)</span></span>&#123;</span><br><span class="line">    Set&lt;Node&gt; visited;</span><br><span class="line">    Stack&lt;Node&gt; s;</span><br><span class="line">    add root to s;</span><br><span class="line">    <span class="hljs-keyword">while</span>(s is not empty)&#123;</span><br><span class="line">        Node cur = the top element in s;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">if</span> cur is target;</span><br><span class="line">        <span class="hljs-keyword">for</span>(Node next : the neighbors of cur)&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(next is not in visited)&#123;</span><br><span class="line">                add next to s;</span><br><span class="line">                add next to visited;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        remove cur from s ; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里，只要深刻的理解了栈的概念就很容易理解。</p>
-<hr>
-<p><strong>我们来看一个简单的问题</strong></p>
-<p>二叉树的中序遍历输出TreeNode中节点的值</p>
-<pre><code>中序遍历：左-&gt;中-&gt;右
-</code></pre><figure class="highlight java hljs"><figcaption><span>树的节点</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line">    TreeNode(<span class="hljs-keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>递归解法：</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList();</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title">inorderTraversal</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        f1(root);</span><br><span class="line">       <span class="hljs-keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f1</span><span class="hljs-params">(TreeNode root)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> ;</span><br><span class="line">        <span class="hljs-comment">//当有左节点的时候就一直递归到没有左节点为止。</span></span><br><span class="line">        inorderTraversal(root.left);</span><br><span class="line">        <span class="hljs-comment">//第一次运行到这里的时候，这一定是最左边的节点。</span></span><br><span class="line">        list.add(root.val);</span><br><span class="line">        <span class="hljs-comment">//第一次运行到这里的时候，左边节点和父节点已经遍历了。</span></span><br><span class="line">        inorderTraversal(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>迭代解法：</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -301,149 +253,6 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-23T05:51:17.522Z">2019-03-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Tools/">Tools</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 分钟 读完 (大约 1026 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/23/evermonkey/">EverMonkey印象笔记插件</a>
-            
-        </h1>
-        <div class="content">
-            <p><strong>开始使用</strong></p>
-<blockquote>
-<p>打开命令面板(F1 或者 ctrl+shift+p), 输入以下命令即可操作印象笔记。</p>
-</blockquote>
-<p><strong>新建笔记 – ever new</strong></p>
-<blockquote>
-<p>新建一个空白笔记, 文档顶部是笔记元数据，包括笔记的标题，标签，所属笔记本等(不支持分级)。 当输入笔记本和标签时，如果是已经存在的，则会有代码补全提示，否则将会在印象笔记中新建。标签需要用半角逗号分隔。</p>
-</blockquote>
-<p><strong>打开笔记 – ever open</strong></p>
-<blockquote>
-<p>以树形结构打开印象笔记。选中笔记后，默认会将笔记的内容转换为 markdown 格式，如果有不支持的媒体格式，那么转换后可能会影响笔记的内容。如果在多端进行编辑也会出现 html 标签的情况。</p>
-</blockquote>
-<p><strong>搜索笔记 – ever search</strong></p>
-<blockquote>
-<p>根据输入的搜索条件返回印象笔记。返回的形式是 notebook&gt;&gt;note, 搜索使用的是印象笔记官方的搜索语言，比如 tag:java 等。更多使用方法可以查看官方文档 Evernote Search Grammar</p>
-</blockquote>
-<p><strong>发布笔记 – ever publish</strong></p>
-<blockquote>
-<p>当编辑或者更新笔记后，可以使用 ever publish 命令将笔记发布到印象笔记服务器上，实现笔记的同步。monkey 会根据缓存信息判断是需要新建还是更新笔记, 更新成功后会弹出消息。</p>
-</blockquote>
-<p><strong>打开最近编辑的笔记 – ever recent</strong></p>
-<blockquote>
-<p>打开最近编辑过的笔记。选中笔记后，默认会将笔记的内容转换为 markdown 格式，如果有不支持的媒体格式，那么转换后可能会影响笔记的内容。如果在多端进行编辑也会出现 html 标签的情况。</p>
-</blockquote>
-<p><strong>在浏览器中打开编辑的笔记 – ever browse</strong></p>
-<blockquote>
-<p>在印象笔记网页端打开当前编辑的笔记，如果还未发布，则无法打开。如果在网页端中编辑文档内容，再次在vscode中打开笔记时，渲染markdown会导致一些原生html被渲染。</p>
-</blockquote>
-<p><strong>在客户端中浏览编辑的笔记 – ever everclient</strong></p>
-<blockquote>
-<p>在印象笔记客户端中打开编辑的笔记，如果还未发布，则无法打开。如果在客户端中编辑文档内容，再次在vscode中打开笔记时，渲染markdown会导致一些原生html被渲染。</p>
-</blockquote>
-<p><strong>上传附件到当前编辑的笔记 – ever attach</strong></p>
-<blockquote>
-<p>如果已经配置了 uploadFolder, 可以将附件放到对应的文件夹下，输入文件名即可实现上传。否则，需要输入文件的绝对路径。上传后的附件是缓存在本地的，需要使用 ever publish 命令将附件上传。</p>
-</blockquote>
-<p><strong>取消上传附件到当前编辑的笔记 – ever unattach</strong></p>
-<blockquote>
-<p>如果附件上传后还没有 publish, 此时可以使用 ever unattach 命令进行取消。 注: monkey 中不提供任何删除服务器端笔记的命令！</p>
-</blockquote>
-<p><strong>浏览当前编辑笔记的附件 – ever resources</strong></p>
-<blockquote>
-<p>浏览当前编辑的笔记。其中会以 (server), (local) 的形式区分本地附件和服务器附件。如果是服务器端的附件，选中后会临时下载到 attachmentsFolder 中, 并使用默认应用打开附件。 如果是本地附件，则会直接使用默认应用打开。</p>
-</blockquote>
-<p><strong>同步笔记账户 – ever sync</strong></p>
-<blockquote>
-<p>同步笔记账户，这个命令会在第一次使用 monkey 的时候调用，并将结果缓存到内存中。如果没有缓存报错(通常是由于网络原因导致请求失败，本地缓存失效), 或者在多端使用印象笔记，不建议使用此命令。可能会由于印象笔记限流导致，账户暂时无法调用 API。</p>
-</blockquote>
-<p><strong>打开印象笔记开发者网页 – ever token</strong></p>
-<blockquote>
-<p>获取 token 和 noteStoreUrl。</p>
-</blockquote>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-22T10:59:39.111Z">2019-03-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/KeepThinking/">KeepThinking</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 123 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/22/GoodWords/">触动心灵的话</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p>孩子，我要求你读书用功，不是因为我要你跟别人比成绩，而是因为：我希望你将来会拥有选择的权利，选择有意义、有时间的工作，而不是被迫谋生。当你的工作在你心中有意义，你就有成就感。当你的工作给你时间，不剥夺你的生活，你就有尊严。成就感和尊严，给你快乐。</p>
-</blockquote>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-03-22T10:45:40.779Z">2019-03-22</time>
                 
                 <div class="level-item">
@@ -485,324 +294,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-22T06:12:24.283Z">2019-03-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 分钟 读完 (大约 667 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/22/recursion/">递归</a>
-            
-        </h1>
-        <div class="content">
-            <p><strong>递归问题</strong>：我们可以用「分而治之」的概念去帮助理解。步骤如下：</p>
-<ol>
-<li>把问题分解成更容易解决的子问题集合（比如可以把计算斐波那契数列的第n项问题分解转换成计算第n-1项加上第n-2项这两个子问题）</li>
-<li>假设我们有一个函数可以应用在所有的子问题上（比如计算斐波那契数列的fibo函数）</li>
-<li>基于步骤2的函数，实现如何把子问题的解拼成最终问题的解，这就是递归部分（在计算斐波那契数列的例子里就是fibo(n-1) + fibo(n-2)部分）</li>
-<li>递归部分确定了，然后再考虑子问题最终简化到到最底层时该返回什么值（不能再分的原子情况）。</li>
-</ol>
-<h3 id="E-g："><a href="#E-g：" class="headerlink" title="E.g："></a>E.g：</h3><p><strong>问题描述</strong><br>　　每年冬天，北大未名湖上都是滑冰的好地方。北大体育组准备了许多冰鞋，可是人太多了，每天下午收工后，常常一双冰鞋都不剩。<br>　　每天早上，租鞋窗口都会排起长龙，假设有还鞋的m个，有需要租鞋的n个。现在的问题是，这些人有多少种排法，可以避免出现体育组没有冰鞋可租的尴尬场面。（两个同样需求的人（比如都是租鞋或都是还鞋）交换位置是同一种排法）<br><strong>输入格式</strong><br>　　两个整数，表示m和n<br><strong>输出格式</strong><br>　　一个整数，表示队伍的排法的方案数。<br><strong>样例输入</strong><br>3 2<br><strong>样例输出</strong><br>5<br><strong>数据规模和约定</strong><br>m,n∈［0,18］<br>　<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.*;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="hljs-keyword">int</span> m=in.nextInt();<span class="hljs-comment">//send</span></span><br><span class="line">        <span class="hljs-keyword">int</span> n=in.nextInt();<span class="hljs-comment">//get</span></span><br><span class="line">        System.out.println(cal(m,n));</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m,<span class="hljs-keyword">int</span> n)</span> </span>&#123;     </span><br><span class="line">      <span class="hljs-keyword">if</span>(n&gt;m) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">      &#125;     </span><br><span class="line">           <span class="hljs-keyword">return</span> cal(m-<span class="hljs-number">1</span>,n)+cal(m,n-<span class="hljs-number">1</span>);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>类似问题</strong></p>
-<ul>
-<li>计算m个a n个b 的排列数</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;</span><br><span class="line">     <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">      * 计算m个a n个b 的排列数</span></span><br><span class="line"><span class="hljs-comment">      */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="hljs-keyword">int</span> m=in.nextInt();<span class="hljs-comment">//a</span></span><br><span class="line">        <span class="hljs-keyword">int</span> n=in.nextInt();<span class="hljs-comment">//b</span></span><br><span class="line">        System.out.println(cal(m,n));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b)</span> </span>&#123;     </span><br><span class="line">      <span class="hljs-keyword">if</span>(a==<span class="hljs-number">0</span>&amp;&amp;b==<span class="hljs-number">0</span>) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(a==<span class="hljs-number">0</span>||b==<span class="hljs-number">0</span>) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">      &#125;     </span><br><span class="line">           <span class="hljs-keyword">return</span> cal(a-<span class="hljs-number">1</span>,b)+cal(a,b-<span class="hljs-number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>计算斐波那契数</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.*;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;</span><br><span class="line">     <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">      * 计算斐波那契数</span></span><br><span class="line"><span class="hljs-comment">      */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="hljs-keyword">int</span> n=in.nextInt();<span class="hljs-comment">//a</span></span><br><span class="line">        System.out.println(cal(n));</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123; </span><br><span class="line">      </span><br><span class="line">      <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>)</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">     </span><br><span class="line">           <span class="hljs-keyword">return</span> cal(n-<span class="hljs-number">1</span>)+cal(n-<span class="hljs-number">2</span>);<span class="hljs-comment">//第n个数为n-1,n-2的和 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-21T10:57:10.505Z">2019-03-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 519 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/21/JavaSearch/">查找Java版</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><hr>
-<p><strong>基本思想：</strong><br>　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 顺序查找</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> 数组；查找的元素</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> 下标</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">SequenceSearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a,<span class="hljs-keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(a[i]==num)</span><br><span class="line">                    <span class="hljs-keyword">return</span> i+<span class="hljs-number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="折半（二分）查找"><a href="#折半（二分）查找" class="headerlink" title="折半（二分）查找"></a>折半（二分）查找</h3><hr>
-<p><strong>基本思想：</strong><br>　　搜索过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜索过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组为空，则代表找不到。这种搜索算法每一次比较都使搜索范围缩小一半。仅限有序数组</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">* 二分查找(只能查找有序数组)</span></span><br><span class="line"><span class="hljs-comment">* <span class="hljs-doctag">@param</span> 数组；查找的元素</span></span><br><span class="line"><span class="hljs-comment">* <span class="hljs-doctag">@return</span> 下标</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">BinarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a,<span class="hljs-keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="hljs-keyword">int</span> low = <span class="hljs-number">0</span>;</span><br><span class="line">       <span class="hljs-keyword">int</span> high = a.length-<span class="hljs-number">1</span>;</span><br><span class="line">       <span class="hljs-keyword">int</span> mid;</span><br><span class="line">       <span class="hljs-keyword">while</span>(low&lt;=high) &#123;</span><br><span class="line">           mid = (low + high) / <span class="hljs-number">2</span>;</span><br><span class="line">           <span class="hljs-keyword">if</span>(a[mid] &gt; num) &#123;</span><br><span class="line">                   high=mid-<span class="hljs-number">1</span>;</span><br><span class="line">           &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a[mid] &lt; num) &#123;</span><br><span class="line">                   low=mid+<span class="hljs-number">1</span>;</span><br><span class="line">           &#125;<span class="hljs-keyword">else</span> &#123;</span><br><span class="line">                   <span class="hljs-keyword">return</span> mid+<span class="hljs-number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;    </span><br><span class="line">       <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h3><hr>
-<p><strong>基本思想：</strong><br>　　将n个数据元素<strong>按块有序</strong>划分为m块（m&lt;=n）。每一<strong>块中的数据元素不必有序</strong>，但块与块之间必须“按块有序”，即第1快中的任一元素的关键字都必须小于第2块中任一元素的关键字；而第2块中任一元素又都小于第3块中的任一元素，……；<strong>块间用二分查找，块内用顺序查找</strong></p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">* 二分查找(只能查找有序数组)</span></span><br><span class="line"><span class="hljs-comment">* <span class="hljs-doctag">@param</span> 数组；查找的元素</span></span><br><span class="line"><span class="hljs-comment">* <span class="hljs-doctag">@return</span> 下标</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-21T06:21:32.278Z">2019-03-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 282 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/21/JavaSort/">排序Java版</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><hr>
-<p><strong>基本思想：</strong><br>　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">   * 冒泡排序</span></span><br><span class="line"><span class="hljs-comment">   * <span class="hljs-doctag">@param</span> 数组</span></span><br><span class="line"><span class="hljs-comment">   * <span class="hljs-doctag">@return</span> 排好序的数组</span></span><br><span class="line"><span class="hljs-comment">   */</span></span><br><span class="line">   <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] BubbleSort(<span class="hljs-keyword">int</span>[] a) &#123;</span><br><span class="line">   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = a.length-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;</span><br><span class="line">               <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &gt; <span class="hljs-number">0</span>; j--) &#123;</span><br><span class="line">                   <span class="hljs-keyword">if</span>(a[j]&lt;a[j-<span class="hljs-number">1</span>])</span><br><span class="line">                       swap(a, j, j-<span class="hljs-number">1</span>);</span><br><span class="line">               &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   <span class="hljs-keyword">return</span> a;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a,<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">       <span class="hljs-keyword">int</span> t=a[i];</span><br><span class="line">       a[i]=a[j];</span><br><span class="line">       a[j]=t;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><hr>
-<p><strong>基本思想：</strong><br>　　把n个待排序的元素看成一个有序表和一个无序表，开始时有序表中只有一个元素，无序表中有n-1个元素；排序过程即每次从无序表中取出第一个元素，将它插入到有序表中，使之成为新的有序表，重复n-1次完成整个排序过程。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> *  插入排序Eg：</span></span><br><span class="line"><span class="hljs-comment">         [9| 7, 4, 0, 5]</span></span><br><span class="line"><span class="hljs-comment">        [7, 9| 4, 0, 5]</span></span><br><span class="line"><span class="hljs-comment">        [4, 7, 9| 0, 5]</span></span><br><span class="line"><span class="hljs-comment">        [0, 4, 7, 9| 5]</span></span><br><span class="line"><span class="hljs-comment">        [0, 4, 5, 7, 9]</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] InsertSort (<span class="hljs-keyword">int</span> a[]) &#123;    </span><br><span class="line">    <span class="hljs-keyword">int</span> t=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">        t=a[i];</span><br><span class="line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i-<span class="hljs-number">1</span> ; j &gt;= <span class="hljs-number">0</span>; j--) &#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span>(t&lt;a[j])</span><br><span class="line">                        swap(a,j,j+<span class="hljs-number">1</span>);</span><br><span class="line">                    <span class="hljs-keyword">else</span></span><br><span class="line">                        <span class="hljs-keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="hljs-comment">//  System.out.println(Arrays.toString(a));</span></span><br><span class="line">    &#125;     </span><br><span class="line">    <span class="hljs-keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a><strong>时间复杂度</strong></h2><table>
-<thead>
-<tr>
-<th>排序法</th>
-<th>最差时间分析</th>
-<th>平均时间复杂度</th>
-<th>稳定度</th>
-<th>空间复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>冒泡排序</td>
-<td>O(n2)</td>
-<td>O(n2)</td>
-<td>稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>O(n2)</td>
-<td>O(n*log2n)</td>
-<td>不稳定</td>
-<td>O(log2n)~O(n)</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>O(n2)</td>
-<td>O(n2)</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>二叉树排序</td>
-<td>O(n2)</td>
-<td>O(n*log2n)</td>
-<td>不一定</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>O(n2)</td>
-<td>O(n2)</td>
-<td>稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>O(n*log2n)</td>
-<td>O(n*log2n)</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td>O</td>
-<td>O</td>
-<td>不稳定</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-20T11:19:10.957Z">2019-03-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Grammar/">Grammar</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    几秒 读完 (大约 100 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/20/Hexo/">HexoTest</a>
-            
-        </h1>
-        <div class="content">
-            <ul>
-<li><p>1</p>
-<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
-</li>
-<li><p>2</p>
-<blockquote><p>NEW: DevDocs now comes with syntax highlighting.</p>
-<footer><strong>DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="noopener">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
-</li>
-<li><p>3</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SinglyListNode</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> val;</span><br><span class="line">    SinglyListNode next;</span><br><span class="line">    SinglyListNode(<span class="hljs-keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;length;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%3d"</span>,a[i]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4</p>
-<figure class="highlight java hljs"><figcaption><span>Arrays.sort()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(a[]);</span><br><span class="line"><span class="hljs-keyword">int</span> a=<span class="hljs-number">0</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5</p>
-<figure class="highlight plain hljs"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>6</p>
-<img src="https://github.com/Arnoldteams/arnoldteams.github.io/blob/master/images/avatar.png?raw=true" class="[class names]" title="[100px] [100px] [title text [alt text]]">
-</li>
-<li><p>7</p>
-<a href="https://hexo.io/zh-cn/docs/tag-plugins.html#jsFiddle" target="_blank" rel="noopener">Hexo Tag Plugins</a>
-</li>
-<li><p>8</p>
-
-content
-
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    
-<div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/page/0/">上一页</a>
-        </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/page/2/">下一页</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link is-current" href="/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
-            
-        </ul>
-    </nav>
-</div>
 </div>
                 
 
