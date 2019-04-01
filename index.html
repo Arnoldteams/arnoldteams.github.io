@@ -138,6 +138,55 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-01T06:38:18.886Z">2019-04-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 583 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/01/JavaSort2/">排序Java版(交换排序)</a>
+            
+        </h1>
+        <div class="content">
+            <h3><span id="冒泡排序">冒泡排序</span></h3><hr>
+<p><strong>基本思想：</strong><br>　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。</p>
+<figure class="highlight java hljs"><figcaption><span>BubbleSort</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * 冒泡排序</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> 数组</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span> 排好序的数组</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"><span class="hljs-comment">//v1.0 由尾到头排序</span></span><br><span class="line"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] BubbleSort(<span class="hljs-keyword">int</span>[] a) &#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = a.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &gt; <span class="hljs-number">0</span>; j--) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (a[j] &lt; a[j - <span class="hljs-number">1</span>])</span><br><span class="line">                swap(a, j, j - <span class="hljs-number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">//v2.0 由头到尾排序</span></span><br><span class="line"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] BubbleSort(<span class="hljs-keyword">int</span>[] a) &#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;=a.length - <span class="hljs-number">1</span>; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i+<span class="hljs-number">1</span>; j &lt;=a.length - <span class="hljs-number">1</span>; j++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (a[i] &gt; a[j])</span><br><span class="line">                swap(a, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> t = a[i];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="快速排序">快速排序</span></h3><hr>
+<p><strong>基本思想：</strong><br>　　第一趟选取一个哨兵，以哨兵为分界进行划分，将数组划分为 <strong>[low] 哨兵 [high]</strong>  使得 <strong>[low]</strong> 的所有元素均小于哨兵元素，<strong>[high]</strong> 的所有元素均大于哨兵元素（也就是说哨兵这个元素已经排到正确位置了），之后以这个哨兵为界分别对 <strong>[low] [high]</strong> 进行划分，递归进行直到完成排序</p>
+<figure class="highlight java hljs"><figcaption><span>QuickSort</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * 快速排序</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> 数组，数组下限，数组上限</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span> 排好序的数组</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] QuickSort(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> pos = Partition(a, low, high);</span><br><span class="line">        QuickSort(a, low, pos - <span class="hljs-number">1</span>);</span><br><span class="line">        QuickSort(a, pos + <span class="hljs-number">1</span>, high);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * 划分</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> 数组，数组下限，数组上限</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span> 哨兵的位置</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Partition</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> sentry = a[low];<span class="hljs-comment">// 哨兵</span></span><br><span class="line">    <span class="hljs-keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="hljs-comment">// 实现[low] 哨兵 [high] 的排序；当low=high时候结束循环</span></span><br><span class="line">        <span class="hljs-keyword">while</span> (low &lt; high &amp;&amp; a[high] &gt;= sentry) &#123;</span><br><span class="line">            <span class="hljs-comment">// 从high-&gt;low遍历；发现第一个a[high]&lt;哨兵 结束循环</span></span><br><span class="line">            high--;</span><br><span class="line">        &#125;</span><br><span class="line">        a[low] = a[high]; <span class="hljs-comment">// 将这个小于哨兵的元素移至哨兵左边[low]</span></span><br><span class="line">        <span class="hljs-keyword">while</span> (low &lt; high &amp;&amp; a[low] &lt;= sentry) &#123;</span><br><span class="line">            <span class="hljs-comment">// 从low-&gt;high遍历；发现第一个a[high]&gt;哨兵 结束循环</span></span><br><span class="line">            low++;</span><br><span class="line">        &#125;</span><br><span class="line">        a[high] = a[low]; <span class="hljs-comment">// 将这个大于于哨兵的元素移至哨兵右边[high]</span></span><br><span class="line">    &#125;</span><br><span class="line">    a[low] = sentry;<span class="hljs-comment">// 哨兵放到正确的位置</span></span><br><span class="line">    <span class="hljs-keyword">return</span> low;<span class="hljs-comment">// 返回哨兵的位置，这时 哨兵的左边&lt;哨兵；哨兵的右边&gt;哨兵</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-03-28T07:48:22.229Z">2019-03-28</time>
                 
                 <div class="level-item">
@@ -161,7 +210,7 @@
             
         </h1>
         <div class="content">
-            <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SequenceList</span>&lt;<span class="hljs-title">T</span>&gt; </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> MaxSize=<span class="hljs-number">10</span>;</span><br><span class="line">	<span class="hljs-keyword">private</span> T[] data;</span><br><span class="line">	<span class="hljs-keyword">int</span> length;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SequenceList</span><span class="hljs-params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">InitList</span><span class="hljs-params">(T[] list)</span> </span>&#123;</span><br><span class="line">                <span class="hljs-comment">//初始化</span></span><br><span class="line">		data=Arrays.copyOf(list, MaxSize);</span><br><span class="line">		length=list.length;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">ListInsert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i,T a)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">//插入</span></span><br><span class="line">		<span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>||i&gt;length+<span class="hljs-number">1</span>||length&gt;=MaxSize)</span><br><span class="line">			<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = length; j &gt;=i; j--) &#123;</span><br><span class="line">			data[j]=data[j-<span class="hljs-number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		data[i-<span class="hljs-number">1</span>]=a;</span><br><span class="line">		length++;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	 <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">ListDelete</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">//删除</span></span><br><span class="line">		<span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>&amp;&amp;i&gt;length+<span class="hljs-number">1</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">		T temp=data[i-<span class="hljs-number">1</span>];</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &lt; length; j++) &#123;</span><br><span class="line">			data[j-<span class="hljs-number">1</span>]=data[j];</span><br><span class="line">		&#125;</span><br><span class="line">		length--;</span><br><span class="line">		data[length]=<span class="hljs-keyword">null</span>;		</span><br><span class="line">		<span class="hljs-keyword">return</span> temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">LocateElem</span><span class="hljs-params">(T a)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">//获取元素位置</span></span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">			<span class="hljs-keyword">if</span>(data[i]==a)</span><br><span class="line">				<span class="hljs-keyword">return</span> i+<span class="hljs-number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">GetElem</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">//获取元素</span></span><br><span class="line">		<span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span>&amp;&amp;i&gt;length+<span class="hljs-number">1</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> data[i-<span class="hljs-number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Length</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">//长度</span></span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.length;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">//打印</span></span><br><span class="line">		System.out.println(Arrays.toString(data));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">Empty</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">                <span class="hljs-comment">//判断是否为空</span></span><br><span class="line">		<span class="hljs-keyword">if</span>(data.length==<span class="hljs-number">0</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="hljs-comment">//Test</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Integer[] a= &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>&#125;;<span class="hljs-comment">//使用int初始化会发生异常</span></span><br><span class="line">		SequenceList&lt;Integer&gt; list=<span class="hljs-keyword">new</span> SequenceList&lt;Integer&gt;();</span><br><span class="line">		System.out.println(<span class="hljs-string">"Init:"</span>+list.InitList(a));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Insert:"</span>+list.ListInsert(<span class="hljs-number">1</span>, <span class="hljs-number">66</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Delete:"</span>+list.ListDelete(<span class="hljs-number">4</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"GetNum:"</span>+list.GetElem(<span class="hljs-number">4</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"LocElem:"</span>+list.LocateElem(<span class="hljs-number">66</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Length:"</span>+list.length);</span><br><span class="line">		System.out.println(<span class="hljs-string">"Empty:"</span>+list.Empty());</span><br><span class="line">		list.print();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SequenceList</span>&lt;<span class="hljs-title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> MaxSize = <span class="hljs-number">10</span>;</span><br><span class="line">	<span class="hljs-keyword">private</span> T[] data;</span><br><span class="line">	<span class="hljs-keyword">int</span> length;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SequenceList</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">InitList</span><span class="hljs-params">(T[] list)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 初始化</span></span><br><span class="line">		data = Arrays.copyOf(list, MaxSize);</span><br><span class="line">		length = list.length;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">ListInsert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, T a)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 插入</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> || i &gt; length + <span class="hljs-number">1</span> || length &gt;= MaxSize)</span><br><span class="line">			<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = length; j &gt;= i; j--) &#123;</span><br><span class="line">			data[j] = data[j - <span class="hljs-number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		data[i - <span class="hljs-number">1</span>] = a;</span><br><span class="line">		length++;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">ListDelete</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 删除</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> &amp;&amp; i &gt; length + <span class="hljs-number">1</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">		T temp = data[i - <span class="hljs-number">1</span>];</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &lt; length; j++) &#123;</span><br><span class="line">			data[j - <span class="hljs-number">1</span>] = data[j];</span><br><span class="line">		&#125;</span><br><span class="line">		length--;</span><br><span class="line">		data[length] = <span class="hljs-keyword">null</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">LocateElem</span><span class="hljs-params">(T a)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 获取元素位置</span></span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">			<span class="hljs-keyword">if</span> (data[i] == a)</span><br><span class="line">				<span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">GetElem</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 获取元素</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> &amp;&amp; i &gt; length + <span class="hljs-number">1</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> data[i - <span class="hljs-number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Length</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 长度</span></span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.length;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 打印</span></span><br><span class="line">		System.out.println(Arrays.toString(data));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">Empty</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 判断是否为空</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (data.length == <span class="hljs-number">0</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Test</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Integer[] a = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> &#125;;<span class="hljs-comment">// 使用int初始化会发生异常</span></span><br><span class="line">		SequenceList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> SequenceList&lt;Integer&gt;();</span><br><span class="line">		System.out.println(<span class="hljs-string">"Init:"</span> + list.InitList(a));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Insert:"</span> + list.ListInsert(<span class="hljs-number">1</span>, <span class="hljs-number">66</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Delete:"</span> + list.ListDelete(<span class="hljs-number">4</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"GetNum:"</span> + list.GetElem(<span class="hljs-number">4</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"LocElem:"</span> + list.LocateElem(<span class="hljs-number">66</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Length:"</span> + list.length);</span><br><span class="line">		System.out.println(<span class="hljs-string">"Empty:"</span> + list.Empty());</span><br><span class="line">		list.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -220,52 +269,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 分钟 读完 (大约 543 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/23/String/">String常用方法</a>
-            
-        </h1>
-        <div class="content">
-            <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">1</span> length（）字符串的长度;    </span><br><span class="line">  isEmpty()判空</span><br><span class="line"></span><br><span class="line"><span class="hljs-number">2</span> charAt（）截取一个字符</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.charAt(<span class="hljs-number">1</span>));<span class="hljs-comment">//输出的结果是字符串a的下标为1的字符e。</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">3</span> getchars（）截取多个字符并由其他字符串接收</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   <span class="hljs-keyword">char</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">10</span>];</span><br><span class="line">   a.getChars(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>, b, <span class="hljs-number">0</span>);</span><br><span class="line">   System.out.println(b);<span class="hljs-comment">//输出的结果为Hello</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">4</span> getBytes()将字符串变成一个<span class="hljs-keyword">byte</span>数组</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   <span class="hljs-keyword">byte</span> b[] = a.getBytes();</span><br><span class="line">   System.out.println(<span class="hljs-keyword">new</span> String(b));<span class="hljs-comment">//输出的结果为Hello Word的byte数组。</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">5</span> toCharArray()将字符串变成一个字符数组</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   <span class="hljs-keyword">char</span>[]b = a.toCharArray();</span><br><span class="line">   System.out.println(b);<span class="hljs-comment">//输出的结果为Hello Word字符数组。</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">6</span> equals()和equalsIgnoreCase()比较两个字符串是否相等，前者区分大小写，后者不区分</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   String b = <span class="hljs-string">"hello word"</span>;</span><br><span class="line">   System.out.println(a.equals(b));<span class="hljs-comment">//false</span></span><br><span class="line">   System.out.println(a.equalsIgnoreCase(b));<span class="hljs-comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">7</span> startsWith()和endsWith()判断字符串是不是以特定的字符开头或结束</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.startsWith(<span class="hljs-string">"ee"</span>));<span class="hljs-comment">//false</span></span><br><span class="line">   System.out.println(a.endsWith(<span class="hljs-string">"rd"</span>));<span class="hljs-comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">8</span> toUpperCase()和toLowerCase()将字符串转换为大写或小写</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.toUpperCase());<span class="hljs-comment">//HELLO WORD</span></span><br><span class="line">   System.out.println(a.toLowerCase());<span class="hljs-comment">//hello word</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">9</span> concat() 连接两个字符串</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   String b = <span class="hljs-string">"你好"</span>;</span><br><span class="line">   System.out.println(b.concat(a));<span class="hljs-comment">//你好Hello Word</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">10</span> trim()去掉起始和结束的空格</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">" Hello Word "</span>;</span><br><span class="line">   System.out.println(a.trim());<span class="hljs-comment">//Hello Word</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">11</span> substring（）截取字符串</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.substring(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>));<span class="hljs-comment">//Hello</span></span><br><span class="line">   System.out.println(a.substring(<span class="hljs-number">6</span>));<span class="hljs-comment">//World</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">12</span> indexOf()和lastIndexOf()前者是查找字符或字符串第一次出现的地方，后者是查找字符或字符串最后一次出现的地方</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   System.out.println(a.indexOf(<span class="hljs-string">"o"</span>));<span class="hljs-comment">//4</span></span><br><span class="line">   System.out.println(a.lastIndexOf(<span class="hljs-string">"o"</span>));<span class="hljs-comment">//7</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">13</span> compareTo()和compareToIgnoreCase(）按字典顺序比较两个字符串的大小，前者区分大小写，后者不区分</span><br><span class="line"></span><br><span class="line">   String a = <span class="hljs-string">"Hello Word"</span>;</span><br><span class="line">   String b = <span class="hljs-string">"hello word"</span>;</span><br><span class="line">   System.out.println(a.compareTo(b));<span class="hljs-comment">//-32</span></span><br><span class="line">   System.out.println(a.compareToIgnoreCase(b));<span class="hljs-comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">14</span> replace() 替换</span><br><span class="line"></span><br><span class="line">    String s=<span class="hljs-string">"abc"</span>;</span><br><span class="line">    System.out.println(s.replace(<span class="hljs-string">'a'</span>, <span class="hljs-string">'w'</span>));<span class="hljs-comment">//wbc</span></span><br><span class="line">    System.out.println(s.replaceFirst(<span class="hljs-string">"bc"</span>,  <span class="hljs-string">"cde"</span>));<span class="hljs-comment">//acde</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">15</span> contains() 字符串匹配</span><br><span class="line"></span><br><span class="line">    String s=<span class="hljs-string">"ab,cd,ef"</span>;</span><br><span class="line">    System.out.println(s.contains(<span class="hljs-string">"ef"</span>));<span class="hljs-comment">//true</span></span><br><span class="line">    System.out.println(s.contains(<span class="hljs-string">"ecf"</span>));<span class="hljs-comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">16</span>  split 拆分字符串</span><br><span class="line"></span><br><span class="line">       String s=<span class="hljs-string">"sa sf gaf asd"</span>;</span><br><span class="line">       String[] a=s.split(<span class="hljs-string">" "</span>);<span class="hljs-comment">//[sa, sf, gaf,asd]</span></span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -295,7 +298,7 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
     
         
     
@@ -313,7 +316,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Grammar/">
@@ -357,9 +360,74 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            标签云
+            最新文章
         </h3>
-        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 10px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T06:38:18.886Z">2019-04-01</time></div>
+                    <a href="/2019/04/01/JavaSort2/" class="has-link-black-ter is-size-6">排序Java版(交换排序)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-28T07:48:22.229Z">2019-03-28</time></div>
+                    <a href="/2019/03/28/SequenceList/" class="has-link-black-ter is-size-6">SequenceList_Java 顺序表</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:28:48.092Z">2019-03-23</time></div>
+                    <a href="/2019/03/23/LinkedList/" class="has-link-black-ter is-size-6">LinkedList常用方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time></div>
+                    <a href="/2019/03/23/String/" class="has-link-black-ter is-size-6">String常用方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:08:28.480Z">2019-03-23</time></div>
+                    <a href="/2019/03/23/Arrays/" class="has-link-black-ter is-size-6">Arrays常用方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -371,6 +439,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/03/">
@@ -433,7 +512,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        17
+                        18
                     </p>
                 </div>
             </div>
@@ -571,74 +650,9 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            最新文章
+            标签云
         </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-28T07:48:22.229Z">2019-03-28</time></div>
-                    <a href="/2019/03/28/SequenceList/" class="has-link-black-ter is-size-6">SequenceList_Java 顺序表</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:28:48.092Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/LinkedList/" class="has-link-black-ter is-size-6">LinkedList常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/String/" class="has-link-black-ter is-size-6">String常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:08:28.480Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/Arrays/" class="has-link-black-ter is-size-6">Arrays常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T11:44:18.120Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/ArrayList/" class="has-link-black-ter is-size-6">ArrayList常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -745,7 +759,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Sort/">
                         <span class="tag">Sort</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -794,7 +808,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -887,7 +901,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        17
+                        18
                     </p>
                 </div>
             </div>
@@ -1025,74 +1039,9 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            最新文章
+            标签云
         </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-28T07:48:22.229Z">2019-03-28</time></div>
-                    <a href="/2019/03/28/SequenceList/" class="has-link-black-ter is-size-6">SequenceList_Java 顺序表</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:28:48.092Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/LinkedList/" class="has-link-black-ter is-size-6">LinkedList常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/String/" class="has-link-black-ter is-size-6">String常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:08:28.480Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/Arrays/" class="has-link-black-ter is-size-6">Arrays常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T11:44:18.120Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/ArrayList/" class="has-link-black-ter is-size-6">ArrayList常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -1199,7 +1148,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Sort/">
                         <span class="tag">Sort</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1248,7 +1197,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

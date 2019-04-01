@@ -172,7 +172,7 @@
 <li>基于步骤2的函数，实现如何把子问题的解拼成最终问题的解，这就是递归部分（在计算斐波那契数列的例子里就是fibo(n-1) + fibo(n-2)部分）</li>
 <li>递归部分确定了，然后再考虑子问题最终简化到到最底层时该返回什么值（不能再分的原子情况）。</li>
 </ol>
-<h3 id="E-g："><a href="#E-g：" class="headerlink" title="E.g："></a>E.g：</h3><p><strong>问题描述</strong><br>　　每年冬天，北大未名湖上都是滑冰的好地方。北大体育组准备了许多冰鞋，可是人太多了，每天下午收工后，常常一双冰鞋都不剩。<br>　　每天早上，租鞋窗口都会排起长龙，假设有还鞋的m个，有需要租鞋的n个。现在的问题是，这些人有多少种排法，可以避免出现体育组没有冰鞋可租的尴尬场面。（两个同样需求的人（比如都是租鞋或都是还鞋）交换位置是同一种排法）<br><strong>输入格式</strong><br>　　两个整数，表示m和n<br><strong>输出格式</strong><br>　　一个整数，表示队伍的排法的方案数。<br><strong>样例输入</strong><br>3 2<br><strong>样例输出</strong><br>5<br><strong>数据规模和约定</strong><br>m,n∈［0,18］<br>　<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.*;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="hljs-keyword">int</span> m=in.nextInt();<span class="hljs-comment">//send</span></span><br><span class="line">        <span class="hljs-keyword">int</span> n=in.nextInt();<span class="hljs-comment">//get</span></span><br><span class="line">        System.out.println(cal(m,n));</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m,<span class="hljs-keyword">int</span> n)</span> </span>&#123;     </span><br><span class="line">      <span class="hljs-keyword">if</span>(n&gt;m) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">      &#125;     </span><br><span class="line">           <span class="hljs-keyword">return</span> cal(m-<span class="hljs-number">1</span>,n)+cal(m,n-<span class="hljs-number">1</span>);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3><span id="eg">E.g：</span></h3><p><strong>问题描述</strong><br>　　每年冬天，北大未名湖上都是滑冰的好地方。北大体育组准备了许多冰鞋，可是人太多了，每天下午收工后，常常一双冰鞋都不剩。<br>　　每天早上，租鞋窗口都会排起长龙，假设有还鞋的m个，有需要租鞋的n个。现在的问题是，这些人有多少种排法，可以避免出现体育组没有冰鞋可租的尴尬场面。（两个同样需求的人（比如都是租鞋或都是还鞋）交换位置是同一种排法）<br><strong>输入格式</strong><br>　　两个整数，表示m和n<br><strong>输出格式</strong><br>　　一个整数，表示队伍的排法的方案数。<br><strong>样例输入</strong><br>3 2<br><strong>样例输出</strong><br>5<br><strong>数据规模和约定</strong><br>m,n∈［0,18］<br>　<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.*;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="hljs-keyword">int</span> m=in.nextInt();<span class="hljs-comment">//send</span></span><br><span class="line">        <span class="hljs-keyword">int</span> n=in.nextInt();<span class="hljs-comment">//get</span></span><br><span class="line">        System.out.println(cal(m,n));</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m,<span class="hljs-keyword">int</span> n)</span> </span>&#123;     </span><br><span class="line">      <span class="hljs-keyword">if</span>(n&gt;m) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">      &#125;     </span><br><span class="line">           <span class="hljs-keyword">return</span> cal(m-<span class="hljs-number">1</span>,n)+cal(m,n-<span class="hljs-number">1</span>);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>类似问题</strong></p>
 <ul>
 <li>计算m个a n个b 的排列数</li>
@@ -214,7 +214,7 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/21/JavaSearch/">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/21/JavaSearch1/">
                 <span class="level-item">查找Java版（线性结构）</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
@@ -230,7 +230,7 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
     
         
     
@@ -248,7 +248,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Grammar/">
@@ -292,9 +292,74 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            标签云
+            最新文章
         </h3>
-        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 10px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T06:38:18.886Z">2019-04-01</time></div>
+                    <a href="/2019/04/01/JavaSort2/" class="has-link-black-ter is-size-6">排序Java版(交换排序)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-28T07:48:22.229Z">2019-03-28</time></div>
+                    <a href="/2019/03/28/SequenceList/" class="has-link-black-ter is-size-6">SequenceList_Java 顺序表</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:28:48.092Z">2019-03-23</time></div>
+                    <a href="/2019/03/23/LinkedList/" class="has-link-black-ter is-size-6">LinkedList常用方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time></div>
+                    <a href="/2019/03/23/String/" class="has-link-black-ter is-size-6">String常用方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:08:28.480Z">2019-03-23</time></div>
+                    <a href="/2019/03/23/Arrays/" class="has-link-black-ter is-size-6">Arrays常用方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -306,6 +371,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/03/">
@@ -368,7 +444,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        17
+                        18
                     </p>
                 </div>
             </div>
@@ -506,74 +582,9 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            最新文章
+            标签云
         </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-28T07:48:22.229Z">2019-03-28</time></div>
-                    <a href="/2019/03/28/SequenceList/" class="has-link-black-ter is-size-6">SequenceList_Java 顺序表</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:28:48.092Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/LinkedList/" class="has-link-black-ter is-size-6">LinkedList常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/String/" class="has-link-black-ter is-size-6">String常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:08:28.480Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/Arrays/" class="has-link-black-ter is-size-6">Arrays常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T11:44:18.120Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/ArrayList/" class="has-link-black-ter is-size-6">ArrayList常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -680,7 +691,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Sort/">
                         <span class="tag">Sort</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -729,7 +740,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -822,7 +833,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        17
+                        18
                     </p>
                 </div>
             </div>
@@ -960,74 +971,9 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            最新文章
+            标签云
         </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-28T07:48:22.229Z">2019-03-28</time></div>
-                    <a href="/2019/03/28/SequenceList/" class="has-link-black-ter is-size-6">SequenceList_Java 顺序表</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:28:48.092Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/LinkedList/" class="has-link-black-ter is-size-6">LinkedList常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/String/" class="has-link-black-ter is-size-6">String常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:08:28.480Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/Arrays/" class="has-link-black-ter is-size-6">Arrays常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T11:44:18.120Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/ArrayList/" class="has-link-black-ter is-size-6">ArrayList常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -1134,7 +1080,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Sort/">
                         <span class="tag">Sort</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1183,7 +1129,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
