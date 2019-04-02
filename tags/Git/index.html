@@ -2,7 +2,7 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>标签: ArrayList - Arnoldteams</title>
+<title>标签: Git - Arnoldteams</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -10,7 +10,7 @@
     
     <meta property="og:type" content="website">
 <meta property="og:title" content="Arnoldteams">
-<meta property="og:url" content="http://yoursite.com/tags/ArrayList/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Git/index.html">
 <meta property="og:site_name" content="Arnoldteams">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -136,7 +136,7 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">ArrayList</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Git</a></li>
         </ul>
         </nav>
     </div>
@@ -148,17 +148,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-23T11:44:18.120Z">2019-03-23</time>
+                <time class="level-item has-text-grey" datetime="2019-04-02T06:25:19.670Z">2019-04-02</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                <a class="has-link-grey -link" href="/categories/Tools/">Tools</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 273 个字)
+                    2 分钟 读完 (大约 284 个字)
                 </span>
                 
                 
@@ -167,11 +167,37 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/03/23/ArrayList/">ArrayList常用方法</a>
+                <a class="has-link-black-ter" href="/2019/04/02/Git/">Git Start!</a>
             
         </h1>
         <div class="content">
-            <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> ArrayList&lt;String&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"> <span class="hljs-comment">// 创建一个空的数组链表对象list，list用来存放String类型的数据</span></span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 增加元素到list对象中</span></span><br><span class="line"> list.add(<span class="hljs-string">"Item1"</span>);</span><br><span class="line"> list.add(<span class="hljs-string">"Item2"</span>);</span><br><span class="line"> list.add(<span class="hljs-number">2</span>, <span class="hljs-string">"Item3"</span>); <span class="hljs-comment">// 此条语句将会把“Item3”字符串增加到list的第3个位置。</span></span><br><span class="line"> list.add(<span class="hljs-string">"Item4"</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 检查元素的位置</span></span><br><span class="line"> <span class="hljs-keyword">int</span> pos = list.indexOf(<span class="hljs-string">"Item2"</span>);</span><br><span class="line"> System.out.println(<span class="hljs-string">"The index of Item2 is: "</span> + pos);</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 检查数组链表是否为空</span></span><br><span class="line"> <span class="hljs-keyword">boolean</span> check = list.isEmpty();</span><br><span class="line"> System.out.println(<span class="hljs-string">"Checking if the arraylist is empty: "</span> + check);</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 获取链表的大小</span></span><br><span class="line"> <span class="hljs-keyword">int</span> size = list.size();</span><br><span class="line"> System.out.println(<span class="hljs-string">"The size of the list is: "</span> + size);</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 检查数组链表中是否包含某元素</span></span><br><span class="line"> <span class="hljs-keyword">boolean</span> element = list.contains(<span class="hljs-string">"Item5"</span>);</span><br><span class="line"> System.out</span><br><span class="line">         .println(<span class="hljs-string">"Checking if the arraylist contains the object Item5: "</span></span><br><span class="line">                 + element);</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 获取指定位置上的元素</span></span><br><span class="line"> String item = list.get(<span class="hljs-number">0</span>);</span><br><span class="line"> System.out.println(<span class="hljs-string">"The item is the index 0 is: "</span> + item);</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 使用迭代器遍历list</span></span><br><span class="line"> <span class="hljs-keyword">for</span> (Iterator&lt;String&gt; it = list.iterator(); it.hasNext();) &#123;</span><br><span class="line">     System.out.println(<span class="hljs-string">"Item is: "</span> + it.next());</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 替换元素</span></span><br><span class="line"> list.set(<span class="hljs-number">1</span>, <span class="hljs-string">"NewItem"</span>);</span><br><span class="line"> System.out.println(<span class="hljs-string">"The arraylist after the replacement is: "</span> + list);</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 移除第0个位置上的元素</span></span><br><span class="line"> list.remove(<span class="hljs-number">0</span>);</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 移除第一次找到的 "Item3"元素</span></span><br><span class="line"> list.remove(<span class="hljs-string">"Item3"</span>);</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">// 转换 ArrayList 为 Array</span></span><br><span class="line"> String[] simpleArray = list.toArray(<span class="hljs-keyword">new</span> String[list.size()]);</span><br></pre></td></tr></table></figure>
+            <h3><span id="常用命令">常用命令</span></h3><hr>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pwd         用于显示当前目录</span><br><span class="line">mkdir       建立目录</span><br><span class="line">touch       建立文件</span><br></pre></td></tr></table></figure>
+<h3><span id="git">Git</span></h3><p><img src="https://i.loli.net/2019/04/02/5ca30dedb5b1f.png" alt="20190402152322.png"></p>
+<h3><span id="eg">E.G</span></h3><ol>
+<li><code>git init</code> 选择一个空目录初始化</li>
+<li>创建指定目录learngit并加入readme</li>
+</ol>
+<pre><code class="shell"><span class="meta">$</span><span class="bash"> mkdir learngit</span>
+<span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> learngit/</span>
+<span class="meta">$</span><span class="bash"> touch readme.txt</span>
+<span class="meta">$</span><span class="bash"> git add readme.txt //可反复多次使用，添加多个文件到暂存区</span>
+</code></pre>
+<ol start="3">
+<li><code>git status</code> 查看添加到工作区与暂存区的内容是否一致</li>
+<li>当在本地发生了修改可以通过<code>git diff</code>查看修改的变化<br><code>$ git diff readme.txt</code>    </li>
+<li>提交所有暂存区的内容到仓库+提交说明（方便管理）<br><code>$ git commit -m &quot;wrote a readme file&quot;</code></li>
+<li>可以使用<code>git log</code>查看提交的日志，通过commit后的版本号回退版本<br><code>commit 461a4c83a94bc47621c873d30b9165db9e48c78d</code></li>
+<li>回退版本<ul>
+<li>回退到前一个版本<br><code>$ git reset --hard HEAD^</code></li>
+<li>回退到特定版本（使用版本号不发生重复的前n位&gt;3）<br><code>$ git reset --hard 461a</code></li>
+<li>查询恢复版本的记录<br><code>$ git reflog</code></li>
+<li>撤销工作区的修改<br><code>$ git checkout -- readme.txt</code></li>
+<li>撤销暂存区的修改<br><code>$ git reset HEAD readme.txt</code></li>
+</ul>
+</li>
+</ol>
+
         </div>
         
         
