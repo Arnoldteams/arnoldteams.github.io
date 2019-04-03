@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 284 个字)
+                    4 分钟 读完 (大约 529 个字)
                 </span>
                 
                 
@@ -173,7 +173,7 @@
         <div class="content">
             <h3><span id="常用命令">常用命令</span></h3><hr>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pwd         用于显示当前目录</span><br><span class="line">mkdir       建立目录</span><br><span class="line">touch       建立文件</span><br></pre></td></tr></table></figure>
-<h3><span id="git">Git</span></h3><p><img src="https://i.loli.net/2019/04/02/5ca30dedb5b1f.png" alt="20190402152322.png"></p>
+<h3><span id="git">Git</span></h3><p><img src="https://i.loli.net/2019/04/02/5ca30dedb5b1f.png" alt="git 原理示意图"></p>
 <h3><span id="eg">E.G</span></h3><ol>
 <li><code>git init</code> 选择一个空目录初始化</li>
 <li>创建指定目录learngit并加入readme</li>
@@ -188,14 +188,32 @@
 <li>当在本地发生了修改可以通过<code>git diff</code>查看修改的变化<br><code>$ git diff readme.txt</code>    </li>
 <li>提交所有暂存区的内容到仓库+提交说明（方便管理）<br><code>$ git commit -m &quot;wrote a readme file&quot;</code></li>
 <li>可以使用<code>git log</code>查看提交的日志，通过commit后的版本号回退版本<br><code>commit 461a4c83a94bc47621c873d30b9165db9e48c78d</code></li>
-<li>回退版本<ul>
+<li>回退<ul>
+<li>回退暂存区的特定文件（暂存区-&gt;工作区）<br><code>$ git reset -- filename</code></li>
 <li>回退到前一个版本<br><code>$ git reset --hard HEAD^</code></li>
 <li>回退到特定版本（使用版本号不发生重复的前n位&gt;3）<br><code>$ git reset --hard 461a</code></li>
 <li>查询恢复版本的记录<br><code>$ git reflog</code></li>
-<li>撤销工作区的修改<br><code>$ git checkout -- readme.txt</code></li>
-<li>撤销暂存区的修改<br><code>$ git reset HEAD readme.txt</code></li>
+<li>撤销工作区的修改（暂存区-&gt;工作区）<br><code>$ git checkout -- readme.txt</code></li>
+<li>撤销暂存区的修改（仓库-&gt;暂存区）<br><code>$ git reset HEAD readme.txt</code></li>
 </ul>
 </li>
+<li>删除文件使用<code>git rm</code>将修改保存到暂存区<br><code>$ git rm readme.txt</code></li>
+<li>连接本地仓库到<strong>GitHub</strong><ul>
+<li>创建SSH Key<br><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></li>
+<li>将<strong>id_rsa.pub</strong> 添加到<strong>GitHub</strong><blockquote>
+<p>登陆GitHub-&gt;“Account settings”-&gt;“SSH Keys”添加“SSH Key”，任意Title，在Key文本框里粘贴id_rsa.pub文件的内容</p>
+</blockquote>
+</li>
+<li><strong>GitHub</strong>上建立新仓库<code>learngit</code></li>
+<li>本地与在线仓库关联<br><code>$ git remote add origin git@github.com:arnoldteams/learngit.git</code><blockquote>
+<p>远程库的名字是origin<br>关联仓库为arnoldteams/learngit</p>
+</blockquote>
+</li>
+<li>将本地推送到GitHub仓库<br><code>$ git push -u origin master</code><br><strong>推送失败可以先进行合并</strong><br><code>$ git pull --rebase origin master</code></li>
+</ul>
+</li>
+<li>连接完成后若本地仓库发生修改进行推送<br><code>$ git push origin master</code></li>
+<li>GitHub 仓库克隆到本地<br><code>$ git clone git@github.com:arnoldteams/learngit.git</code><br>或者<br><code>$ git clone https://github.com/Arnoldteams/learngit</code></li>
 </ol>
 
         </div>
@@ -260,7 +278,7 @@
                 <span class="level-item">KeepThinking</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Tools/">
@@ -282,6 +300,19 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-03T07:06:23.369Z">2019-04-03</time></div>
+                    <a href="/2019/04/03/GoodWords002/" class="has-link-black-ter is-size-6">人就是一块月饼</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/KeepThinking/">KeepThinking</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -335,19 +366,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/String/" class="has-link-black-ter is-size-6">String常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -366,7 +384,7 @@
                     <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -432,7 +450,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        20
                     </p>
                 </div>
             </div>
@@ -516,6 +534,17 @@
             </li>
         
             <li>
+                <a class="level is-mobile" href="http://msdn.itellyou.cn/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">MSDN</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">msdn.itellyou.cn</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
                 <a class="level is-mobile" href="https://www.liuchuo.net/" target="_blank">
                     <span class="level-left">
                         <span class="level-item">GOD Liu</span>
@@ -572,7 +601,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 20px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 20px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 20px;">鸡汤</a>
     </div>
 </div>
 
@@ -714,7 +743,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/励志/">
                         <span class="tag">励志</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -728,7 +757,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/感动/">
                         <span class="tag">感动</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -777,7 +806,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/鸡汤/">
                         <span class="tag">鸡汤</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -828,7 +857,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        20
                     </p>
                 </div>
             </div>
@@ -912,6 +941,17 @@
             </li>
         
             <li>
+                <a class="level is-mobile" href="http://msdn.itellyou.cn/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">MSDN</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">msdn.itellyou.cn</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
                 <a class="level is-mobile" href="https://www.liuchuo.net/" target="_blank">
                     <span class="level-left">
                         <span class="level-item">GOD Liu</span>
@@ -968,7 +1008,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 20px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 20px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 20px;">鸡汤</a>
     </div>
 </div>
 
@@ -1110,7 +1150,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/励志/">
                         <span class="tag">励志</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1124,7 +1164,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/感动/">
                         <span class="tag">感动</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1173,7 +1213,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/鸡汤/">
                         <span class="tag">鸡汤</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
