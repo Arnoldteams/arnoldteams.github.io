@@ -138,6 +138,64 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-20T11:05:41.365Z">2019-04-20</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 290 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/20/Pointer/">C语言 指针</a>
+            
+        </h1>
+        <div class="content">
+            <figure class="highlight c hljs"><figcaption><span>建立数组</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> a[<span class="hljs-number">6</span>];</span><br><span class="line">a[<span class="hljs-number">0</span>]=<span class="hljs-string">'s'</span>;</span><br><span class="line">a[<span class="hljs-number">1</span>]=<span class="hljs-string">'w'</span>;</span><br><span class="line">a[<span class="hljs-number">2</span>]=<span class="hljs-string">'3'</span>;</span><br><span class="line">a[<span class="hljs-number">5</span>]=<span class="hljs-string">'q'</span>;</span><br><span class="line"><span class="hljs-keyword">char</span> *t=a;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/04/20/5cbb096b7c3db.png" alt=""></p>
+<ol>
+<li><code>a</code> 为<strong>固定</strong>指针是数组a的首地址，不可直接进行运算。但可以通过以 <strong>[基地址+偏移量]</strong> 的思想来进行操作。</li>
+</ol>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"1--%d\n"</span>,a);	 <span class="hljs-comment">//a 数组的首地址,即a[0]的地址 </span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"2--%d\n"</span>,&amp;a);	 <span class="hljs-comment">//a 数组的首地址</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"3--%d\n"</span>,&amp;a[<span class="hljs-number">5</span>]); <span class="hljs-comment">//a[5]的地址, </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"4--%s\n"</span>,&amp;a[<span class="hljs-number">1</span>]); <span class="hljs-comment">//a数组中从a[1]开始的字符串，&#123;w3&#125;	</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"5--%c\n"</span>,a[<span class="hljs-number">1</span>]);	 <span class="hljs-comment">//a[1]的内容(char),&#123;w&#125;</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"6--%d\n"</span>,*a);	 <span class="hljs-comment">//a[0]的内容(char),&#123;115&#125;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>t</code>为<strong>浮动</strong>指针，初始化为指向数组a的首地址（注意区分a,t的不同），可直接进行运算来操作。</li>
+</ol>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"8--%d\n"</span>,t);	  <span class="hljs-comment">//a 数组的首地址</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"9--%d\n"</span>,&amp;t);	  <span class="hljs-comment">//t指针的地址</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"10--%d\n"</span>,&amp;t[<span class="hljs-number">5</span>]); <span class="hljs-comment">//a[5]的地址</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"11--%s\n"</span>,&amp;t[<span class="hljs-number">1</span>]);<span class="hljs-comment">//a数组中从a[0]开始的字符串，&#123;w3&#125;	</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"12--%c\n"</span>,t[<span class="hljs-number">0</span>]);<span class="hljs-comment">//a[1]的内容(char),&#123;w&#125;</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"13--%c\n"</span>,*t);	<span class="hljs-comment">//a[0]的内容(char),&#123;115&#125;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>对<code>t</code>进行操作</li>
+</ol>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t++;</span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"14--%d\n"</span>,t);	  <span class="hljs-comment">//a[1] 的地址</span></span><br><span class="line"></span><br><span class="line">*t=<span class="hljs-string">'c'</span>;</span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"15--%c\n"</span>,*t);	  <span class="hljs-comment">//a[1] 的值，&#123;c&#125; </span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"16--%c\n"</span>,a[<span class="hljs-number">1</span>]);  <span class="hljs-comment">//a[1] 的值，&#123;c&#125;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-02T06:25:19.670Z">2019-04-02</time>
                 
                 <div class="level-item">
@@ -148,7 +206,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 673 个字)
+                    5 分钟 读完 (大约 691 个字)
                 </span>
                 
                 
@@ -224,13 +282,13 @@
 <ol start="3">
 <li>向<code>dev</code>提交<br><img src="https://i.loli.net/2019/04/04/5ca5b700eee1a.png" alt="HEAD-&gt;dev"></li>
 <li>合并分支<ul>
-<li>合并dev到当前分支<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span> git merge dev</span><br></pre></td></tr></table></figure>
-</li>
+<li>合并<code>dev</code>到当前分支<br><code>$ git merge dev</code></li>
+<li>保留新分支进行合并<br><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; dev</code> </li>
 </ul>
 </li>
 </ol>
 <p><img src="https://i.loli.net/2019/04/04/5ca5b73d78e82.png" alt="HEAD-&gt;master"></p>
-<ol start="5">
+<ol>
 <li>删除分支<br><code>$ git branch -d dev</code></li>
 </ol>
 
@@ -297,50 +355,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-28T07:48:22.229Z">2019-03-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 248 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/28/SequenceList/">SequenceList_Java 顺序表</a>
-            
-        </h1>
-        <div class="content">
-            <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SequenceList</span>&lt;<span class="hljs-title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> MaxSize = <span class="hljs-number">10</span>;</span><br><span class="line">	<span class="hljs-keyword">private</span> T[] data;</span><br><span class="line">	<span class="hljs-keyword">int</span> length;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SequenceList</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">InitList</span><span class="hljs-params">(T[] list)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 初始化</span></span><br><span class="line">		data = Arrays.copyOf(list, MaxSize);</span><br><span class="line">		length = list.length;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">ListInsert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, T a)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 插入</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> || i &gt; length + <span class="hljs-number">1</span> || length &gt;= MaxSize)</span><br><span class="line">			<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = length; j &gt;= i; j--) &#123;</span><br><span class="line">			data[j] = data[j - <span class="hljs-number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		data[i - <span class="hljs-number">1</span>] = a;</span><br><span class="line">		length++;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">ListDelete</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 删除</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> &amp;&amp; i &gt; length + <span class="hljs-number">1</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">		T temp = data[i - <span class="hljs-number">1</span>];</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &lt; length; j++) &#123;</span><br><span class="line">			data[j - <span class="hljs-number">1</span>] = data[j];</span><br><span class="line">		&#125;</span><br><span class="line">		length--;</span><br><span class="line">		data[length] = <span class="hljs-keyword">null</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">LocateElem</span><span class="hljs-params">(T a)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 获取元素位置</span></span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">			<span class="hljs-keyword">if</span> (data[i] == a)</span><br><span class="line">				<span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">GetElem</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 获取元素</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> &amp;&amp; i &gt; length + <span class="hljs-number">1</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> data[i - <span class="hljs-number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Length</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 长度</span></span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.length;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 打印</span></span><br><span class="line">		System.out.println(Arrays.toString(data));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">Empty</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 判断是否为空</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (data.length == <span class="hljs-number">0</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Test</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Integer[] a = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> &#125;;<span class="hljs-comment">// 使用int初始化会发生异常</span></span><br><span class="line">		SequenceList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> SequenceList&lt;Integer&gt;();</span><br><span class="line">		System.out.println(<span class="hljs-string">"Init:"</span> + list.InitList(a));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Insert:"</span> + list.ListInsert(<span class="hljs-number">1</span>, <span class="hljs-number">66</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Delete:"</span> + list.ListDelete(<span class="hljs-number">4</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"GetNum:"</span> + list.GetElem(<span class="hljs-number">4</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"LocElem:"</span> + list.LocateElem(<span class="hljs-number">66</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Length:"</span> + list.length);</span><br><span class="line">		System.out.println(<span class="hljs-string">"Empty:"</span> + list.Empty());</span><br><span class="line">		list.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -391,6 +405,14 @@
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/C-Notes/">
+            <span class="level-start">
+                <span class="level-item">C Notes</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/Grammar/">
             <span class="level-start">
                 <span class="level-item">Grammar</span>
@@ -434,6 +456,19 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T11:05:41.365Z">2019-04-20</time></div>
+                    <a href="/2019/04/20/Pointer/" class="has-link-black-ter is-size-6">C语言 指针</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -487,19 +522,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:17:03.040Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/String/" class="has-link-black-ter is-size-6">String常用方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -518,7 +540,7 @@
                     <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -584,7 +606,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        20
                     </p>
                 </div>
             </div>
@@ -594,7 +616,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -604,7 +626,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        28
+                        29
                     </p>
                 </div>
             </div>
@@ -735,7 +757,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -896,6 +918,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/指针/">
+                        <span class="tag">指针</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
                         <span class="tag is-grey">2</span>
@@ -954,6 +983,7 @@
 </div>
 
                 
+                
 
 
 
@@ -991,7 +1021,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        20
                     </p>
                 </div>
             </div>
@@ -1001,7 +1031,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -1011,7 +1041,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        28
+                        29
                     </p>
                 </div>
             </div>
@@ -1142,7 +1172,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -1303,6 +1333,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/指针/">
+                        <span class="tag">指针</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/排序/">
                         <span class="tag">排序</span>
                         <span class="tag is-grey">2</span>
@@ -1359,6 +1396,7 @@
     
 </div>
 
+                
             </div>
         </div>
     </section>
