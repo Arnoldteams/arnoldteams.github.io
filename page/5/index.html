@@ -138,6 +138,102 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-23T05:51:17.522Z">2019-03-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Tools/">Tools</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 分钟 读完 (大约 1026 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/23/Evermonkey/">EverMonkey印象笔记插件</a>
+            
+        </h1>
+        <div class="content">
+            <p><strong>开始使用</strong></p>
+<blockquote>
+<p>打开命令面板(F1 或者 ctrl+shift+p), 输入以下命令即可操作印象笔记。</p>
+</blockquote>
+<p><strong>新建笔记 – ever new</strong></p>
+<blockquote>
+<p>新建一个空白笔记, 文档顶部是笔记元数据，包括笔记的标题，标签，所属笔记本等(不支持分级)。 当输入笔记本和标签时，如果是已经存在的，则会有代码补全提示，否则将会在印象笔记中新建。标签需要用半角逗号分隔。</p>
+</blockquote>
+<p><strong>打开笔记 – ever open</strong></p>
+<blockquote>
+<p>以树形结构打开印象笔记。选中笔记后，默认会将笔记的内容转换为 markdown 格式，如果有不支持的媒体格式，那么转换后可能会影响笔记的内容。如果在多端进行编辑也会出现 html 标签的情况。</p>
+</blockquote>
+<p><strong>搜索笔记 – ever search</strong></p>
+<blockquote>
+<p>根据输入的搜索条件返回印象笔记。返回的形式是 notebook&gt;&gt;note, 搜索使用的是印象笔记官方的搜索语言，比如 tag:java 等。更多使用方法可以查看官方文档 Evernote Search Grammar</p>
+</blockquote>
+<p><strong>发布笔记 – ever publish</strong></p>
+<blockquote>
+<p>当编辑或者更新笔记后，可以使用 ever publish 命令将笔记发布到印象笔记服务器上，实现笔记的同步。monkey 会根据缓存信息判断是需要新建还是更新笔记, 更新成功后会弹出消息。</p>
+</blockquote>
+<p><strong>打开最近编辑的笔记 – ever recent</strong></p>
+<blockquote>
+<p>打开最近编辑过的笔记。选中笔记后，默认会将笔记的内容转换为 markdown 格式，如果有不支持的媒体格式，那么转换后可能会影响笔记的内容。如果在多端进行编辑也会出现 html 标签的情况。</p>
+</blockquote>
+<p><strong>在浏览器中打开编辑的笔记 – ever browse</strong></p>
+<blockquote>
+<p>在印象笔记网页端打开当前编辑的笔记，如果还未发布，则无法打开。如果在网页端中编辑文档内容，再次在vscode中打开笔记时，渲染markdown会导致一些原生html被渲染。</p>
+</blockquote>
+<p><strong>在客户端中浏览编辑的笔记 – ever everclient</strong></p>
+<blockquote>
+<p>在印象笔记客户端中打开编辑的笔记，如果还未发布，则无法打开。如果在客户端中编辑文档内容，再次在vscode中打开笔记时，渲染markdown会导致一些原生html被渲染。</p>
+</blockquote>
+<p><strong>上传附件到当前编辑的笔记 – ever attach</strong></p>
+<blockquote>
+<p>如果已经配置了 uploadFolder, 可以将附件放到对应的文件夹下，输入文件名即可实现上传。否则，需要输入文件的绝对路径。上传后的附件是缓存在本地的，需要使用 ever publish 命令将附件上传。</p>
+</blockquote>
+<p><strong>取消上传附件到当前编辑的笔记 – ever unattach</strong></p>
+<blockquote>
+<p>如果附件上传后还没有 publish, 此时可以使用 ever unattach 命令进行取消。 注: monkey 中不提供任何删除服务器端笔记的命令！</p>
+</blockquote>
+<p><strong>浏览当前编辑笔记的附件 – ever resources</strong></p>
+<blockquote>
+<p>浏览当前编辑的笔记。其中会以 (server), (local) 的形式区分本地附件和服务器附件。如果是服务器端的附件，选中后会临时下载到 attachmentsFolder 中, 并使用默认应用打开附件。 如果是本地附件，则会直接使用默认应用打开。</p>
+</blockquote>
+<p><strong>同步笔记账户 – ever sync</strong></p>
+<blockquote>
+<p>同步笔记账户，这个命令会在第一次使用 monkey 的时候调用，并将结果缓存到内存中。如果没有缓存报错(通常是由于网络原因导致请求失败，本地缓存失效), 或者在多端使用印象笔记，不建议使用此命令。可能会由于印象笔记限流导致，账户暂时无法调用 API。</p>
+</blockquote>
+<p><strong>打开印象笔记开发者网页 – ever token</strong></p>
+<blockquote>
+<p>获取 token 和 noteStoreUrl。</p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-03-22T10:59:39.111Z">2019-03-22</time>
                 
                 <div class="level-item">
@@ -148,7 +244,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 126 个字)
+                    3 分钟 读完 (大约 378 个字)
                 </span>
                 
                 
@@ -157,12 +253,30 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/03/22/GoodWords001/">读书的目的</a>
+                <a class="has-link-black-ter" href="/2019/03/22/Good_Words001/">Stay Hungry!Stay Foolish!</a>
             
         </h1>
         <div class="content">
-            <blockquote>
+            <h3><span id="读书的目的">读书的目的</span></h3><blockquote>
 <p>孩子，我要求你读书用功，不是因为我要你跟别人比成绩，而是因为：我希望你将来会拥有选择的权利，选择有意义、有时间的工作，而不是被迫谋生。当你的工作在你心中有意义，你就有成就感。当你的工作给你时间，不剥夺你的生活，你就有尊严。成就感和尊严，给你快乐。 —龙应台</p>
+</blockquote>
+<h3><span id="有意识的思考">有意识的思考</span></h3><blockquote>
+<p>不要让笔尖上的勤奋掩盖思维上的懒惰。</p>
+</blockquote>
+<blockquote>
+<p>拒绝思维懒惰，习惯于深度思考，永远不要用战术上的勤奋掩盖战略上的懒惰。</p>
+</blockquote>
+<h3><span id="微笑面对苦难">微笑面对苦难</span></h3><blockquote>
+<p>那些承载着苦难的时光，那些从根本上挑战每一份坚持的日子，将决定你是怎样的人。—谢丽尔·桑德</p>
+</blockquote>
+<blockquote>
+<p>无论生活再艰难，也要用力活着—《荒野猎人》</p>
+</blockquote>
+<blockquote>
+<p>风吹不倒有根的树。只要一息尚存，就战斗到底。</p>
+</blockquote>
+<h3><span id="尊严的背后是实力">尊严的背后是实力</span></h3><blockquote>
+<p>尊严只有在双方对等地位时才存在，弱者的尊严在强者面前一文不值，强者可以施舍给你“尊严”，但他可以以毫不犹豫的践踏，因为他是强者，与此拼命维护那施舍来的尊严，不如拼命提升自己的实力</p>
 </blockquote>
 
         </div>
@@ -204,7 +318,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/03/22/Transform/">类型转换&amp;进制转换(Java)</a>
+                <a class="has-link-black-ter" href="/2019/03/22/Java_Transform/">类型转换&amp;进制转换(Java)</a>
             
         </h1>
         <div class="content">
@@ -212,66 +326,6 @@
 <p><strong>类型转换</strong><br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//int-&gt;String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">1</span>：String s=i+<span class="hljs-string">""</span>;</span><br><span class="line"><span class="hljs-number">2</span>：String s=String.valueOf(i);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//int-&gt;char</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">1</span>:<span class="hljs-keyword">char</span> c = (<span class="hljs-keyword">char</span>)(<span class="hljs-string">'0'</span> + i);</span><br><span class="line"><span class="hljs-number">2</span>:<span class="hljs-keyword">char</span> c = (<span class="hljs-keyword">char</span>)(<span class="hljs-number">48</span>+ i);</span><br><span class="line"><span class="hljs-number">3</span>:<span class="hljs-keyword">char</span> c = String.valueOf(i).charAt(<span class="hljs-number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//String-&gt;int</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">1</span>：i=Integer.parseInt(s);</span><br><span class="line"><span class="hljs-number">2</span>：i=Integer.valueOf(s).intValue();<span class="hljs-comment">//Integer.valueOf(s) </span></span><br><span class="line"><span class="hljs-comment">//转换数字字符串以外类型会抛出异常</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//String-&gt;byte[]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">1</span>:<span class="hljs-keyword">byte</span>[] b=s.getBytes();</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//String -&gt; char</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">1</span>. String.charAt(index)<span class="hljs-comment">//（返回值为char）可以得到String中某一指定位置的char。</span></span><br><span class="line"><span class="hljs-number">2</span>. String.toCharArray()<span class="hljs-comment">//（返回值为char[]）可以得到将包含整个String的char数组。这样我们就能够使用从0开始的位置索引来访问string中的任意位置的元素。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//byte[]-&gt;String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">1</span>:String s=<span class="hljs-keyword">new</span> String(b)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//ASCII-&gt;char</span></span><br><span class="line"><span class="hljs-number">1</span>:<span class="hljs-keyword">char</span> c = (<span class="hljs-keyword">char</span>) <span class="hljs-number">68</span>;<span class="hljs-comment">//D  </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//char-&gt;ASCII</span></span><br><span class="line"></span><br><span class="line">System.out.println((<span class="hljs-keyword">int</span>)<span class="hljs-string">'c'</span>);<span class="hljs-comment">//99</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//char-&gt;int</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">1</span>:<span class="hljs-keyword">int</span> i=Integer.parseInt(String.valueOf(c)) ;</span><br><span class="line"><span class="hljs-number">2</span>:<span class="hljs-keyword">int</span> i=c-<span class="hljs-string">'0'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//char -&gt;String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-number">1</span>. String s = String.valueOf(<span class="hljs-string">'c'</span>); <span class="hljs-comment">//效率最高的方法</span></span><br><span class="line"><span class="hljs-number">2</span>. String s = String.valueOf(<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[]&#123;<span class="hljs-string">'c'</span>&#125;); <span class="hljs-comment">//将一个char数组转换成String</span></span><br><span class="line"><span class="hljs-number">3</span>. String s = <span class="hljs-string">""</span> + <span class="hljs-string">'c'</span>;<span class="hljs-comment">// 虽然这个方法很简单，但这是效率最低的方法</span></span><br><span class="line"><span class="hljs-number">4</span>. String s = <span class="hljs-keyword">new</span> String(<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[]&#123;<span class="hljs-string">'c'</span>&#125;);</span><br></pre></td></tr></table></figure></p>
 <p><strong>进制转换</strong><br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s=Integer.toString(<span class="hljs-number">8</span>, <span class="hljs-number">2</span>);<span class="hljs-comment">//1000：8转化为1000B二进制字符串</span></span><br><span class="line"><span class="hljs-comment">//Integer.toString(val,进制)</span></span><br></pre></td></tr></table></figure></p>
 
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-22T06:12:24.283Z">2019-03-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 分钟 读完 (大约 667 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/22/recursion/">递归</a>
-            
-        </h1>
-        <div class="content">
-            <p><strong>递归问题</strong>：我们可以用「分而治之」的概念去帮助理解。步骤如下：</p>
-<ol>
-<li>把问题分解成更容易解决的子问题集合（比如可以把计算斐波那契数列的第n项问题分解转换成计算第n-1项加上第n-2项这两个子问题）</li>
-<li>假设我们有一个函数可以应用在所有的子问题上（比如计算斐波那契数列的fibo函数）</li>
-<li>基于步骤2的函数，实现如何把子问题的解拼成最终问题的解，这就是递归部分（在计算斐波那契数列的例子里就是fibo(n-1) + fibo(n-2)部分）</li>
-<li>递归部分确定了，然后再考虑子问题最终简化到到最底层时该返回什么值（不能再分的原子情况）。</li>
-</ol>
-<h3><span id="eg">E.g：</span></h3><p><strong>问题描述</strong><br>　　每年冬天，北大未名湖上都是滑冰的好地方。北大体育组准备了许多冰鞋，可是人太多了，每天下午收工后，常常一双冰鞋都不剩。<br>　　每天早上，租鞋窗口都会排起长龙，假设有还鞋的m个，有需要租鞋的n个。现在的问题是，这些人有多少种排法，可以避免出现体育组没有冰鞋可租的尴尬场面。（两个同样需求的人（比如都是租鞋或都是还鞋）交换位置是同一种排法）<br><strong>输入格式</strong><br>　　两个整数，表示m和n<br><strong>输出格式</strong><br>　　一个整数，表示队伍的排法的方案数。<br><strong>样例输入</strong><br>3 2<br><strong>样例输出</strong><br>5<br><strong>数据规模和约定</strong><br>m,n∈［0,18］<br>　<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.*;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="hljs-keyword">int</span> m=in.nextInt();<span class="hljs-comment">//send</span></span><br><span class="line">        <span class="hljs-keyword">int</span> n=in.nextInt();<span class="hljs-comment">//get</span></span><br><span class="line">        System.out.println(cal(m,n));</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m,<span class="hljs-keyword">int</span> n)</span> </span>&#123;     </span><br><span class="line">      <span class="hljs-keyword">if</span>(n&gt;m) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">      &#125;     </span><br><span class="line">           <span class="hljs-keyword">return</span> cal(m-<span class="hljs-number">1</span>,n)+cal(m,n-<span class="hljs-number">1</span>);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>类似问题</strong></p>
-<ul>
-<li>计算m个a n个b 的排列数</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;</span><br><span class="line">     <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">      * 计算m个a n个b 的排列数</span></span><br><span class="line"><span class="hljs-comment">      */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="hljs-keyword">int</span> m=in.nextInt();<span class="hljs-comment">//a</span></span><br><span class="line">        <span class="hljs-keyword">int</span> n=in.nextInt();<span class="hljs-comment">//b</span></span><br><span class="line">        System.out.println(cal(m,n));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b)</span> </span>&#123;     </span><br><span class="line">      <span class="hljs-keyword">if</span>(a==<span class="hljs-number">0</span>&amp;&amp;b==<span class="hljs-number">0</span>) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(a==<span class="hljs-number">0</span>||b==<span class="hljs-number">0</span>) &#123;</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">      &#125;     </span><br><span class="line">           <span class="hljs-keyword">return</span> cal(a-<span class="hljs-number">1</span>,b)+cal(a,b-<span class="hljs-number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>计算斐波那契数</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.*;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;</span><br><span class="line">     <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">      * 计算斐波那契数</span></span><br><span class="line"><span class="hljs-comment">      */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="hljs-keyword">int</span> n=in.nextInt();<span class="hljs-comment">//a</span></span><br><span class="line">        System.out.println(cal(n));</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123; </span><br><span class="line">      </span><br><span class="line">      <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>)</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)</span><br><span class="line">           <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">     </span><br><span class="line">           <span class="hljs-keyword">return</span> cal(n-<span class="hljs-number">1</span>)+cal(n-<span class="hljs-number">2</span>);<span class="hljs-comment">//第n个数为n-1,n-2的和 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -364,6 +418,14 @@
                 <span class="level-item tag">8</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/Js-Notes/">
+            <span class="level-start">
+                <span class="level-item">Js Notes</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/KeepThinking/">
             <span class="level-start">
                 <span class="level-item">KeepThinking</span>
@@ -396,8 +458,21 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-03T06:15:02.829Z">2019-05-03</time></div>
+                    <a href="/2019/05/03/JavaScript_Str&Arr/" class="has-link-black-ter is-size-6">字符串 数组</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Js-Notes/">Js Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-20T11:05:41.365Z">2019-04-20</time></div>
-                    <a href="/2019/04/20/Pointer/" class="has-link-black-ter is-size-6">C语言 指针</a>
+                    <a href="/2019/04/20/C_Pointer/" class="has-link-black-ter is-size-6">C语言 指针</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
                     </p>
@@ -423,7 +498,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T06:38:18.886Z">2019-04-01</time></div>
-                    <a href="/2019/04/01/JavaSort2/" class="has-link-black-ter is-size-6">排序Java版(交换排序)</a>
+                    <a href="/2019/04/01/Java_Sort2/" class="has-link-black-ter is-size-6">排序Java版(交换排序)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
                     </p>
@@ -436,20 +511,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-28T07:48:22.229Z">2019-03-28</time></div>
-                    <a href="/2019/03/28/SequenceList/" class="has-link-black-ter is-size-6">SequenceList_Java 顺序表</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-23T12:28:48.092Z">2019-03-23</time></div>
-                    <a href="/2019/03/23/LinkedList/" class="has-link-black-ter is-size-6">LinkedList常用方法</a>
+                    <a href="/2019/03/28/Java_SequenceList/" class="has-link-black-ter is-size-6">SequenceList_Java 顺序表</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
                     </p>
@@ -468,6 +530,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
@@ -541,7 +614,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        20
+                        21
                     </p>
                 </div>
             </div>
@@ -551,7 +624,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
@@ -561,7 +634,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -692,7 +765,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -757,6 +830,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/HashMap/">
                         <span class="tag">HashMap</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JS/">
+                        <span class="tag">JS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -956,7 +1036,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        20
+                        21
                     </p>
                 </div>
             </div>
@@ -966,7 +1046,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
@@ -976,7 +1056,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        29
+                        30
                     </p>
                 </div>
             </div>
@@ -1107,7 +1187,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList/" style="font-size: 10px;">ArrayList</a> <a href="/tags/Arrays/" style="font-size: 10px;">Arrays</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/LinkedList/" style="font-size: 10px;">LinkedList</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Math-Java/" style="font-size: 10px;">Math_Java</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Search/" style="font-size: 10px;">Search</a> <a href="/tags/SequenceList/" style="font-size: 10px;">SequenceList</a> <a href="/tags/Sort/" style="font-size: 20px;">Sort</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap/" style="font-size: 10px;">TreeMap</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/排序/" style="font-size: 20px;">排序</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/类型转换/" style="font-size: 10px;">类型转换</a> <a href="/tags/线性结构/" style="font-size: 10px;">线性结构</a> <a href="/tags/递归/" style="font-size: 10px;">递归</a> <a href="/tags/顺序表/" style="font-size: 10px;">顺序表</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -1172,6 +1252,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/HashMap/">
                         <span class="tag">HashMap</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JS/">
+                        <span class="tag">JS</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
