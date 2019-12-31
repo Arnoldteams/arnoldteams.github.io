@@ -8,18 +8,18 @@
 
 
     
-    <meta name="description" content="首先安装必备软件 VScode Node.js（需要配置环境变量） git其次必要的初始化 将D:\arnoldteams.github.io\node_modules.bin 添加到环境变量Path中 npm install -g hexo">
+    <meta name="description" content="安装必备软件 VScode Node.js（需要配置环境变量） git必要的初始化 将D:\arnoldteams.github.io\node_modules.bin 添加到环境变量Path中 npm install -g hexo  在本地创建ssh git config –global  user.name “这里换上你的用户名” git config –global user.email">
 <meta name="keywords" content="blog,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="blogSetup">
 <meta property="og:url" content="http://yoursite.com/2019/12/23/Tools/blogSetup/index.html">
 <meta property="og:site_name" content="Arnoldteams">
-<meta property="og:description" content="首先安装必备软件 VScode Node.js（需要配置环境变量） git其次必要的初始化 将D:\arnoldteams.github.io\node_modules.bin 添加到环境变量Path中 npm install -g hexo">
+<meta property="og:description" content="安装必备软件 VScode Node.js（需要配置环境变量） git必要的初始化 将D:\arnoldteams.github.io\node_modules.bin 添加到环境变量Path中 npm install -g hexo  在本地创建ssh git config –global  user.name “这里换上你的用户名” git config –global user.email">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-26T13:19:07.576Z">
+<meta property="og:updated_time" content="2019-12-31T03:11:40.118Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="blogSetup">
-<meta name="twitter:description" content="首先安装必备软件 VScode Node.js（需要配置环境变量） git其次必要的初始化 将D:\arnoldteams.github.io\node_modules.bin 添加到环境变量Path中 npm install -g hexo">
+<meta name="twitter:description" content="安装必备软件 VScode Node.js（需要配置环境变量） git必要的初始化 将D:\arnoldteams.github.io\node_modules.bin 添加到环境变量Path中 npm install -g hexo  在本地创建ssh git config –global  user.name “这里换上你的用户名” git config –global user.email">
 
 
 
@@ -152,7 +152,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 51 个字)
+                    1 分钟 读完 (大约 136 个字)
                 </span>
                 
                 
@@ -165,12 +165,26 @@
             
         </h1>
         <div class="content">
-            <h3><span id="首先安装必备软件">首先安装必备软件</span></h3><ul>
+            <h3><span id="安装必备软件">安装必备软件</span></h3><ul>
 <li>VScode</li>
 <li>Node.js（需要配置环境变量）</li>
-<li>git<h3><span id="其次必要的初始化">其次必要的初始化</span></h3></li>
+<li>git<h3><span id="必要的初始化">必要的初始化</span></h3></li>
 <li>将<strong>D:\arnoldteams.github.io\node_modules.bin</strong> 添加到环境变量Path中</li>
-<li><strong>npm install -g hexo</strong></li>
+<li>npm install -g hexo</li>
+</ul>
+<h3><span id="在本地创建ssh">在本地创建ssh</span></h3><ul>
+<li>git config –global  user.name “这里换上你的用户名”</li>
+<li>git config –global user.email “这里换上你的邮箱”</li>
+<li>ssh-keygen -t rsa -C “这里换上你的邮箱”</li>
+</ul>
+<h3><span id="将ssh添加到github">将ssh添加到GitHub</span></h3><ul>
+<li>打开Sitting-&gt;选择SSH and GPG keys-&gt;New SSH key</li>
+<li>添加本地的C:\Users\ateams.ssh\id_rsa.pub文件的内容</li>
+</ul>
+<h3><span id="部署">部署</span></h3><ul>
+<li>hexo g</li>
+<li>hexo s</li>
+<li>hexo d</li>
 </ul>
 
         </div>
