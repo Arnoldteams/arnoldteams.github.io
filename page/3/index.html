@@ -138,17 +138,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:16.927Z">2019-12-23</time>
+                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:17.380Z">2019-12-23</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Js-Notes/">Js Notes</a>
+                <a class="has-link-grey -link" href="/categories/Grammar/">Grammar</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 511 个字)
+                    几秒 读完 (大约 100 个字)
                 </span>
                 
                 
@@ -157,194 +157,139 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/12/23/JavaScriptNotes/JavaScript_Str&Arr/">字符串 数组</a>
+                <a class="has-link-black-ter" href="/2019/12/23/Tools/Hexo/">HexoTest</a>
             
         </h1>
         <div class="content">
-            <h3><span id="字符串">字符串</span></h3><hr>
-<ol>
-<li>转义字符</li>
-</ol>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">'I\'m \"OK\"!'</span>;<span class="hljs-comment">//表示的字符串内容是：I'm "OK"!</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>按位置查找</li>
-</ol>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> s = <span class="hljs-string">'Hello, world!'</span>;</span><br><span class="line">s[<span class="hljs-number">0</span>]; <span class="hljs-comment">// 'H'</span></span><br><span class="line">s[<span class="hljs-number">6</span>]; <span class="hljs-comment">// ' '</span></span><br><span class="line">s[<span class="hljs-number">7</span>]; <span class="hljs-comment">// 'w'</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li><code>toUpperCase()</code>把一个字符串全部变为大写</li>
-<li><code>toLowerCase()</code>把一个字符串全部变为小写</li>
-<li><code>indexOf()</code>搜索指定字符串出现的位置</li>
-<li>字符串截取</li>
-</ol>
-<figure class="highlight js hljs"><figcaption><span>substring()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> s = <span class="hljs-string">'hello, world'</span></span><br><span class="line">s.substring(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>); <span class="hljs-comment">// 从索引0开始到5（不包括5），返回'hello'</span></span><br><span class="line">s.substring(<span class="hljs-number">7</span>); <span class="hljs-comment">// 从索引7开始到结束，返回'world'</span></span><br></pre></td></tr></table></figure>
-<h3><span id="数组">数组</span></h3><hr>
-<ol>
-<li>length 修改</li>
-</ol>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</span><br><span class="line">arr.length; <span class="hljs-comment">// 3</span></span><br><span class="line">arr.length = <span class="hljs-number">6</span>;</span><br><span class="line">arr; <span class="hljs-comment">// arr变为[1, 2, 3, undefined, undefined, undefined]</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>索引赋值超限</li>
-</ol>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</span><br><span class="line">arr[<span class="hljs-number">5</span>] = <span class="hljs-string">'x'</span>;</span><br><span class="line">arr; <span class="hljs-comment">// arr变为[1, 2, 3, undefined, undefined, 'x']</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>按位置查找</li>
-</ol>
-<figure class="highlight js hljs"><figcaption><span>indexOf()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-string">'30'</span>, <span class="hljs-string">'xyz'</span>];</span><br><span class="line">arr.indexOf(<span class="hljs-number">10</span>); <span class="hljs-comment">// 元素10的索引为0</span></span><br><span class="line">arr.indexOf(<span class="hljs-number">20</span>); <span class="hljs-comment">// 元素20的索引为1</span></span><br><span class="line">arr.indexOf(<span class="hljs-number">30</span>); <span class="hljs-comment">// 元素30没有找到，返回-1</span></span><br><span class="line">arr.indexOf(<span class="hljs-string">'30'</span>); <span class="hljs-comment">// 元素'30'的索引为2</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>截取</li>
-</ol>
-<figure class="highlight js hljs"><figcaption><span>slice()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'C'</span>, <span class="hljs-string">'D'</span>, <span class="hljs-string">'E'</span>, <span class="hljs-string">'F'</span>, <span class="hljs-string">'G'</span>];</span><br><span class="line">arr.slice(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// 从索引0开始，到索引3结束，但不包括索引3: ['A', 'B', 'C']</span></span><br><span class="line">arr.slice(<span class="hljs-number">3</span>); <span class="hljs-comment">// 从索引3开始到结束: ['D', 'E', 'F', 'G']</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>push和pop(尾操作)</li>
-</ol>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>];</span><br><span class="line">arr.push(<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>); <span class="hljs-comment">// 返回Array新的长度: 4</span></span><br><span class="line">arr; <span class="hljs-comment">// [1, 2, 'A', 'B']</span></span><br><span class="line">arr.pop(); <span class="hljs-comment">// pop()返回'B'</span></span><br><span class="line">arr; <span class="hljs-comment">// [1, 2, 'A']</span></span><br><span class="line">arr.pop(); arr.pop(); arr.pop(); <span class="hljs-comment">// 连续pop 3次</span></span><br><span class="line">arr; <span class="hljs-comment">// []</span></span><br><span class="line">arr.pop(); <span class="hljs-comment">// 空数组继续pop不会报错，而是返回undefined</span></span><br><span class="line">arr; <span class="hljs-comment">// []</span></span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>unshift和shift（头操作）</li>
-</ol>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>];</span><br><span class="line">arr.unshift(<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>); <span class="hljs-comment">// 返回Array新的长度: 4</span></span><br><span class="line">arr; <span class="hljs-comment">// ['A', 'B', 1, 2]</span></span><br><span class="line">arr.shift(); <span class="hljs-comment">// 'A'</span></span><br><span class="line">arr; <span class="hljs-comment">// ['B', 1, 2]</span></span><br><span class="line">arr.shift(); arr.shift(); arr.shift(); <span class="hljs-comment">// 连续shift 3次</span></span><br><span class="line">arr; <span class="hljs-comment">// []</span></span><br><span class="line">arr.shift(); <span class="hljs-comment">// 空数组继续shift不会报错，而是返回undefined</span></span><br><span class="line">arr; <span class="hljs-comment">// []</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>排序 <code>sort()</code></li>
-<li>翻转 <code>reverse()</code></li>
-<li>元素的添加和删除</li>
-</ol>
-<figure class="highlight js hljs"><figcaption><span>splice()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">'Microsoft'</span>, <span class="hljs-string">'Apple'</span>, <span class="hljs-string">'Yahoo'</span>, <span class="hljs-string">'AOL'</span>, <span class="hljs-string">'Excite'</span>, <span class="hljs-string">'Oracle'</span>];</span><br><span class="line"><span class="hljs-comment">// 从索引2开始删除3个元素,然后再添加两个元素:</span></span><br><span class="line">arr.splice(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'Google'</span>, <span class="hljs-string">'Facebook'</span>); <span class="hljs-comment">// 返回删除的元素 ['Yahoo', 'AOL', 'Excite']</span></span><br><span class="line">arr; <span class="hljs-comment">// ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']</span></span><br><span class="line"><span class="hljs-comment">// 只删除,不添加:</span></span><br><span class="line">arr.splice(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// ['Google', 'Facebook']</span></span><br><span class="line">arr; <span class="hljs-comment">// ['Microsoft', 'Apple', 'Oracle']</span></span><br><span class="line"><span class="hljs-comment">// 只添加,不删除:</span></span><br><span class="line">arr.splice(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'Google'</span>, <span class="hljs-string">'Facebook'</span>); <span class="hljs-comment">// 返回[],因为没有删除任何元素</span></span><br><span class="line">arr; <span class="hljs-comment">// ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']</span></span><br></pre></td></tr></table></figure>
-<ol start="10">
-<li>连接</li>
-</ol>
-<figure class="highlight js hljs"><figcaption><span>concat()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'C'</span>];</span><br><span class="line"><span class="hljs-keyword">var</span> added = arr.concat([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);</span><br><span class="line">added; <span class="hljs-comment">// ['A', 'B', 'C', 1, 2, 3]</span></span><br><span class="line">arr; <span class="hljs-comment">// ['A', 'B', 'C']</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js hljs"><figcaption><span>join()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'C'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</span><br><span class="line">arr.join(<span class="hljs-string">'-'</span>); <span class="hljs-comment">// 'A-B-C-1-2-3'</span></span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        
-    </div>
-</div>
+            <ul>
+<li><p>1</p>
+<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+</li>
+<li><p>2</p>
+<blockquote><p>NEW: DevDocs now comes with syntax highlighting.</p>
+<footer><strong>DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="noopener">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
+</li>
+<li><p>3</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SinglyListNode</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> val;</span><br><span class="line">    SinglyListNode next;</span><br><span class="line">    SinglyListNode(<span class="hljs-keyword">int</span> x) &#123; val = x; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;length;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%3d"</span>,a[i]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4</p>
+<figure class="highlight java hljs"><figcaption><span>Arrays.sort()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(a[]);</span><br><span class="line"><span class="hljs-keyword">int</span> a=<span class="hljs-number">0</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5</p>
+<figure class="highlight plain hljs"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>6</p>
+<img src="https://github.com/Arnoldteams/arnoldteams.github.io/blob/master/images/avatar.png?raw=true" class="[class names]" title="[100px] [100px] [title text [alt text]]">
+</li>
+<li><p>7</p>
+<a href="https://hexo.io/zh-cn/docs/tag-plugins.html#jsFiddle" target="_blank" rel="noopener">Hexo Tag Plugins</a>
+</li>
+<li><p>8</p>
 
+content
 
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:16.782Z">2019-12-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Js-Notes/">Js Notes</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 333 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/12/23/JavaScriptNotes/JavaScript_fun/"></a>
-            
-        </h1>
-        <div class="content">
-            <h2><span id="函数">函数</span></h2><hr>
-<figure class="highlight js hljs"><figcaption><span>函数定义</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">abs</span>(<span class="hljs-params">x</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (x &gt;= <span class="hljs-number">0</span>) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> x;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> abs = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (x &gt;= <span class="hljs-number">0</span>) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> x;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>关键字<code>arguments</code>，它只在函数内部起作用，并且永远指向当前函数的调用者传入的所有参数</li>
-</ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">abs</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length === <span class="hljs-number">0</span>) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">var</span> x = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>];</span><br><span class="line">    <span class="hljs-keyword">return</span> x &gt;= <span class="hljs-number">0</span> ? x : -x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">abs(); <span class="hljs-comment">// 0</span></span><br><span class="line">abs(<span class="hljs-number">10</span>); <span class="hljs-comment">// 10</span></span><br><span class="line">abs(<span class="hljs-number">-9</span>); <span class="hljs-comment">// 9</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>获得除了定义之外的rest参数</li>
-</ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">a, b, ...rest</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'a = '</span> + a);</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'b = '</span> + b);</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(rest);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>);</span><br><span class="line"><span class="hljs-comment">// 结果:</span></span><br><span class="line"><span class="hljs-comment">// a = 1</span></span><br><span class="line"><span class="hljs-comment">// b = 2</span></span><br><span class="line"><span class="hljs-comment">// Array [ 3, 4, 5 ]</span></span><br><span class="line"></span><br><span class="line">foo(<span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-comment">// 结果:</span></span><br><span class="line"><span class="hljs-comment">// a = 1</span></span><br><span class="line"><span class="hljs-comment">// b = undefined</span></span><br><span class="line"><span class="hljs-comment">// Array []</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>解构赋值</li>
-</ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildDate</span>(<span class="hljs-params">&#123;year, month, day, hour=<span class="hljs-number">0</span>, minute=<span class="hljs-number">0</span>, second=<span class="hljs-number">0</span>&#125;</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(year + <span class="hljs-string">'-'</span> + month + <span class="hljs-string">'-'</span> + day + <span class="hljs-string">' '</span> + hour + <span class="hljs-string">':'</span> + minute + <span class="hljs-string">':'</span> + second);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">buildDate(&#123; <span class="hljs-attr">year</span>: <span class="hljs-number">2017</span>, <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> &#125;);</span><br><span class="line"><span class="hljs-comment">// Sun Jan 01 2017 00:00:00 GMT+0800 (CST)</span></span><br><span class="line"></span><br><span class="line">buildDate(&#123; <span class="hljs-attr">year</span>: <span class="hljs-number">2017</span>, <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">20</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">15</span> &#125;);</span><br><span class="line"><span class="hljs-comment">// Sun Jan 01 2017 20:15:00 GMT+0800 (CST)</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>函数重写</li>
-</ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">window</span>.parseInt = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    count += <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> oldParseInt.apply(<span class="hljs-literal">null</span>, <span class="hljs-built_in">arguments</span>); <span class="hljs-comment">// 调用原函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>函数传递</li>
-</ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y, f</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> f(x) + f(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js hljs"><figcaption><span>map()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pow</span>(<span class="hljs-params">x</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>];</span><br><span class="line"><span class="hljs-keyword">var</span> results = arr.map(pow); </span><br><span class="line"><span class="hljs-built_in">console</span>.log(results);</span><br><span class="line"><span class="hljs-comment">// [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js hljs"><figcaption><span>reduce()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>];</span><br><span class="line">arr.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;); <span class="hljs-comment">// 25</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js hljs"><figcaption><span>filter()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>];</span><br><span class="line"><span class="hljs-keyword">var</span> r = arr.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x % <span class="hljs-number">2</span> !== <span class="hljs-number">0</span>;</span><br><span class="line">&#125;);</span><br><span class="line">r; <span class="hljs-comment">// [1, 5, 9, 15]</span></span><br><span class="line"></span><br><span class="line">--------------------------------------</span><br><span class="line">-- 删除空字符</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">'A'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'B'</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'  '</span>];</span><br><span class="line"><span class="hljs-keyword">var</span> r = arr.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> s &amp;&amp; s.trim(); <span class="hljs-comment">// 注意：IE9以下的版本没有trim()方法</span></span><br><span class="line">&#125;);</span><br><span class="line">r; <span class="hljs-comment">// ['A', 'B', 'B']</span></span><br><span class="line"></span><br><span class="line">-- 去除重复字符</span><br><span class="line"></span><br><span class="line">r = arr.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">element, index, self</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> self.indexOf(element) === index;</span><br><span class="line">    <span class="hljs-comment">//indexOf总是返回第一个元素的位置,self 为所有元素</span></span><br><span class="line">    <span class="hljs-comment">//element,index 为当前元素的值和下标</span></span><br><span class="line">&#125;);</span><br><span class="line">r; <span class="hljs-comment">// ['A', 'B']</span></span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:16.654Z">2019-12-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Js-Notes/">Js Notes</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 356 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/12/23/JavaScriptNotes/JavaScript_Obj/"></a>
-            
-        </h1>
-        <div class="content">
-            <h2><span id="对象">对象</span></h2><hr>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//创建对象</span></span><br><span class="line"><span class="hljs-keyword">var</span> xiaohong = &#123;</span><br><span class="line">    name: <span class="hljs-string">'小红'</span>,</span><br><span class="line">    age: <span class="hljs-number">16</span>,</span><br><span class="line">    <span class="hljs-string">'middle-school'</span>: <span class="hljs-string">'No.1 Middle School'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//访问对象属性（不存在的属性返回undefined）</span></span><br><span class="line">xiaohong[<span class="hljs-string">'middle-school'</span>]; <span class="hljs-comment">// 'No.1 Middle School'</span></span><br><span class="line">xiaohong[<span class="hljs-string">'name'</span>]; <span class="hljs-comment">// '小红'</span></span><br><span class="line">xiaohong.name; <span class="hljs-comment">// '小红'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//删除属性</span></span><br><span class="line"><span class="hljs-keyword">delete</span> xiaohong.age; <span class="hljs-comment">// 删除age属性</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//检测属性(继承的属性也有效)</span></span><br><span class="line"><span class="hljs-string">'name'</span> <span class="hljs-keyword">in</span> xiaohong; <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-string">'toString'</span> <span class="hljs-keyword">in</span> xiaohong; <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-comment">//检测属性(过滤继承的属性)</span></span><br><span class="line">xiaohong.hasOwnProperty(<span class="hljs-string">'name'</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-string">'toString'</span> <span class="hljs-keyword">in</span> xiaohong; <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>对象中<code>this</code>的使用</li>
-</ul>
-<figure class="highlight js hljs"><figcaption><span>this.birth：undefined</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="hljs-string">'小明'</span>,</span><br><span class="line">    birth: <span class="hljs-number">1990</span>,</span><br><span class="line">    age: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAgeFromBirth</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">var</span> y = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear();</span><br><span class="line">            <span class="hljs-keyword">return</span> y - <span class="hljs-keyword">this</span>.birth;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> getAgeFromBirth();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xiaoming.age();</span><br></pre></td></tr></table></figure>
-<p><code>Uncaught TypeError: Cannot read property &#39;birth&#39; of undefined</code></p>
-<figure class="highlight js hljs"><figcaption><span>this的传递：this.birth：1990</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="hljs-string">'小明'</span>,</span><br><span class="line">    birth: <span class="hljs-number">1990</span>,</span><br><span class="line">    age: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">var</span> that = <span class="hljs-keyword">this</span>; <span class="hljs-comment">// 在方法内部一开始就捕获this</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAgeFromBirth</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">var</span> y = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear();</span><br><span class="line">            <span class="hljs-keyword">return</span> y - that.birth; <span class="hljs-comment">// 用that而不是this</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> getAgeFromBirth();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xiaoming.age(); <span class="hljs-comment">// 25</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>指定<code>this</code>的指向<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> y = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear();</span><br><span class="line">    <span class="hljs-keyword">return</span> y - <span class="hljs-keyword">this</span>.birth;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getAge.apply(xiaoming, []); <span class="hljs-comment">// 25, this指向xiaoming, 参数为空</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2><span id="变量">变量</span></h2><hr>
-<ul>
-<li>把代码全部放入唯一的名字空间中，会大大减少全局变量冲突的可能</li>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:17.242Z">2019-12-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Tools/">Tools</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 244 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/23/Tools/Dos/">Dos常用命令</a>
+            
+        </h1>
+        <div class="content">
+            <ul>
+<li>dir  显示一个目录下的文件和子目录<br>　　　　dir [盘符:][目录路径][/p] [/s] [/w] [/o]<br>　　　　[/p]表示分页显示目录内容，按任意键查看下一屏<br>　　　　[/s]表示显示所有目录及其子目录下的所有文件<br>　　　　[/w]表示宽屏显示<br>　　　　[/o]表示分类顺序显示</li>
+<li>md（make directory）用于新建目录<br>　　　　md [盘符:][路径名]&lt;文件夹名&gt;<br>　　　　md 文件夹名  表示在当前目录下创建文件夹<br>　　　　md e:\zgt  表示在E盘下创建zgt文件夹<br>　　　　md e:\zgt\666  表示在E盘zgt文件夹下创建666文件</li>
+<li>echo 回显</li>
+<li>copy &lt;源文件路径&gt;[目标路径]</li>
+<li>cls 清除屏幕命令 ，清除屏幕上所有的显示，光标置于左上角</li>
+<li>format  格式化磁盘</li>
+<li>rmdir /s path  删除非空目录</li>
 </ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 唯一的全局变量MYAPP:</span></span><br><span class="line"><span class="hljs-keyword">var</span> MYAPP = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 其他变量:</span></span><br><span class="line">MYAPP.name = <span class="hljs-string">'myapp'</span>;</span><br><span class="line">MYAPP.version = <span class="hljs-number">1.0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 其他函数:</span></span><br><span class="line">MYAPP.foo = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">'foo'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>批量赋值</li>
-</ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> [x, y, z] = [<span class="hljs-string">'hello'</span>, <span class="hljs-string">'JavaScript'</span>, <span class="hljs-string">'ES6'</span>];</span><br><span class="line"><span class="hljs-comment">//x = hello, y = JavaScript, z = ES6</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="hljs-string">'小明'</span>,</span><br><span class="line">    age: <span class="hljs-number">20</span>,</span><br><span class="line">    gender: <span class="hljs-string">'male'</span>,</span><br><span class="line">    passport: <span class="hljs-string">'G-12345678'</span>,</span><br><span class="line">    school: <span class="hljs-string">'No.4 middle school'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> &#123;name, age, passport&#125; = person;</span><br><span class="line"><span class="hljs-comment">//name = 小明, age = 20, passport = G-12345678</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 如果person对象没有single属性，默认赋值为true:</span></span><br><span class="line"><span class="hljs-keyword">var</span> &#123;name, single=<span class="hljs-literal">true</span>&#125; = person;</span><br><span class="line">name; <span class="hljs-comment">// '小明'</span></span><br><span class="line">single; <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:17.105Z">2019-12-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Psy/">Psy</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    几秒 读完 (大约 0 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/23/PositivePsy/L11/">Positive Psychology Lesson11</a>
+            
+        </h1>
+        <div class="content">
+            
         </div>
         
         
@@ -381,7 +326,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/9/">9</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/10/">10</a></li>
             
         </ul>
     </nav>
@@ -426,7 +371,7 @@
                 <span class="level-item">C Notes</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Grammar/">
@@ -493,6 +438,45 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-31T01:31:18.634Z">2019-12-31</time></div>
+                    <a href="/2019/12/31/Tools/vscode/" class="has-link-black-ter is-size-6">Vscode</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-31T01:23:21.078Z">2019-12-31</time></div>
+                    <a href="/2019/12/31/Cpp/1231/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-29T13:47:31.234Z">2019-12-29</time></div>
+                    <a href="/2019/12/29/Cpp/1229/" class="has-link-black-ter is-size-6">Linux基础</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-23T01:23:17.840Z">2019-12-23</time></div>
                     <a href="/2019/12/23/Tools/Evermonkey/" class="has-link-black-ter is-size-6">EverMonkey印象笔记插件</a>
                     <p class="is-size-7 is-uppercase">
@@ -510,45 +494,6 @@
                     <a href="/2019/12/23/Tools/MarkDown/" class="has-link-black-ter is-size-6">Markdown</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Grammar/">Grammar</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-23T01:23:17.574Z">2019-12-23</time></div>
-                    <a href="/2019/12/23/Tools/Git/" class="has-link-black-ter is-size-6">Git Start!</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Tools/">Tools</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-23T01:23:17.380Z">2019-12-23</time></div>
-                    <a href="/2019/12/23/Tools/Hexo/" class="has-link-black-ter is-size-6">HexoTest</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Grammar/">Grammar</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-23T01:23:17.242Z">2019-12-23</time></div>
-                    <a href="/2019/12/23/Tools/Dos/" class="has-link-black-ter is-size-6">Dos常用命令</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Tools/">Tools</a>
                     </p>
                 </div>
             </div>
@@ -572,7 +517,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">26</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -616,7 +561,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        29
                     </p>
                 </div>
             </div>
@@ -636,7 +581,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        39
+                        43
                     </p>
                 </div>
             </div>
@@ -767,7 +712,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -804,6 +749,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/BigInteger/">
                         <span class="tag">BigInteger</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C++</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -914,6 +866,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Vim，GCC/">
+                        <span class="tag">Vim，GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vscode/">
+                        <span class="tag">Vscode</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/blog/">
                         <span class="tag">blog</span>
                         <span class="tag is-grey">1</span>
@@ -923,6 +889,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/hexo/">
                         <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/linux命令/">
+                        <span class="tag">linux命令</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1101,7 +1074,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        29
                     </p>
                 </div>
             </div>
@@ -1121,7 +1094,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        39
+                        43
                     </p>
                 </div>
             </div>
@@ -1252,7 +1225,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -1289,6 +1262,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/BigInteger/">
                         <span class="tag">BigInteger</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C++</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1399,6 +1379,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Vim，GCC/">
+                        <span class="tag">Vim，GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vscode/">
+                        <span class="tag">Vscode</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/blog/">
                         <span class="tag">blog</span>
                         <span class="tag is-grey">1</span>
@@ -1408,6 +1402,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/hexo/">
                         <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/linux命令/">
+                        <span class="tag">linux命令</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
