@@ -2,23 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/02/C/C++Note/CppBasic/</loc>
+    
+    <lastmod>2020-01-03T08:48:59.786Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/12/29/C/C++Note/1229/</loc>
+    
+    <lastmod>2020-01-03T07:21:26.926Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/12/23/Tools/blogSetup/</loc>
     
-    <lastmod>2019-12-31T03:11:40.118Z</lastmod>
+    <lastmod>2020-01-03T02:11:27.008Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/12/31/Cpp/1231/</loc>
+    <loc>http://yoursite.com/2020/01/03/Job/Now/</loc>
     
-    <lastmod>2019-12-31T02:25:01.916Z</lastmod>
+    <lastmod>2020-01-03T00:58:05.652Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/12/29/Cpp/1229/</loc>
+    <loc>http://yoursite.com/2020/01/03/Job/C/C++Linux/</loc>
     
-    <lastmod>2019-12-31T01:54:02.606Z</lastmod>
+    <lastmod>2020-01-03T00:56:16.447Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/12/31/C/C++Note/1231/</loc>
+    
+    <lastmod>2020-01-02T08:18:08.048Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/01/C/C++Note/String/</loc>
+    
+    <lastmod>2020-01-02T08:17:13.478Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/12/23/C/C++Note/Pointer/</loc>
+    
+    <lastmod>2020-01-02T05:51:30.602Z</lastmod>
     
   </url>
   
@@ -75,13 +110,6 @@
     <loc>http://yoursite.com/2019/12/23/JavaScriptNotes/JavaScript_Str&Arr/</loc>
     
     <lastmod>2019-05-03T10:43:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/12/23/CNotes/C_Pointer/</loc>
-    
-    <lastmod>2019-05-03T10:41:25.000Z</lastmod>
     
   </url>
   
