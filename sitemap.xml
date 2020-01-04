@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/03/Job/C/C++Linux/</loc>
+    
+    <lastmod>2020-01-04T08:35:40.663Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/01/02/C/C++Note/CppBasic/</loc>
     
     <lastmod>2020-01-04T04:00:06.767Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://yoursite.com/2020/01/03/Job/Now/</loc>
     
     <lastmod>2020-01-03T00:58:05.652Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/03/Job/C/C++Linux/</loc>
-    
-    <lastmod>2020-01-03T00:56:16.447Z</lastmod>
     
   </url>
   
