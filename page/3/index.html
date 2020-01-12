@@ -138,17 +138,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-29T13:47:31.234Z">2019-12-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2020-01-07T11:37:20.951Z">2020-01-07</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 579 个字)
+                    1 分钟 读完 (大约 171 个字)
                 </span>
                 
                 
@@ -157,136 +153,28 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/12/29/C/C++Note/1229/">Linux基础</a>
+                <a class="has-link-black-ter" href="/2020/01/07/C/C++Note/log4cpp/">日志库 Log4cpp</a>
             
         </h1>
         <div class="content">
-            <h4><span id="linux-命令">Linux 命令</span></h4><hr>
+            <ul>
+<li>Layout 布局–日志输出格式</li>
+<li>Appender 输出源–控制输出的方式（文件，控制台）<ul>
+<li>Appender 绑定 Layout</li>
+</ul>
+</li>
+<li>Category 日志级别–设置输出的级别<ul>
+<li>DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL</li>
+<li>Category 绑定 Appender</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/Category.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/PatternLayout.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/OstreamAppender.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/FileAppender.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/RollingFileAppender.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/Priority.hh&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> log4cpp;</span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line">...</span><br><span class="line">	PatternLayout * ptLayout = <span class="hljs-keyword">new</span> PatternLayout();</span><br><span class="line">	ptLayout1-&gt;setConversionPattern(<span class="hljs-string">"%d %c [%p] %m%n"</span>); <span class="hljs-comment">//设置布局</span></span><br><span class="line"></span><br><span class="line">	RollingFileAppender * rollAppender = <span class="hljs-keyword">new</span> RollingFileAppender(<span class="hljs-comment">//设置输出文件</span></span><br><span class="line">		<span class="hljs-string">"rollAppender"</span>, <span class="hljs-comment">//操作名</span></span><br><span class="line">		<span class="hljs-string">"rollwd.log"</span>, <span class="hljs-comment">//输出文件名</span></span><br><span class="line">		<span class="hljs-number">1024</span> * <span class="hljs-number">5</span>,       <span class="hljs-comment">//文件长度最大值</span></span><br><span class="line">		<span class="hljs-number">3</span>);             <span class="hljs-comment">//最多输出3个文件</span></span><br><span class="line">	rollAppender-&gt;setLayout(ptLayout);<span class="hljs-comment">//Appender 绑定 Layout</span></span><br><span class="line"></span><br><span class="line">	Category &amp; root = Category::getRoot().getInstance(<span class="hljs-string">"mycat"</span>);<span class="hljs-comment">//操作名</span></span><br><span class="line">	root.setPriority(Priority::DEBUG);<span class="hljs-comment">//设置优先级</span></span><br><span class="line">	root.addAppender(rollAppender);<span class="hljs-comment">//Category 绑定 Appender</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">root.warn(msg);<span class="hljs-comment">//string msg;</span></span><br><span class="line">root.error(msg);</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">Category::shutdown();</span><br></pre></td></tr></table></figure>
 <ul>
-<li>目录ls<ul>
-<li>详情ls -l</li>
-<li>大小ls -lh</li>
-<li>显示隐藏ls -a</li>
-<li>条件ls |grep {name}</li>
-<li>查看当前目录下的文件数量（不包含子目录中的文件）<pre><code>ls -l|grep &quot;^-&quot;| wc -l
-</code></pre></li>
-<li>查看当前目录下的文件数量（包含子目录,R代表子目录)<pre><code>ls -lR|grep &quot;^-&quot;| wc -l
-</code></pre></li>
-<li>查看当前目录下的文件夹目录个数（不包含子目录中的目录）      ls -l|grep “^d”| wc -l</li>
-<li>树形目录tree {file}<ul>
-<li>安装apt install tree</li>
-</ul>
+<li>Linux 编译<blockquote>
+<p>g++ log4test.cpp -l log4cpp -l pthread</p>
+</blockquote>
 </li>
-</ul>
-</li>
-<li>路径pwd </li>
-<li>权限chmod 777 {file}<ul>
-<li>[拥有者][组用户][其他]</li>
-</ul>
-</li>
-<li>查找find {name}<ul>
-<li>指定目录按名查找find /abc -name file</li>
-</ul>
-</li>
-<li>复制cp <ul>
-<li>文件夹cp -r {file1} {file2}</li>
-</ul>
-</li>
-<li>移动mv<ul>
-<li>重命名 mv {dir1} {dir2}</li>
-</ul>
-</li>
-<li>创建<ul>
-<li>文件夹mkdir</li>
-<li>文件touch {file}/echo -n&gt; {file}</li>
-</ul>
-</li>
-<li>查看cat<ul>
-<li>头部分head -n {n}</li>
-<li>尾部分tail -n {n}</li>
-<li>部分 more<ul>
-<li>f和b前向后翻页q退出</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>删除rm</li>
-<li>磁盘df -h<ul>
-<li>文件du -h –max-depth=0</li>
-</ul>
-</li>
-<li><p>链接li -s {file1} {file2}</p>
-</li>
-<li><p>用户 cat /etc/passwd</p>
-<ul>
-<li>切换su {user}</li>
-<li>退出exit  </li>
-<li>添加useradd {user}<ul>
-<li>添加到/home:useradd -m {user} -s /bin/bash</li>
-</ul>
-</li>
-<li>修改密码passwd {user}</li>
-<li>删除userdel {user} -r/f</li>
-</ul>
-</li>
-<li>首次登陆需设置sudo密码<ul>
-<li>sudo passwd</li>
-</ul>
-</li>
-</ul>
-<h4><span id="vim">Vim</span></h4><hr>
-<ul>
-<li>h j k l / w e b移动</li>
-<li>模式:i输入/v视图</li>
-<li>：q! 退出不保存/：w 保存/：q 退出/：e {file} 多标签<ul>
-<li>多标签切换Ctrl+^</li>
-</ul>
-</li>
-<li>复制{n}yy, 复制n行-&gt;按p粘贴</li>
-<li>删除{n}dd，删除n行-&gt;<strong>按u撤销</strong><ul>
-<li>{n}x，删除n个字母</li>
-<li>x,删除一个字母</li>
-</ul>
-</li>
-<li>行号 set nu</li>
-<li>选定<ul>
-<li>Ctrl+v/v</li>
-</ul>
-</li>
-<li>分屏<ul>
-<li>：vs/sp</li>
-<li>切换 Ctrl+ww</li>
-</ul>
-</li>
-<li>注释<br>选定 -&gt; shift+i -&gt; // -&gt; Esc</li>
-</ul>
-<h4><span id="gcc">GCC</span></h4><hr>
-<ul>
-<li>预处理-&gt;编译-&gt;汇编-&gt;链接</li>
-<li>静态库<em>.a/</em>.lib<ul>
-<li>必要文件<br>vim multi.c<br>vim multi.h<br>vim main.c</li>
-<li>建立静态库并移动到/usr/lib<br>编译 gcc -c multi.c<br>归档 ar crsv libmulti.a multi.o<br>sudo cp libmulti.a /usr/lib</li>
-<li>链接并执行<br>gcc -o main main.c -l multi<br>./main</li>
-</ul>
-</li>
-<li>动态库<em>.so/</em>.dll<ul>
-<li>必要文件(同上)</li>
-<li>建立动态库并移动到/usr/lib<br>gcc -fPIC -Wall -c multi.c -o multi2.o<br>gcc -shared -o libmulti2.so multi2.o<br>sudo cp libmulti2.so /usr/lib</li>
-<li>更新cache<br>sudo ldconfig</li>
-<li>链接并执行<br>gcc main main.c -l multi2</li>
-</ul>
-</li>
-</ul>
-<h4><span id="gdb">GDB</span></h4><hr>
-<ul>
-<li>显示部分行l</li>
-<li>回车执行上一条命令</li>
-<li>断点 b {n}</li>
-<li>单步执行n</li>
-<li>运行r</li>
-<li>查看变量c的值 p c</li>
-<li>进入函数 s</li>
-<li>栈调用查看bt</li>
 </ul>
 
         </div>
@@ -309,17 +197,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:17.840Z">2019-12-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Tools/">Tools</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2020-01-03T00:56:28.726Z">2020-01-03</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    7 分钟 读完 (大约 1026 个字)
+                    几秒 读完 (大约 23 个字)
                 </span>
                 
                 
@@ -328,62 +212,20 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/12/23/Tools/Evermonkey/">EverMonkey印象笔记插件</a>
+                <a class="has-link-black-ter" href="/2020/01/03/Job/Now/"></a>
             
         </h1>
         <div class="content">
-            <p><strong>开始使用</strong></p>
-<blockquote>
-<p>打开命令面板(F1 或者 ctrl+shift+p), 输入以下命令即可操作印象笔记。</p>
-</blockquote>
-<p><strong>新建笔记 – ever new</strong></p>
-<blockquote>
-<p>新建一个空白笔记, 文档顶部是笔记元数据，包括笔记的标题，标签，所属笔记本等(不支持分级)。 当输入笔记本和标签时，如果是已经存在的，则会有代码补全提示，否则将会在印象笔记中新建。标签需要用半角逗号分隔。</p>
-</blockquote>
-<p><strong>打开笔记 – ever open</strong></p>
-<blockquote>
-<p>以树形结构打开印象笔记。选中笔记后，默认会将笔记的内容转换为 markdown 格式，如果有不支持的媒体格式，那么转换后可能会影响笔记的内容。如果在多端进行编辑也会出现 html 标签的情况。</p>
-</blockquote>
-<p><strong>搜索笔记 – ever search</strong></p>
-<blockquote>
-<p>根据输入的搜索条件返回印象笔记。返回的形式是 notebook&gt;&gt;note, 搜索使用的是印象笔记官方的搜索语言，比如 tag:java 等。更多使用方法可以查看官方文档 Evernote Search Grammar</p>
-</blockquote>
-<p><strong>发布笔记 – ever publish</strong></p>
-<blockquote>
-<p>当编辑或者更新笔记后，可以使用 ever publish 命令将笔记发布到印象笔记服务器上，实现笔记的同步。monkey 会根据缓存信息判断是需要新建还是更新笔记, 更新成功后会弹出消息。</p>
-</blockquote>
-<p><strong>打开最近编辑的笔记 – ever recent</strong></p>
-<blockquote>
-<p>打开最近编辑过的笔记。选中笔记后，默认会将笔记的内容转换为 markdown 格式，如果有不支持的媒体格式，那么转换后可能会影响笔记的内容。如果在多端进行编辑也会出现 html 标签的情况。</p>
-</blockquote>
-<p><strong>在浏览器中打开编辑的笔记 – ever browse</strong></p>
-<blockquote>
-<p>在印象笔记网页端打开当前编辑的笔记，如果还未发布，则无法打开。如果在网页端中编辑文档内容，再次在vscode中打开笔记时，渲染markdown会导致一些原生html被渲染。</p>
-</blockquote>
-<p><strong>在客户端中浏览编辑的笔记 – ever everclient</strong></p>
-<blockquote>
-<p>在印象笔记客户端中打开编辑的笔记，如果还未发布，则无法打开。如果在客户端中编辑文档内容，再次在vscode中打开笔记时，渲染markdown会导致一些原生html被渲染。</p>
-</blockquote>
-<p><strong>上传附件到当前编辑的笔记 – ever attach</strong></p>
-<blockquote>
-<p>如果已经配置了 uploadFolder, 可以将附件放到对应的文件夹下，输入文件名即可实现上传。否则，需要输入文件的绝对路径。上传后的附件是缓存在本地的，需要使用 ever publish 命令将附件上传。</p>
-</blockquote>
-<p><strong>取消上传附件到当前编辑的笔记 – ever unattach</strong></p>
-<blockquote>
-<p>如果附件上传后还没有 publish, 此时可以使用 ever unattach 命令进行取消。 注: monkey 中不提供任何删除服务器端笔记的命令！</p>
-</blockquote>
-<p><strong>浏览当前编辑笔记的附件 – ever resources</strong></p>
-<blockquote>
-<p>浏览当前编辑的笔记。其中会以 (server), (local) 的形式区分本地附件和服务器附件。如果是服务器端的附件，选中后会临时下载到 attachmentsFolder 中, 并使用默认应用打开附件。 如果是本地附件，则会直接使用默认应用打开。</p>
-</blockquote>
-<p><strong>同步笔记账户 – ever sync</strong></p>
-<blockquote>
-<p>同步笔记账户，这个命令会在第一次使用 monkey 的时候调用，并将结果缓存到内存中。如果没有缓存报错(通常是由于网络原因导致请求失败，本地缓存失效), 或者在多端使用印象笔记，不建议使用此命令。可能会由于印象笔记限流导致，账户暂时无法调用 API。</p>
-</blockquote>
-<p><strong>打开印象笔记开发者网页 – ever token</strong></p>
-<blockquote>
-<p>获取 token 和 noteStoreUrl。</p>
-</blockquote>
+            <ul>
+<li>shell脚本</li>
+<li><p>gdb调试</p>
+</li>
+<li><p>编码风格</p>
+</li>
+<li>文档编写</li>
+<li>概要设计、详细设计</li>
+<li>-</li>
+</ul>
 
         </div>
         
@@ -405,17 +247,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:17.708Z">2019-12-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Grammar/">Grammar</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2020-01-03T00:45:55.755Z">2020-01-03</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 477 个字)
+                    5 分钟 读完 (大约 682 个字)
                 </span>
                 
                 
@@ -424,189 +262,73 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/12/23/Tools/MarkDown/">Markdown</a>
+                <a class="has-link-black-ter" href="/2020/01/03/Job/C/C++Linux/">C/C++Linux 工作需求</a>
             
         </h1>
         <div class="content">
-            <h4><span id="标题">标题</span></h4><h1><span id="这是-h1">这是 H1</span></h1><h2><span id="这是-h2">这是 H2</span></h2><h3><span id="这是-h3">这是 H3</span></h3><figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-section">#### 标题</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-section"># 这是 H1</span></span><br><span class="line"><span class="hljs-section">## 这是 H2</span></span><br><span class="line"><span class="hljs-section">### 这是 H3</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h4><span id="段落">段落</span></h4><blockquote>
-<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in,laoreet vitae, risus.</p>
-</blockquote>
-</blockquote>
-<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-section">#### 段落</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-quote">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</span></span><br><span class="line">consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line">Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</span><br><span class="line"></span><br><span class="line">&gt;&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</span><br><span class="line">consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line">Vestibulum enim wisi, viverra nec, fringilla in,laoreet vitae, risus.</span><br></pre></td></tr></table></figure>
-<hr>
-<h4><span id="列表">列表</span></h4><ul>
-<li>This is a list</li>
-<li>This is a list<ul>
-<li>This is a list</li>
-<li>This is a list</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>This is a list</li>
-<li>This is a list<ol>
-<li>This is a list</li>
-<li>This is a list</li>
+            <ol>
+<li></li>
 </ol>
-</li>
-</ol>
-<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-section">#### 列表</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-bullet">- </span>This is a list</span><br><span class="line"><span class="hljs-bullet">- </span>This is a list</span><br><span class="line">   - This is a list</span><br><span class="line">   - This is a list</span><br><span class="line"></span><br><span class="line"><span class="hljs-bullet">1. </span>This is a list</span><br><span class="line"><span class="hljs-bullet">2. </span>This is a list</span><br><span class="line"><span class="hljs-code">    1. This is a list</span></span><br><span class="line"><span class="hljs-code">    2. This is a list</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h4><span id="代码">代码</span></h4><p>Use the <code>printf()</code> function.</p>
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println();</span><br></pre></td></tr></table></figure>
-<hr>
-<h4><span id="强调">强调</span></h4><p><em>single asterisks</em></p>
-<p><em>single underscores</em></p>
-<p><strong>double asterisks</strong></p>
-<p><strong>double underscores</strong></p>
-<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-section">#### 强调</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-emphasis">*single asterisks*</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-emphasis">_single underscores_</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-strong">**double asterisks**</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-strong">__double underscores__</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h4><span id="标点符号">标点符号</span></h4><table>
-<thead>
-<tr>
-<th>符号</th>
-<th></th>
-<th>标点</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&copy;</td>
-<td>版权</td>
-<td>\</td>
-<td>反斜线</td>
-</tr>
-<tr>
-<td>&reg;</td>
-<td>注册商标</td>
-<td>`</td>
-<td>反引号</td>
-</tr>
-<tr>
-<td>&trade;</td>
-<td>商标</td>
-<td>*</td>
-<td>星号</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>空格</td>
-<td>_</td>
-<td>底线</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>和号</td>
-<td>{}</td>
-<td>花括号</td>
-</tr>
-<tr>
-<td>&quot;</td>
-<td>引号</td>
-<td>[]</td>
-<td>方括号</td>
-</tr>
-<tr>
-<td>&apos;</td>
-<td>撇号</td>
-<td>()</td>
-<td>括弧</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小于号</td>
-<td>#</td>
-<td>井字号</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>大于号</td>
-<td>+</td>
-<td>加号</td>
-</tr>
-<tr>
-<td>&ne;</td>
-<td>不等号</td>
-<td>-</td>
-<td>减号</td>
-</tr>
-<tr>
-<td>&le;</td>
-<td>小于等于</td>
-<td>.</td>
-<td>英文句点</td>
-</tr>
-<tr>
-<td>&ge;</td>
-<td>大于等于</td>
-<td>!</td>
-<td>惊叹号</td>
-</tr>
-<tr>
-<td>&cent;</td>
-<td>分</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>&pound;</td>
-<td>磅</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>&euro;</td>
-<td>欧元</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>&yen;</td>
-<td>元</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>&sect;</td>
-<td>节</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>&times;</td>
-<td>乘号</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>&divide;</td>
-<td>除号</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>&plusmn;</td>
-<td>正负号</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-section">#### 标点符号</span></span><br><span class="line"></span><br><span class="line">符号 |   | 标点 |  |</span><br><span class="line">------- | ------- | ------- | -------</span><br><span class="line">&amp;copy; | 版权 | \\ | 反斜线</span><br><span class="line">&amp;reg; | 注册商标 | \` | 反引号</span><br><span class="line">&amp;trade; | 商标 | \* | 星号</span><br><span class="line">&amp;nbsp; | 空格 | \_ | 底线</span><br><span class="line">&amp;amp; | 和号 | \&#123;\&#125; | 花括号</span><br><span class="line">&amp;quot; | 引号 | \[\] | 方括号</span><br><span class="line">&amp;apos; | 撇号 | \(\) | 括弧</span><br><span class="line">&amp;lt; | 小于号 | \# | 井字号</span><br><span class="line">&amp;gt; | 大于号 | \+ | 加号</span><br><span class="line">&amp;ne; | 不等号 | \- | 减号</span><br><span class="line">&amp;le; | 小于等于 | \. | 英文句点</span><br><span class="line">&amp;ge; | 大于等于 | \! | 惊叹号</span><br><span class="line">&amp;cent; | 分 |  | </span><br><span class="line">&amp;pound; | 磅 |  | </span><br><span class="line">&amp;euro; | 欧元 |  | </span><br><span class="line">&amp;yen; | 元 |  | </span><br><span class="line">&amp;sect; | 节 |  | </span><br><span class="line">&amp;times; | 乘号 |  | </span><br><span class="line">&amp;divide; | 除号 |  | </span><br><span class="line">&amp;plusmn; | 正负号 |  |</span><br></pre></td></tr></table></figure>
 <ul>
-<li>其他</li>
+<li>linux下各种命令、<strong>shell脚本</strong>。</li>
+<li>linux C/C++编程，熟悉makefile，熟悉linux软件编译及调试过程</li>
+<li>使用QT开发界面工程。</li>
+<li>掌握<strong>数据结构，常用算法</strong>;</li>
+<li>擅长沟通和团队协作能力;</li>
+<li>具有较强的技术<strong>文档写作</strong>能力，能高质量完成开发、设计相关技术<strong>文档编写</strong>工作。</li>
+<li>熟悉linux下pam登录机制。</li>
+<li>熟悉linux下selinux安全机制。</li>
 </ul>
-<p><del>删除线</del></p>
-<p><u>下划线</u></p>
-<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~~删除线~~</span><br><span class="line"></span><br><span class="line"><span class="hljs-xml"><span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span></span>下划线<span class="hljs-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p><code>makefile  linux软件编译及调试   QT开发界面 pam登录机制 selinux安全机制</code></p>
+<hr>
+<ol start="2">
+<li></li>
+</ol>
+<ul>
+<li>精通c/c++的基本原理和语法；熟悉Linux系统编程开发， 熟悉<strong>gdb调试</strong>；</li>
+<li>熟悉DPDK的相关知识和编程，熟悉<strong>TCP/IP协议</strong>，熟悉协议分析和流量分析，具备信息安全领域技术经验者优先考虑；</li>
+<li>精通本领域的各种编程语言和开发工具，可以独立完成大型产品的独立模块或者小型产品的开发工作；</li>
+<li>具备较强的<strong>概要设计、详细设计和文档编写</strong>能力，能够独立查找、解决开发中出现的常见问题；</li>
+</ul>
+<p><code>DPDK  TCP/IP协议  协议分析  流量分析</code></p>
+<hr>
+<ol start="3">
+<li></li>
+</ol>
+<ul>
+<li>有linux c/c++开发经验，<strong>编码风格良好</strong>；</li>
+<li>熟悉常用算法及设计模式；具有linux下网络抓包分析的经验；</li>
+<li>熟悉http,https,smtp等常用网络协议知识；</li>
+<li>熟悉代理服务器，中间件开发优先；</li>
+<li>热爱编程、思路清晰、善于思考、能<strong>独立分析和解决问题</strong>；</li>
+<li>团队协作，抗压能力强，从事过协议解析优先。</li>
+</ul>
+<p><code>网络抓包  http,https,smtp协议 linux下网络抓包分析  代理服务器  中间件   协议解析</code></p>
+<hr>
+<ol start="4">
+<li></li>
+</ol>
+<ul>
+<li>熟悉Linux下的C/C++开发；熟悉相关开发工具；了解数据库开发；</li>
+<li>熟悉 linux系统编程、或内核编程、或linux文件过滤编程；</li>
+<li>了解设计模式，有一定设计经验者优先；</li>
+<li>良好的沟通协作能力。</li>
+</ul>
+<p><code>数据库开发   内核编程  linux文件过滤编程  设计模式</code></p>
+<hr>
+<ol start="5">
+<li></li>
+</ol>
+<ul>
+<li>熟悉Linux操作系统，熟悉 Linux 内核开发者优先</li>
+<li>熟悉docker的常用操作和相关解决方案</li>
+<li>有opencv实际开发经验懂docker容器优先，</li>
+<li>有较强的独立工作能力和解决问题的能力，做事<strong>认真负责</strong></li>
+<li>具备良好的<strong>分析能力、表达能力和人际沟通</strong>能力</li>
+<li>具有良好的<strong>英语</strong>文章阅读能</li>
+</ul>
+<p><code>内核开发  docker  opencv</code></p>
+<hr>
 
         </div>
         
@@ -644,7 +366,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/11/">11</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/13/">13</a></li>
             
         </ul>
     </nav>
@@ -671,22 +393,6 @@
         <a class="level is-marginless" href="/categories/Algorithm/">
             <span class="level-start">
                 <span class="level-item">Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">5</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C/">
-            <span class="level-start">
-                <span class="level-item">C</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C-Notes/">
-            <span class="level-start">
-                <span class="level-item">C Notes</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">5</span>
@@ -756,8 +462,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:56:28.726Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/Now/" class="has-link-black-ter is-size-6"></a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -769,8 +475,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:45:55.755Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/C/C++Linux/" class="has-link-black-ter is-size-6">C/C++Linux 工作需求</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -782,10 +488,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T08:23:48.207Z">2020-01-02</time></div>
-                    <a href="/2020/01/02/C/C++Note/CppBasic/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:40:51.545Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Singleton/" class="has-link-black-ter is-size-6">单例模式</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -795,10 +501,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-01T08:47:14.103Z">2020-01-01</time></div>
-                    <a href="/2020/01/01/C/C++Note/String/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:27:27.141Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Stream/" class="has-link-black-ter is-size-6">流</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -808,8 +514,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-31T01:31:18.634Z">2019-12-31</time></div>
-                    <a href="/2019/12/31/Tools/vscode/" class="has-link-black-ter is-size-6">Vscode</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:00:02.855Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/CodeRule/" class="has-link-black-ter is-size-6">代码规范</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -835,7 +541,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -846,7 +552,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">29</span>
+                    <span class="level-item tag">27</span>
                 </span>
             </a>
         </li>
@@ -890,7 +596,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        33
+                        38
                     </p>
                 </div>
             </div>
@@ -900,7 +606,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        7
                     </p>
                 </div>
             </div>
@@ -910,7 +616,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        45
+                        53
                     </p>
                 </div>
             </div>
@@ -1041,7 +747,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/GDB/" style="font-size: 10px;">GDB</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Linuxtips/" style="font-size: 10px;">Linuxtips</a> <a href="/tags/Log4cpp/" style="font-size: 10px;">Log4cpp</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PIMPL/" style="font-size: 10px;">PIMPL</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Singleton/" style="font-size: 10px;">Singleton</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/流/" style="font-size: 10px;">流</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -1111,6 +817,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GDB/">
+                        <span class="tag">GDB</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
                         <span class="tag is-grey">1</span>
@@ -1167,8 +887,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Linuxtips/">
+                        <span class="tag">Linuxtips</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Log4cpp/">
+                        <span class="tag">Log4cpp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Markdown/">
                         <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PIMPL/">
+                        <span class="tag">PIMPL</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1183,6 +924,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Singleton/">
+                        <span class="tag">Singleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1209,8 +964,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Vim，GCC/">
-                        <span class="tag">Vim，GCC</span>
+                    <a class="tags has-addons" href="/tags/Vim/">
+                        <span class="tag">Vim</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1300,13 +1055,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/指针-C/">
                         <span class="tag">指针(C)</span>
                         <span class="tag is-grey">1</span>
@@ -1335,6 +1083,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/流/">
+                        <span class="tag">流</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/类型转换-Java/">
                         <span class="tag">类型转换(Java)</span>
                         <span class="tag is-grey">1</span>
@@ -1345,6 +1100,13 @@
                     <a class="tags has-addons" href="/tags/线性结构-Java/">
                         <span class="tag">线性结构(Java)</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/设计模式/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1417,7 +1179,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        33
+                        38
                     </p>
                 </div>
             </div>
@@ -1427,7 +1189,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        7
                     </p>
                 </div>
             </div>
@@ -1437,7 +1199,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        45
+                        53
                     </p>
                 </div>
             </div>
@@ -1568,7 +1330,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/GDB/" style="font-size: 10px;">GDB</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Linuxtips/" style="font-size: 10px;">Linuxtips</a> <a href="/tags/Log4cpp/" style="font-size: 10px;">Log4cpp</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PIMPL/" style="font-size: 10px;">PIMPL</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Singleton/" style="font-size: 10px;">Singleton</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/流/" style="font-size: 10px;">流</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -1638,6 +1400,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GDB/">
+                        <span class="tag">GDB</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
                         <span class="tag is-grey">1</span>
@@ -1694,8 +1470,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Linuxtips/">
+                        <span class="tag">Linuxtips</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Log4cpp/">
+                        <span class="tag">Log4cpp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Markdown/">
                         <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PIMPL/">
+                        <span class="tag">PIMPL</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1710,6 +1507,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Singleton/">
+                        <span class="tag">Singleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1736,8 +1547,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Vim，GCC/">
-                        <span class="tag">Vim，GCC</span>
+                    <a class="tags has-addons" href="/tags/Vim/">
+                        <span class="tag">Vim</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1827,13 +1638,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/指针-C/">
                         <span class="tag">指针(C)</span>
                         <span class="tag is-grey">1</span>
@@ -1862,6 +1666,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/流/">
+                        <span class="tag">流</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/类型转换-Java/">
                         <span class="tag">类型转换(Java)</span>
                         <span class="tag is-grey">1</span>
@@ -1872,6 +1683,13 @@
                     <a class="tags has-addons" href="/tags/线性结构-Java/">
                         <span class="tag">线性结构(Java)</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/设计模式/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

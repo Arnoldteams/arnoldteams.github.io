@@ -2,6 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/12/C/C++Note/Design%20pattern/Singleton/</loc>
+    
+    <lastmod>2020-01-12T13:21:11.044Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/12/C/C++Note/Stream/</loc>
+    
+    <lastmod>2020-01-12T13:14:02.263Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/12/29/C/C++Note/Linux/</loc>
+    
+    <lastmod>2020-01-12T13:12:55.283Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/12/C/C++Note/Design%20pattern/Pimpl/</loc>
+    
+    <lastmod>2020-01-12T13:09:56.384Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/12/C/C++Note/TempNote/</loc>
+    
+    <lastmod>2020-01-12T13:06:00.609Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/02/C/C++Note/CppBasic/</loc>
+    
+    <lastmod>2020-01-12T13:05:33.808Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/12/23/C/C++Note/Pointer/</loc>
+    
+    <lastmod>2020-01-12T12:56:03.493Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/07/C/C++Note/log4cpp/</loc>
+    
+    <lastmod>2020-01-12T12:46:34.338Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/01/C/C++Note/String/</loc>
+    
+    <lastmod>2020-01-12T12:44:59.739Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/12/C/C++Note/CodeRule/</loc>
+    
+    <lastmod>2020-01-12T12:00:24.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/12/31/Tools/vscode/</loc>
+    
+    <lastmod>2020-01-11T12:21:58.217Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/11/Tools/Linux/</loc>
+    
+    <lastmod>2020-01-11T12:20:38.491Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/03/Job/Now/</loc>
+    
+    <lastmod>2020-01-04T10:56:17.348Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/12/23/Tools/blogSetup/</loc>
     
     <lastmod>2020-01-04T09:17:51.621Z</lastmod>
@@ -16,55 +107,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/01/02/C/C++Note/CppBasic/</loc>
-    
-    <lastmod>2020-01-04T04:00:06.767Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/12/31/Tools/vscode/</loc>
-    
-    <lastmod>2020-01-03T12:36:15.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/12/29/C/C++Note/1229/</loc>
-    
-    <lastmod>2020-01-03T07:21:26.926Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/03/Job/Now/</loc>
-    
-    <lastmod>2020-01-03T00:58:05.652Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/12/31/C/C++Note/1231/</loc>
-    
-    <lastmod>2020-01-02T08:18:08.048Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/01/C/C++Note/String/</loc>
-    
-    <lastmod>2020-01-02T08:17:13.478Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/12/23/C/C++Note/Pointer/</loc>
-    
-    <lastmod>2020-01-02T05:51:30.602Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2019/12/23/PositivePsy/L11/</loc>
     
     <lastmod>2019-08-02T00:32:50.000Z</lastmod>
@@ -75,13 +117,6 @@
     <loc>http://yoursite.com/2019/12/23/JavaScriptNotes/JavaScript_fun/</loc>
     
     <lastmod>2019-05-06T07:33:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/12/23/Pointer/</loc>
-    
-    <lastmod>2019-05-05T11:27:59.000Z</lastmod>
     
   </url>
   

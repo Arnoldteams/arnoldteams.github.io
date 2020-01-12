@@ -138,17 +138,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:15.764Z">2019-12-23</time>
+                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:16.654Z">2019-12-23</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
+                <a class="has-link-grey -link" href="/categories/Js-Notes/">Js Notes</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 583 个字)
+                    2 分钟 读完 (大约 356 个字)
                 </span>
                 
                 
@@ -157,16 +157,31 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/12/23/JavaNotes/Java_Sort2/">排序Java版(交换排序)</a>
+                <a class="has-link-black-ter" href="/2019/12/23/JavaScriptNotes/JavaScript_Obj/"></a>
             
         </h1>
         <div class="content">
-            <h3><span id="冒泡排序">冒泡排序</span></h3><hr>
-<p><strong>基本思想：</strong><br>　　依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第n个和第n-1个，将小数放前，大数放后。然后比较第n-1个数和第n-2个数，将小数放前，大数放后，如此继续，直至全部排序完成。</p>
-<figure class="highlight java hljs"><figcaption><span>BubbleSort</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * 冒泡排序</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> 数组</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span> 排好序的数组</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"><span class="hljs-comment">//v1.0 由尾到头排序</span></span><br><span class="line"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] BubbleSort(<span class="hljs-keyword">int</span>[] a) &#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = a.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &gt; <span class="hljs-number">0</span>; j--) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (a[j] &lt; a[j - <span class="hljs-number">1</span>])</span><br><span class="line">                swap(a, j, j - <span class="hljs-number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">//v2.0 由头到尾排序</span></span><br><span class="line"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] BubbleSort(<span class="hljs-keyword">int</span>[] a) &#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;=a.length - <span class="hljs-number">1</span>; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i+<span class="hljs-number">1</span>; j &lt;=a.length - <span class="hljs-number">1</span>; j++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (a[i] &gt; a[j])</span><br><span class="line">                swap(a, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> t = a[i];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="快速排序">快速排序</span></h3><hr>
-<p><strong>基本思想：</strong><br>　　第一趟选取一个哨兵，以哨兵为分界进行划分，将数组划分为 <strong>[low] 哨兵 [high]</strong>  使得 <strong>[low]</strong> 的所有元素均小于哨兵元素，<strong>[high]</strong> 的所有元素均大于哨兵元素（也就是说哨兵这个元素已经排到正确位置了），之后以这个哨兵为界分别对 <strong>[low] [high]</strong> 进行划分，递归进行直到完成排序</p>
-<figure class="highlight java hljs"><figcaption><span>QuickSort</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * 快速排序</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> 数组，数组下限，数组上限</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span> 排好序的数组</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] QuickSort(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> pos = Partition(a, low, high);</span><br><span class="line">        QuickSort(a, low, pos - <span class="hljs-number">1</span>);</span><br><span class="line">        QuickSort(a, pos + <span class="hljs-number">1</span>, high);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * 划分</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> 数组，数组下限，数组上限</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span> 哨兵的位置</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Partition</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> sentry = a[low];<span class="hljs-comment">// 哨兵</span></span><br><span class="line">    <span class="hljs-keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="hljs-comment">// 实现[low] 哨兵 [high] 的排序；当low=high时候结束循环</span></span><br><span class="line">        <span class="hljs-keyword">while</span> (low &lt; high &amp;&amp; a[high] &gt;= sentry) &#123;</span><br><span class="line">            <span class="hljs-comment">// 从high-&gt;low遍历；发现第一个a[high]&lt;哨兵 结束循环</span></span><br><span class="line">            high--;</span><br><span class="line">        &#125;</span><br><span class="line">        a[low] = a[high]; <span class="hljs-comment">// 将这个小于哨兵的元素移至哨兵左边[low]</span></span><br><span class="line">        <span class="hljs-keyword">while</span> (low &lt; high &amp;&amp; a[low] &lt;= sentry) &#123;</span><br><span class="line">            <span class="hljs-comment">// 从low-&gt;high遍历；发现第一个a[high]&gt;哨兵 结束循环</span></span><br><span class="line">            low++;</span><br><span class="line">        &#125;</span><br><span class="line">        a[high] = a[low]; <span class="hljs-comment">// 将这个大于于哨兵的元素移至哨兵右边[high]</span></span><br><span class="line">    &#125;</span><br><span class="line">    a[low] = sentry;<span class="hljs-comment">// 哨兵放到正确的位置</span></span><br><span class="line">    <span class="hljs-keyword">return</span> low;<span class="hljs-comment">// 返回哨兵的位置，这时 哨兵的左边&lt;哨兵；哨兵的右边&gt;哨兵</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h2><span id="对象">对象</span></h2><hr>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//创建对象</span></span><br><span class="line"><span class="hljs-keyword">var</span> xiaohong = &#123;</span><br><span class="line">    name: <span class="hljs-string">'小红'</span>,</span><br><span class="line">    age: <span class="hljs-number">16</span>,</span><br><span class="line">    <span class="hljs-string">'middle-school'</span>: <span class="hljs-string">'No.1 Middle School'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//访问对象属性（不存在的属性返回undefined）</span></span><br><span class="line">xiaohong[<span class="hljs-string">'middle-school'</span>]; <span class="hljs-comment">// 'No.1 Middle School'</span></span><br><span class="line">xiaohong[<span class="hljs-string">'name'</span>]; <span class="hljs-comment">// '小红'</span></span><br><span class="line">xiaohong.name; <span class="hljs-comment">// '小红'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//删除属性</span></span><br><span class="line"><span class="hljs-keyword">delete</span> xiaohong.age; <span class="hljs-comment">// 删除age属性</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//检测属性(继承的属性也有效)</span></span><br><span class="line"><span class="hljs-string">'name'</span> <span class="hljs-keyword">in</span> xiaohong; <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-string">'toString'</span> <span class="hljs-keyword">in</span> xiaohong; <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-comment">//检测属性(过滤继承的属性)</span></span><br><span class="line">xiaohong.hasOwnProperty(<span class="hljs-string">'name'</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-string">'toString'</span> <span class="hljs-keyword">in</span> xiaohong; <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>对象中<code>this</code>的使用</li>
+</ul>
+<figure class="highlight js hljs"><figcaption><span>this.birth：undefined</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="hljs-string">'小明'</span>,</span><br><span class="line">    birth: <span class="hljs-number">1990</span>,</span><br><span class="line">    age: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAgeFromBirth</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">var</span> y = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear();</span><br><span class="line">            <span class="hljs-keyword">return</span> y - <span class="hljs-keyword">this</span>.birth;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> getAgeFromBirth();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xiaoming.age();</span><br></pre></td></tr></table></figure>
+<p><code>Uncaught TypeError: Cannot read property &#39;birth&#39; of undefined</code></p>
+<figure class="highlight js hljs"><figcaption><span>this的传递：this.birth：1990</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="hljs-string">'小明'</span>,</span><br><span class="line">    birth: <span class="hljs-number">1990</span>,</span><br><span class="line">    age: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">var</span> that = <span class="hljs-keyword">this</span>; <span class="hljs-comment">// 在方法内部一开始就捕获this</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAgeFromBirth</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">var</span> y = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear();</span><br><span class="line">            <span class="hljs-keyword">return</span> y - that.birth; <span class="hljs-comment">// 用that而不是this</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> getAgeFromBirth();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xiaoming.age(); <span class="hljs-comment">// 25</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>指定<code>this</code>的指向<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> y = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear();</span><br><span class="line">    <span class="hljs-keyword">return</span> y - <span class="hljs-keyword">this</span>.birth;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getAge.apply(xiaoming, []); <span class="hljs-comment">// 25, this指向xiaoming, 参数为空</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2><span id="变量">变量</span></h2><hr>
+<ul>
+<li>把代码全部放入唯一的名字空间中，会大大减少全局变量冲突的可能</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 唯一的全局变量MYAPP:</span></span><br><span class="line"><span class="hljs-keyword">var</span> MYAPP = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 其他变量:</span></span><br><span class="line">MYAPP.name = <span class="hljs-string">'myapp'</span>;</span><br><span class="line">MYAPP.version = <span class="hljs-number">1.0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 其他函数:</span></span><br><span class="line">MYAPP.foo = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">'foo'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>批量赋值</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> [x, y, z] = [<span class="hljs-string">'hello'</span>, <span class="hljs-string">'JavaScript'</span>, <span class="hljs-string">'ES6'</span>];</span><br><span class="line"><span class="hljs-comment">//x = hello, y = JavaScript, z = ES6</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="hljs-string">'小明'</span>,</span><br><span class="line">    age: <span class="hljs-number">20</span>,</span><br><span class="line">    gender: <span class="hljs-string">'male'</span>,</span><br><span class="line">    passport: <span class="hljs-string">'G-12345678'</span>,</span><br><span class="line">    school: <span class="hljs-string">'No.4 middle school'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-keyword">var</span> &#123;name, age, passport&#125; = person;</span><br><span class="line"><span class="hljs-comment">//name = 小明, age = 20, passport = G-12345678</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 如果person对象没有single属性，默认赋值为true:</span></span><br><span class="line"><span class="hljs-keyword">var</span> &#123;name, single=<span class="hljs-literal">true</span>&#125; = person;</span><br><span class="line">name; <span class="hljs-comment">// '小明'</span></span><br><span class="line">single; <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -187,60 +202,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:15.593Z">2019-12-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Algorithm/">Algorithm</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 519 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/12/23/JavaNotes/Java_Search1/">查找Java版（线性结构）</a>
-            
-        </h1>
-        <div class="content">
-            <h3><span id="顺序查找">顺序查找</span></h3><hr>
-<p><strong>基本思想：</strong><br>　　依次查找</p>
-<figure class="highlight java hljs"><figcaption><span>SequenceSearch</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 顺序查找</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> 数组；查找的元素</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> 下标</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">SequenceSearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a,<span class="hljs-keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(a[i]==num)</span><br><span class="line">                    <span class="hljs-keyword">return</span> i+<span class="hljs-number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="折半二分查找">折半（二分）查找</span></h3><hr>
-<p><strong>基本思想：</strong><br>　　搜索过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜索过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组为空，则代表找不到。这种搜索算法每一次比较都使搜索范围缩小一半。仅限<strong>有序数组</strong></p>
-<figure class="highlight java hljs"><figcaption><span>BinarySearch</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 二分查找(只能查找有序数组)</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> 数组；查找的元素</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> 下标</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">BinarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> low = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> high = a.length - <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> mid;</span><br><span class="line">    <span class="hljs-keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">        mid = (low + high) / <span class="hljs-number">2</span>;</span><br><span class="line">        <span class="hljs-keyword">if</span> (a[mid] &gt; num) &#123;</span><br><span class="line">            high = mid - <span class="hljs-number">1</span>;</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a[mid] &lt; num) &#123;</span><br><span class="line">            low = mid + <span class="hljs-number">1</span>;</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> mid + <span class="hljs-number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="分块查找">分块查找</span></h3><hr>
-<p><strong>基本思想：</strong><br>　　将n个数据元素<strong>按块有序</strong>划分为m块（m&lt;=n）。每一<strong>块中的数据元素不必有序</strong>，但块与块之间必须“按块有序”，即第1快中的任一元素的关键字都必须小于第2块中任一元素的关键字；而第2块中任一元素又都小于第3块中的任一元素，……；<strong>块间用顺序 OR 二分查找，块内用顺序查找</strong><br><img src="https://i.loli.net/2019/03/31/5ca056d67186c.jpg" alt="divide.jpg"></p>
-<figure class="highlight java hljs"><figcaption><span>TestData</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span>[][] tab= &#123;&#123;<span class="hljs-number">24</span>,<span class="hljs-number">1</span>&#125;,&#123;<span class="hljs-number">54</span>,<span class="hljs-number">7</span>&#125;,&#123;<span class="hljs-number">78</span>,<span class="hljs-number">10</span>&#125;,&#123;<span class="hljs-number">88</span>,<span class="hljs-number">13</span>&#125;&#125;;<span class="hljs-comment">//索引表</span></span><br><span class="line"><span class="hljs-keyword">int</span>[] a= &#123;<span class="hljs-number">24</span>,<span class="hljs-number">21</span>,<span class="hljs-number">6</span>,<span class="hljs-number">11</span>,<span class="hljs-number">8</span>,<span class="hljs-number">22</span>,<span class="hljs-number">32</span>,<span class="hljs-number">31</span>,<span class="hljs-number">54</span>,<span class="hljs-number">72</span>,<span class="hljs-number">61</span>,<span class="hljs-number">78</span>,<span class="hljs-number">88</span>,<span class="hljs-number">83</span>&#125;;<span class="hljs-comment">//查找数组</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java hljs"><figcaption><span>DivideSearch</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@param</span> 查找数组；索引表；查找元素</span></span><br><span class="line"><span class="hljs-comment">    * <span class="hljs-doctag">@return</span> 下标</span></span><br><span class="line"><span class="hljs-comment">    *  采用顺序+顺序（也可以使用二分+顺序实现）  </span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">DivideSearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span>[][] tab, <span class="hljs-keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> start = -<span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; tab.length; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (tab[i][<span class="hljs-number">0</span>] == num)</span><br><span class="line">            <span class="hljs-keyword">return</span> tab[i][<span class="hljs-number">1</span>];</span><br><span class="line">        <span class="hljs-keyword">if</span> (tab[i][<span class="hljs-number">0</span>] &gt; num) &#123;</span><br><span class="line">            start = tab[i][<span class="hljs-number">1</span>] - <span class="hljs-number">1</span>;</span><br><span class="line">            <span class="hljs-keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span> (start == -<span class="hljs-number">1</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = start; i &gt;= <span class="hljs-number">0</span>; i--) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (a[i] == num)</span><br><span class="line">            <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:15.467Z">2019-12-23</time>
+                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:16.335Z">2019-12-23</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
@@ -250,7 +212,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 248 个字)
+                    7 分钟 读完 (大约 1118 个字)
                 </span>
                 
                 
@@ -259,11 +221,86 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/12/23/JavaNotes/Java_SequenceList/">SequenceList_Java 顺序表</a>
+                <a class="has-link-black-ter" href="/2019/12/23/JavaNotes/Java_HashMap&TreeMap/">HashMap&amp;TreeMap</a>
             
         </h1>
         <div class="content">
-            <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SequenceList</span>&lt;<span class="hljs-title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> MaxSize = <span class="hljs-number">10</span>;</span><br><span class="line">	<span class="hljs-keyword">private</span> T[] data;</span><br><span class="line">	<span class="hljs-keyword">int</span> length;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SequenceList</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">InitList</span><span class="hljs-params">(T[] list)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 初始化</span></span><br><span class="line">		data = Arrays.copyOf(list, MaxSize);</span><br><span class="line">		length = list.length;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">ListInsert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, T a)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 插入</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> || i &gt; length + <span class="hljs-number">1</span> || length &gt;= MaxSize)</span><br><span class="line">			<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = length; j &gt;= i; j--) &#123;</span><br><span class="line">			data[j] = data[j - <span class="hljs-number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		data[i - <span class="hljs-number">1</span>] = a;</span><br><span class="line">		length++;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">ListDelete</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 删除</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> &amp;&amp; i &gt; length + <span class="hljs-number">1</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">		T temp = data[i - <span class="hljs-number">1</span>];</span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &lt; length; j++) &#123;</span><br><span class="line">			data[j - <span class="hljs-number">1</span>] = data[j];</span><br><span class="line">		&#125;</span><br><span class="line">		length--;</span><br><span class="line">		data[length] = <span class="hljs-keyword">null</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">LocateElem</span><span class="hljs-params">(T a)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 获取元素位置</span></span><br><span class="line">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">			<span class="hljs-keyword">if</span> (data[i] == a)</span><br><span class="line">				<span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">GetElem</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 获取元素</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">1</span> &amp;&amp; i &gt; length + <span class="hljs-number">1</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> data[i - <span class="hljs-number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Length</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 长度</span></span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.length;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 打印</span></span><br><span class="line">		System.out.println(Arrays.toString(data));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">Empty</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">		<span class="hljs-comment">// 判断是否为空</span></span><br><span class="line">		<span class="hljs-keyword">if</span> (data.length == <span class="hljs-number">0</span>)</span><br><span class="line">			<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Test</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Integer[] a = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> &#125;;<span class="hljs-comment">// 使用int初始化会发生异常</span></span><br><span class="line">		SequenceList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> SequenceList&lt;Integer&gt;();</span><br><span class="line">		System.out.println(<span class="hljs-string">"Init:"</span> + list.InitList(a));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Insert:"</span> + list.ListInsert(<span class="hljs-number">1</span>, <span class="hljs-number">66</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Delete:"</span> + list.ListDelete(<span class="hljs-number">4</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"GetNum:"</span> + list.GetElem(<span class="hljs-number">4</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"LocElem:"</span> + list.LocateElem(<span class="hljs-number">66</span>));</span><br><span class="line">		System.out.println(<span class="hljs-string">"Length:"</span> + list.length);</span><br><span class="line">		System.out.println(<span class="hljs-string">"Empty:"</span> + list.Empty());</span><br><span class="line">		list.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p><strong>HashMap：</strong></p>
+<blockquote>
+<p>数组方式存储key/value，线程非安全，允许null作为key和value，key不可以重复，value允许重复，不保证元素迭代顺序是按照插入时的顺序，要求key必须重写equals和hashcode方法。</p>
+</blockquote>
+<p><strong>TreeMap：</strong></p>
+<blockquote>
+<p>基于红黑二叉树实现，线程非安全，不允许null，key不可以重复，value允许重复，存入TreeMap的元素应当实现Comparable接口或者实现Comparator接口，会按照排序后的顺序迭代元素，默认升序，两个相比较的key不得抛出classCastException。主要用于存入元素的时候对元素进行自动排序，迭代输出的时候就按排序顺序输出。</p>
+</blockquote>
+<h2><span id="hashmap">HashMap：</span></h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">1</span>. 存入键值对</span><br><span class="line"><span class="hljs-function">V  <span class="hljs-title">put</span> <span class="hljs-params">( K key, V value )</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//向map中添加键值对后，返回这个key对应以前的value,如果以前没有则返回null</span></span></span><br><span class="line"><span class="hljs-function">V  <span class="hljs-title">putIfAbsent</span> <span class="hljs-params">(K key, V value)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">// 在输入键值对前，会先判断map中是否有相同key，如果有就不覆盖，返回原有的value，如果没有就返回null，并直接存入。</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function">E.g:</span></span><br><span class="line"><span class="hljs-function">hashMap.<span class="hljs-title">putIfAbsent</span><span class="hljs-params">(<span class="hljs-string">"A"</span>,<span class="hljs-number">16</span>)</span></span>; </span><br><span class="line">hashMap.putIfAbsent(<span class="hljs-string">"A"</span>,<span class="hljs-number">17</span>);</span><br><span class="line">hashMap.putIfAbsent(<span class="hljs-string">"B"</span>, <span class="hljs-number">100</span>); </span><br><span class="line">hashMap.putIfAbsent(<span class="hljs-string">"B"</span>, <span class="hljs-number">150</span>);</span><br><span class="line">hashMap.put(<span class="hljs-string">"C"</span>, <span class="hljs-number">222</span>);   </span><br><span class="line">hashMap.put(<span class="hljs-string">"C"</span>, <span class="hljs-number">23</span>);</span><br><span class="line"></span><br><span class="line">Out：A=<span class="hljs-number">16</span>, B=<span class="hljs-number">100</span>, C=<span class="hljs-number">23</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span>  <span class="hljs-title">putAll</span> <span class="hljs-params">( Map&lt;? extends K,? extends V&gt; m)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//把一个其他map复制过来</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">2</span>. 通过键取值  </span><br><span class="line"><span class="hljs-function">V <span class="hljs-title">get</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//如果map有key则获取value，没有则返回null，也有可能有key但对应的value就是null，所以不能用get判断是否存在某个key。</span></span></span><br><span class="line"><span class="hljs-function">V <span class="hljs-title">getOrDefault</span><span class="hljs-params">(K key, V defaultValue)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//如果map有key则获取value，没有则返回自定义的defaultValue</span></span></span><br><span class="line"><span class="hljs-function">3. 键或值是否存在</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">containsValue</span><span class="hljs-params">(Object value)</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">containsKey</span><span class="hljs-params">(Object key)</span></span></span><br><span class="line"><span class="hljs-function">4. 替换键值对</span></span><br><span class="line"><span class="hljs-function">V <span class="hljs-title">replace</span><span class="hljs-params">(K key, V Value)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//如果map中存在key则将其对应的value替换为参数里的value，并返回以前的value，如果不存在key则返回null。</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">replace</span><span class="hljs-params">(K key, V oldValue, V newValue)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//匹配map中对应的键值对，如果完全符合就替换，不符合就返回false。</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">replaceAll</span><span class="hljs-params">(BiFunction function)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//对所有键值对进行替换</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">5</span>. 删除键值对</span><br><span class="line"><span class="hljs-function">V <span class="hljs-title">remove</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//通过key删除键值对，返回key对应的value，如果不存在key返回null</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">remove</span><span class="hljs-params">(K key, V Value)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//只有完全匹配参数中的键值对才删除。</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function">6. 元素数据处理（函数式编程）</span></span><br><span class="line"><span class="hljs-function">V  <span class="hljs-title">computeIfPresent</span><span class="hljs-params">(K key, BiFunctionsuper K, ? <span class="hljs-keyword">super</span> V, ? extends V&gt; remappingFunction)</span></span></span><br><span class="line"><span class="hljs-function">V  <span class="hljs-title">computeIfAbsent</span> <span class="hljs-params">(K key, Functionsuper K, ? extends V&gt; mappingFunction)</span></span></span><br><span class="line"><span class="hljs-function">V  <span class="hljs-title">compute</span> <span class="hljs-params">(K key, BiFunctionsuper K, ? <span class="hljs-keyword">super</span> V, ? extends V&gt; remappingFunction)</span></span></span><br><span class="line"><span class="hljs-function">V  <span class="hljs-title">merge</span><span class="hljs-params">(K key, V value,BiFunction remappingFunction)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//上面这些功能简单来说就是  用自定义方法更新key对应的value。</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span>   <span class="hljs-title">forEach</span> <span class="hljs-params">( BiConsumer action)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//这个更好理解了，就是对map所有键值对进行操作</span></span></span><br><span class="line"><span class="hljs-function"></span></span><br><span class="line"><span class="hljs-function">7. 获取  键/值  的集合</span></span><br><span class="line"><span class="hljs-function">Collection&lt;V&gt;  <span class="hljs-title">values</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//获取map中的所有value，并存入Collection</span></span></span><br><span class="line"><span class="hljs-function">Set&lt;K&gt;  <span class="hljs-title">keySet</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//获取map中的所有key，存入set</span></span></span><br><span class="line"><span class="hljs-function">Set&lt;Map.Entry&lt;K,V&gt;&gt; <span class="hljs-title">entrySet</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//获取map中所有键值对，存入set，注意这里的返回类型是个map特有的接口Map.Entry的set集合，一个Map.Entry接口对应map中的一个键值对，Map.Entry是个静态接口，可以通过foreach或迭代器，调用每个接口的set/get方法，其实Map.Entry可以看作键值对的实体类</span></span></span><br></pre></td></tr></table></figure>
+<h2><span id="treemap">TreeMap：</span></h2><p><strong>注意</strong>：之所以会有这些方法，是因为treemap是有序的。<br><figure class="highlight java hljs"><figcaption><span>查找限定范围内的一个key或entry</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Map.<span class="hljs-function">Entry&lt;K,V&gt; <span class="hljs-title">ceilingEntry</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function">K   <span class="hljs-title">ceilingKey</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//查找大于等于参数key的map里包含的最小key或entry，没有就返回null</span></span></span><br><span class="line"><span class="hljs-function">Map.Entry&lt;K,V&gt; <span class="hljs-title">floorEntry</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function">K   <span class="hljs-title">floorKey</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//查找小于等于参数key的map里包含的最大key或entry，没有就返回null</span></span></span><br><span class="line"><span class="hljs-function">Map.Entry&lt;K,V&gt; <span class="hljs-title">lowerEntry</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function">K   <span class="hljs-title">lowerKey</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//查找小于参数key的map里包含的最大key或entry，没有就返回null</span></span></span><br><span class="line"><span class="hljs-function">Map.Entry&lt;K,V&gt; <span class="hljs-title">higherEntry</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function">K   <span class="hljs-title">higherKey</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//查找大于参数key的map里包含的最小key或entry，没有就返回null</span></span></span><br><span class="line"><span class="hljs-function">Map.Entry&lt;K,V&gt; <span class="hljs-title">firstEntry</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function">K   <span class="hljs-title">firstKey</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//查找map中最小的键（第一个）</span></span></span><br><span class="line"><span class="hljs-function">Map.Entry&lt;K,V&gt; <span class="hljs-title">lastEntry</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function">K   <span class="hljs-title">lastKey</span><span class="hljs-params">(K key)</span></span></span><br><span class="line"><span class="hljs-function"> <span class="hljs-comment">//查找map中最大的键（最后一个）3.  删除最大或最小键值对</span></span></span><br><span class="line"><span class="hljs-function">SortedMap&lt;K,V&gt; <span class="hljs-title">headMap</span><span class="hljs-params">(K toKey)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//返回Key小于toKey的所有元素</span></span></span><br><span class="line"><span class="hljs-function">Map.Entry&lt;K,V&gt; <span class="hljs-title">pollFirstEntry</span><span class="hljs-params">()</span>  </span></span><br><span class="line"><span class="hljs-function">Map.Entry&lt;K,V&gt; <span class="hljs-title">pollLastEntry</span><span class="hljs-params">()</span>    </span></span><br><span class="line"><span class="hljs-function"><span class="hljs-comment">//返回被删除的键值对</span></span></span><br></pre></td></tr></table></figure></p>
+<p><a href="https://www.cnblogs.com/xiaostudy/p/9511910.html" target="_blank" rel="noopener">Link: TreeMap</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:16.201Z">2019-12-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java-Notes/">Java Notes</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 626 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/23/JavaNotes/Java_Arr/">Arrays常用方法</a>
+            
+        </h1>
+        <div class="content">
+            <h4><span id="1arraysfillobject-array-object-obj-填充">1.Arrays.fill(Object[] array, Object obj)  填充</span></h4><hr>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//用指定元素填充整个数组（会替换掉数组中原来的元素）</span></span><br><span class="line">Integer[] data = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;;</span><br><span class="line">Arrays.fill(data, <span class="hljs-number">9</span>);</span><br><span class="line">System.out.println(Arrays.toString(data)); <span class="hljs-comment">// [9, 9, 9, 9]</span></span><br><span class="line"></span><br><span class="line">Arrays.fill(Object[] array, <span class="hljs-keyword">int</span> fromIndex, <span class="hljs-keyword">int</span> toIndex, Object obj)</span><br><span class="line"></span><br><span class="line">Integer[] data = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;;</span><br><span class="line">Arrays.fill(data, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>);</span><br><span class="line">System.out.println(Arrays.toString(data)); <span class="hljs-comment">// [9, 9, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<h4><span id="2arrayssortobject-array-排序">2.Arrays.sort(Object[] array)  排序</span></h4><hr>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//对数组元素进行排序（串行排序）</span></span><br><span class="line">String[] data = &#123;<span class="hljs-string">"1"</span>, <span class="hljs-string">"4"</span>, <span class="hljs-string">"3"</span>, <span class="hljs-string">"2"</span>&#125;;</span><br><span class="line">System.out.println(Arrays.toString(data)); <span class="hljs-comment">// [1, 4, 3, 2]</span></span><br><span class="line">Arrays.sort(data);</span><br><span class="line">System.out.println(Arrays.toString(data)); <span class="hljs-comment">// [1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line">Arrays.sort(data, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>);<span class="hljs-comment">// 对下标[0, 3)的元素进行排序，即对1，4，3进行排序，2保持不变</span></span><br><span class="line">System.out.println(Arrays.toString(data)); <span class="hljs-comment">// [1, 3, 4, 2]</span></span><br><span class="line"></span><br><span class="line">Arrays.parallelSort(T[] array)</span><br><span class="line"><span class="hljs-comment">//对数组元素进行排序（并行排序），当数据规模较大时，会有更好的性能</span></span><br></pre></td></tr></table></figure>
+<h4><span id="3arraysbinarysearchobject-array-object-key-查找二分法">3.Arrays.binarySearch(Object[] array, Object key)  查找（二分法）</span></h4><hr>
+<p><strong>注意:</strong><br>　　在调用该方法之前，<strong>必须先调用sort()方法进行排序</strong>，如果数组没有排序，那么结果是不确定的，此外如果数组中包含多个指定元素，则无法保证将找到哪个元素<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Integer[] data = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>&#125;;</span><br><span class="line">Arrays.sort(data);</span><br><span class="line">System.out.println(Arrays.binarySearch(data, <span class="hljs-number">1</span>)); <span class="hljs-comment">// 0</span></span><br><span class="line">System.out.println(Arrays.binarySearch(data, <span class="hljs-number">0</span>)); <span class="hljs-comment">// -1   ；-(0 + 1) = -1</span></span><br><span class="line">System.out.println(Arrays.binarySearch(data, <span class="hljs-number">8</span>)); <span class="hljs-comment">// -5   ；-(4 + 1) = -5</span></span><br><span class="line">System.out.println(Arrays.binarySearch(data, <span class="hljs-number">2</span>)); <span class="hljs-comment">// -2   ；-(1 + 1) = -2</span></span><br><span class="line">System.out.println(Arrays.binarySearch(data, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<h4><span id="4arrayscopyoft-original-int-newlength-拷贝数组">4.Arrays.copyOf(T[] original, int newLength) 拷贝数组</span></h4><hr>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Integer[] data1 = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;;</span><br><span class="line">Integer[] data2 = Arrays.copyOf(data1, <span class="hljs-number">2</span>);</span><br><span class="line">System.out.println(Arrays.toString(data2)); <span class="hljs-comment">// [1, 2]</span></span><br><span class="line">Integer[] data2 = Arrays.copyOf(data1, <span class="hljs-number">5</span>);</span><br><span class="line">System.out.println(Arrays.toString(data2)); <span class="hljs-comment">// [1, 2, 3, 4, null]</span></span><br><span class="line"></span><br><span class="line">Arrays.copyOfRange(T[] original, <span class="hljs-keyword">int</span> from, <span class="hljs-keyword">int</span> to)</span><br><span class="line"><span class="hljs-comment">//指定起始位置和结束位置，如果超过原数组长度，会用null进行填充</span></span><br></pre></td></tr></table></figure>
+<h4><span id="5arraysequalsobject-array1-object-array2-判断两个数组是否相等">5.Arrays.equals(Object[] array1, Object[] array2) 判断两个数组是否相等</span></h4><hr>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//实际上比较的是两个数组的哈希值，即 </span></span><br><span class="line">Arrays.hashCode(data1) == Arrays.hashCode(data2)</span><br><span class="line"></span><br><span class="line">Integer[] data1 = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;</span><br><span class="line">Integer[] data2 = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;</span><br><span class="line">System.out.println(Arrays.equals(data1, data2)); <span class="hljs-comment">// true</span></span><br><span class="line"></span><br><span class="line">Arrays.deepEquals(Object[] array1, Object[] array2)</span><br><span class="line"><span class="hljs-comment">//判断两个多维数组是否相等，实际上比较的是两个数组的哈希值，即 :</span></span><br><span class="line">Arrays.hashCode(data1) == Arrays.hashCode(data2)</span><br></pre></td></tr></table></figure>
+<h4><span id="6arrayshashcodeobject-array-哈希值">6.Arrays.hashCode(Object[] array) 哈希值</span></h4><hr>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//返回数组的哈希值</span></span><br><span class="line">Integer[] data = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;</span><br><span class="line">System.out.println(Arrays.hashCode(data)); <span class="hljs-comment">// 30817</span></span><br><span class="line"> </span><br><span class="line">Arrays.deepHashCode(Object[] array)</span><br><span class="line"><span class="hljs-comment">//返回多维数组的哈希值</span></span><br></pre></td></tr></table></figure>
+<h4><span id="7arraystostringobject-array-输出">7.Arrays.toString(Object[] array) 输出</span></h4><hr>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//返回数组元素的字符串形式</span></span><br><span class="line">Integer[] data = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;</span><br><span class="line">System.out.println(Arrays.toString(data)); <span class="hljs-comment">// [1, 2, 3]</span></span><br><span class="line"></span><br><span class="line">Arrays.deepToString(Object[] array)</span><br><span class="line"><span class="hljs-comment">//返回多维数组元素的字符串形式</span></span><br><span class="line">Integer[][] data = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;, &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;&#125;;</span><br><span class="line">System.out.println(Arrays.deepToString(data)); </span><br><span class="line"><span class="hljs-comment">// [[1, 2, 3], [1, 2, 3]]</span></span><br></pre></td></tr></table></figure>
+<h4><span id="8arrayssetallt-array-intfunction">8.Arrays.setAll(T[] array, IntFunction)</span></h4><hr>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer[] data = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;; <span class="hljs-comment">// i为索引值</span></span><br><span class="line">Arrays.setAll(data, i -&gt; data[i] * <span class="hljs-number">2</span>);</span><br><span class="line">System.out.println(Arrays.toString(data)); <span class="hljs-comment">// [2, 4, 6, 8]</span></span><br></pre></td></tr></table></figure>
+<h4><span id="9arraysstreamt-array">9.Arrays.stream(T[] array)</span></h4><hr>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//返回数组的流Stream，然后我们就可以使用Stream相关的许多方法了</span></span><br><span class="line">Integer[] data = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;;</span><br><span class="line">List&lt;Integer&gt; list = Arrays.stream(data).collect(toList());</span><br><span class="line">System.out.println(list); <span class="hljs-comment">// [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+
         </div>
         
         
@@ -300,9 +337,9 @@
             
             <li><a class="pagination-link has-text-black-ter" href="/page/9/">9</a></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/10/">10</a></li>
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/11/">11</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/13/">13</a></li>
             
         </ul>
     </nav>
@@ -329,22 +366,6 @@
         <a class="level is-marginless" href="/categories/Algorithm/">
             <span class="level-start">
                 <span class="level-item">Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">5</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C/">
-            <span class="level-start">
-                <span class="level-item">C</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C-Notes/">
-            <span class="level-start">
-                <span class="level-item">C Notes</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">5</span>
@@ -414,8 +435,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:56:28.726Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/Now/" class="has-link-black-ter is-size-6"></a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -427,8 +448,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:45:55.755Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/C/C++Linux/" class="has-link-black-ter is-size-6">C/C++Linux 工作需求</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -440,10 +461,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T08:23:48.207Z">2020-01-02</time></div>
-                    <a href="/2020/01/02/C/C++Note/CppBasic/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:40:51.545Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Singleton/" class="has-link-black-ter is-size-6">单例模式</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -453,10 +474,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-01T08:47:14.103Z">2020-01-01</time></div>
-                    <a href="/2020/01/01/C/C++Note/String/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:27:27.141Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Stream/" class="has-link-black-ter is-size-6">流</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -466,8 +487,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-31T01:31:18.634Z">2019-12-31</time></div>
-                    <a href="/2019/12/31/Tools/vscode/" class="has-link-black-ter is-size-6">Vscode</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:00:02.855Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/CodeRule/" class="has-link-black-ter is-size-6">代码规范</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -493,7 +514,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -504,7 +525,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">29</span>
+                    <span class="level-item tag">27</span>
                 </span>
             </a>
         </li>
@@ -548,7 +569,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        33
+                        38
                     </p>
                 </div>
             </div>
@@ -558,7 +579,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        7
                     </p>
                 </div>
             </div>
@@ -568,7 +589,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        45
+                        53
                     </p>
                 </div>
             </div>
@@ -699,7 +720,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/GDB/" style="font-size: 10px;">GDB</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Linuxtips/" style="font-size: 10px;">Linuxtips</a> <a href="/tags/Log4cpp/" style="font-size: 10px;">Log4cpp</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PIMPL/" style="font-size: 10px;">PIMPL</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Singleton/" style="font-size: 10px;">Singleton</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/流/" style="font-size: 10px;">流</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -769,6 +790,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GDB/">
+                        <span class="tag">GDB</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
                         <span class="tag is-grey">1</span>
@@ -825,8 +860,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Linuxtips/">
+                        <span class="tag">Linuxtips</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Log4cpp/">
+                        <span class="tag">Log4cpp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Markdown/">
                         <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PIMPL/">
+                        <span class="tag">PIMPL</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -841,6 +897,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Singleton/">
+                        <span class="tag">Singleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -867,8 +937,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Vim，GCC/">
-                        <span class="tag">Vim，GCC</span>
+                    <a class="tags has-addons" href="/tags/Vim/">
+                        <span class="tag">Vim</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -958,13 +1028,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/指针-C/">
                         <span class="tag">指针(C)</span>
                         <span class="tag is-grey">1</span>
@@ -993,6 +1056,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/流/">
+                        <span class="tag">流</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/类型转换-Java/">
                         <span class="tag">类型转换(Java)</span>
                         <span class="tag is-grey">1</span>
@@ -1003,6 +1073,13 @@
                     <a class="tags has-addons" href="/tags/线性结构-Java/">
                         <span class="tag">线性结构(Java)</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/设计模式/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1075,7 +1152,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        33
+                        38
                     </p>
                 </div>
             </div>
@@ -1085,7 +1162,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        7
                     </p>
                 </div>
             </div>
@@ -1095,7 +1172,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        45
+                        53
                     </p>
                 </div>
             </div>
@@ -1226,7 +1303,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/GDB/" style="font-size: 10px;">GDB</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Linuxtips/" style="font-size: 10px;">Linuxtips</a> <a href="/tags/Log4cpp/" style="font-size: 10px;">Log4cpp</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PIMPL/" style="font-size: 10px;">PIMPL</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Singleton/" style="font-size: 10px;">Singleton</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/流/" style="font-size: 10px;">流</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -1296,6 +1373,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GDB/">
+                        <span class="tag">GDB</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
                         <span class="tag is-grey">1</span>
@@ -1352,8 +1443,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Linuxtips/">
+                        <span class="tag">Linuxtips</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Log4cpp/">
+                        <span class="tag">Log4cpp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Markdown/">
                         <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PIMPL/">
+                        <span class="tag">PIMPL</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1368,6 +1480,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Singleton/">
+                        <span class="tag">Singleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1394,8 +1520,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Vim，GCC/">
-                        <span class="tag">Vim，GCC</span>
+                    <a class="tags has-addons" href="/tags/Vim/">
+                        <span class="tag">Vim</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1485,13 +1611,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/指针-C/">
                         <span class="tag">指针(C)</span>
                         <span class="tag is-grey">1</span>
@@ -1520,6 +1639,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/流/">
+                        <span class="tag">流</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/类型转换-Java/">
                         <span class="tag">类型转换(Java)</span>
                         <span class="tag is-grey">1</span>
@@ -1530,6 +1656,13 @@
                     <a class="tags has-addons" href="/tags/线性结构-Java/">
                         <span class="tag">线性结构(Java)</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/设计模式/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

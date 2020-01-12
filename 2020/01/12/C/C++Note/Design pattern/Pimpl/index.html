@@ -2,26 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>C语言 指针 - Arnoldteams</title>
+<title>设计模式PIMPL - Arnoldteams</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
     
-    <meta name="description" content="建立数组123456char a[6];a[0]=&apos;s&apos;;a[1]=&apos;w&apos;;a[2]=&apos;3&apos;;a[5]=&apos;q&apos;;char *t=a;   a 为固定指针是数组a的首地址，不可直接进行运算。但可以通过以 [基地址+偏移量] 的思想来进行操作。 1234567printf(&quot;1--%d\n&quot;,a);	 //a 数组的首地址,即a[0]的地址 printf(&quot;2--%d\n&quot;,&amp;amp;a);	 //a">
-<meta name="keywords" content="指针">
+    <meta name="description" content="目的：实现信息隐藏–分离接口(接口层)和实现(实现层)；实现平滑库升级无需重新编译  隐藏的内容--LineImp实现层12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455class Line::LineImp&amp;#123;private:	clas">
+<meta name="keywords" content="设计模式,PIMPL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言 指针">
-<meta property="og:url" content="http://yoursite.com/2019/12/23/Pointer/index.html">
+<meta property="og:title" content="设计模式PIMPL">
+<meta property="og:url" content="http://yoursite.com/2020/01/12/C/C++Note/Design pattern/Pimpl/index.html">
 <meta property="og:site_name" content="Arnoldteams">
-<meta property="og:description" content="建立数组123456char a[6];a[0]=&apos;s&apos;;a[1]=&apos;w&apos;;a[2]=&apos;3&apos;;a[5]=&apos;q&apos;;char *t=a;   a 为固定指针是数组a的首地址，不可直接进行运算。但可以通过以 [基地址+偏移量] 的思想来进行操作。 1234567printf(&quot;1--%d\n&quot;,a);	 //a 数组的首地址,即a[0]的地址 printf(&quot;2--%d\n&quot;,&amp;amp;a);	 //a">
+<meta property="og:description" content="目的：实现信息隐藏–分离接口(接口层)和实现(实现层)；实现平滑库升级无需重新编译  隐藏的内容--LineImp实现层12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455class Line::LineImp&amp;#123;private:	clas">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.loli.net/2019/04/20/5cbb096b7c3db.png">
-<meta property="og:updated_time" content="2019-05-05T11:27:59.000Z">
+<meta property="og:updated_time" content="2020-01-12T13:09:56.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言 指针">
-<meta name="twitter:description" content="建立数组123456char a[6];a[0]=&apos;s&apos;;a[1]=&apos;w&apos;;a[2]=&apos;3&apos;;a[5]=&apos;q&apos;;char *t=a;   a 为固定指针是数组a的首地址，不可直接进行运算。但可以通过以 [基地址+偏移量] 的思想来进行操作。 1234567printf(&quot;1--%d\n&quot;,a);	 //a 数组的首地址,即a[0]的地址 printf(&quot;2--%d\n&quot;,&amp;amp;a);	 //a">
-<meta name="twitter:image" content="https://i.loli.net/2019/04/20/5cbb096b7c3db.png">
+<meta name="twitter:title" content="设计模式PIMPL">
+<meta name="twitter:description" content="目的：实现信息隐藏–分离接口(接口层)和实现(实现层)；实现平滑库升级无需重新编译  隐藏的内容--LineImp实现层12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455class Line::LineImp&amp;#123;private:	clas">
 
 
 
@@ -95,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="C语言 指针" height="28">
+                <img src="/images/logo.svg" alt="设计模式PIMPL" height="28">
             
             </a>
         </div>
@@ -144,17 +142,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:16.484Z">2019-12-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/C/">C</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 299 个字)
+                    1 分钟 读完 (大约 210 个字)
                 </span>
                 
                 
@@ -163,31 +157,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                C语言 指针
+                设计模式PIMPL
             
         </h1>
         <div class="content">
-            <figure class="highlight c hljs"><figcaption><span>建立数组</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> a[<span class="hljs-number">6</span>];</span><br><span class="line">a[<span class="hljs-number">0</span>]=<span class="hljs-string">'s'</span>;</span><br><span class="line">a[<span class="hljs-number">1</span>]=<span class="hljs-string">'w'</span>;</span><br><span class="line">a[<span class="hljs-number">2</span>]=<span class="hljs-string">'3'</span>;</span><br><span class="line">a[<span class="hljs-number">5</span>]=<span class="hljs-string">'q'</span>;</span><br><span class="line"><span class="hljs-keyword">char</span> *t=a;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2019/04/20/5cbb096b7c3db.png" alt=""></p>
-<ol>
-<li><p><code>a</code> 为<strong>固定</strong>指针是数组a的首地址，不可直接进行运算。但可以通过以 <strong>[基地址+偏移量]</strong> 的思想来进行操作。</p>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"1--%d\n"</span>,a);	 <span class="hljs-comment">//a 数组的首地址,即a[0]的地址 </span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"2--%d\n"</span>,&amp;a);	 <span class="hljs-comment">//a 数组的首地址</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"3--%d\n"</span>,&amp;a[<span class="hljs-number">5</span>]); <span class="hljs-comment">//a[5]的地址, </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"4--%s\n"</span>,&amp;a[<span class="hljs-number">1</span>]); <span class="hljs-comment">//a数组中从a[1]开始的字符串，&#123;w3&#125;	</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"5--%c\n"</span>,a[<span class="hljs-number">1</span>]);	 <span class="hljs-comment">//a[1]的内容(char),&#123;w&#125;</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"6--%d\n"</span>,*a);	 <span class="hljs-comment">//a[0]的内容(char),&#123;115&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>t</code>为<strong>浮动</strong>指针，初始化为指向数组a的首地址（注意区分a,t的不同），可直接进行运算来操作。</p>
-</li>
-</ol>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"8--%d\n"</span>,t);	  <span class="hljs-comment">//a 数组的首地址</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"9--%d\n"</span>,&amp;t);	  <span class="hljs-comment">//t指针的地址</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"10--%d\n"</span>,&amp;t[<span class="hljs-number">5</span>]); <span class="hljs-comment">//a[5]的地址</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"11--%s\n"</span>,&amp;t[<span class="hljs-number">1</span>]);<span class="hljs-comment">//a数组中从a[0]开始的字符串，&#123;w3&#125;	</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"12--%c\n"</span>,t[<span class="hljs-number">0</span>]);<span class="hljs-comment">//a[1]的内容(char),&#123;w&#125;</span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"13--%c\n"</span>,*t);	<span class="hljs-comment">//a[0]的内容(char),&#123;115&#125;</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>对<code>t</code>进行操作<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t++;</span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"14--%d\n"</span>,t);	  <span class="hljs-comment">//a[1] 的地址</span></span><br><span class="line"></span><br><span class="line">*t=<span class="hljs-string">'c'</span>;</span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"15--%c\n"</span>,*t);	  <span class="hljs-comment">//a[1] 的值，&#123;c&#125; </span></span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"16--%s\n"</span>,&amp;a[<span class="hljs-number">0</span>]);  <span class="hljs-comment">//a数组中从a[0]开始的字符串	，&#123;sc3&#125;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-
+            <ul>
+<li>目的：实现信息隐藏–分离接口(接口层)和实现(实现层)；实现平滑库升级无需重新编译</li>
+</ul>
+<figure class="highlight c++ hljs"><figcaption><span>隐藏的内容--LineImp实现层</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Line</span>:</span>:LineImp&#123;</span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">	<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>&#123;</span></span><br><span class="line">	<span class="hljs-keyword">public</span>:</span><br><span class="line">		Point(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y)</span><br><span class="line">		:_x(x)</span><br><span class="line">		,_y(y)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Point(int x,int y)"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		~Point()&#123;</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"~Point()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printpoint</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>&#123;</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"("</span> &lt;&lt; _x &lt;&lt; <span class="hljs-string">","</span> &lt;&lt;_y &lt;&lt; <span class="hljs-string">")"</span> ;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="hljs-keyword">private</span>:</span><br><span class="line">		<span class="hljs-keyword">int</span> _x;</span><br><span class="line">		<span class="hljs-keyword">int</span> _y;</span><br><span class="line">			</span><br><span class="line">	&#125;;</span><br><span class="line">	Point _p1;</span><br><span class="line">	Point _p2;</span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	LineImp(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y2);</span><br><span class="line">	~LineImp();</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printline</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-comment">//Line------------</span></span><br><span class="line">Line::Line(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y2)</span><br><span class="line">:line(<span class="hljs-keyword">new</span> LineImp(x1,y1,x2,y2))</span><br><span class="line">&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Line(int x1,int y1,int x2,int y2)"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">void</span> Line::destance() <span class="hljs-keyword">const</span>&#123;</span><br><span class="line">	line-&gt;printline();</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">//Line::LineImp------------</span></span><br><span class="line">Line::LineImp::LineImp(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y2)</span><br><span class="line">:_p1(x1,y1)</span><br><span class="line">,_p2(x2,y2)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"LineImp(Point p1,Point p2)"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Line::LineImp::~LineImp()&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"~LineImp()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">void</span> Line::LineImp::printline() <span class="hljs-keyword">const</span>&#123;</span><br><span class="line">	_p1.printpoint();</span><br><span class="line">	<span class="hljs-built_in">cout</span>&lt;&lt; <span class="hljs-string">"----&gt;"</span>;</span><br><span class="line">	_p2.printpoint();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++ hljs"><figcaption><span>展示的内容--Line接口层</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Line</span>&#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:	</span><br><span class="line">	Line(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y2);</span><br><span class="line">	~Line();</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">destance</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;	</span><br><span class="line">	<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LineImp</span>;</span>	</span><br><span class="line"><span class="hljs-keyword">private</span>:		</span><br><span class="line">	LineImp* line;	</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/指针/">指针</a>
+                    <a class="has-link-grey -link" href="/tags/PIMPL/">PIMPL</a>, <a class="has-link-grey -link" href="/tags/设计模式/">设计模式</a>
                 </div>
             </div>
         </div>
@@ -205,7 +190,7 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/12/23/JavaScriptNotes/JavaScript_Obj/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/01/12/C/C++Note/TempNote/">
                 <i class="level-item fas fa-chevron-left"></i>
                 <span class="level-item"></span>
             </a>
@@ -213,8 +198,8 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/23/JavaNotes/Java_HashMap&TreeMap/">
-                <span class="level-item">HashMap&amp;TreeMap</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/12/C/C++Note/Design pattern/Singleton/">
+                <span class="level-item">单例模式</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -245,22 +230,6 @@
         <a class="level is-marginless" href="/categories/Algorithm/">
             <span class="level-start">
                 <span class="level-item">Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">5</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C/">
-            <span class="level-start">
-                <span class="level-item">C</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C-Notes/">
-            <span class="level-start">
-                <span class="level-item">C Notes</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">5</span>
@@ -330,8 +299,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:56:28.726Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/Now/" class="has-link-black-ter is-size-6"></a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -343,8 +312,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:45:55.755Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/C/C++Linux/" class="has-link-black-ter is-size-6">C/C++Linux 工作需求</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -356,10 +325,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T08:23:48.207Z">2020-01-02</time></div>
-                    <a href="/2020/01/02/C/C++Note/CppBasic/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:40:51.545Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Singleton/" class="has-link-black-ter is-size-6">单例模式</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -369,10 +338,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-01T08:47:14.103Z">2020-01-01</time></div>
-                    <a href="/2020/01/01/C/C++Note/String/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:27:27.141Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Stream/" class="has-link-black-ter is-size-6">流</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -382,8 +351,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-31T01:31:18.634Z">2019-12-31</time></div>
-                    <a href="/2019/12/31/Tools/vscode/" class="has-link-black-ter is-size-6">Vscode</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:00:02.855Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/CodeRule/" class="has-link-black-ter is-size-6">代码规范</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -409,7 +378,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -420,7 +389,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">29</span>
+                    <span class="level-item tag">27</span>
                 </span>
             </a>
         </li>
@@ -464,7 +433,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        33
+                        38
                     </p>
                 </div>
             </div>
@@ -474,7 +443,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        7
                     </p>
                 </div>
             </div>
@@ -484,7 +453,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        45
+                        53
                     </p>
                 </div>
             </div>
@@ -615,7 +584,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/GDB/" style="font-size: 10px;">GDB</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Linuxtips/" style="font-size: 10px;">Linuxtips</a> <a href="/tags/Log4cpp/" style="font-size: 10px;">Log4cpp</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PIMPL/" style="font-size: 10px;">PIMPL</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Singleton/" style="font-size: 10px;">Singleton</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/流/" style="font-size: 10px;">流</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -685,6 +654,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GDB/">
+                        <span class="tag">GDB</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
                         <span class="tag is-grey">1</span>
@@ -741,8 +724,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Linuxtips/">
+                        <span class="tag">Linuxtips</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Log4cpp/">
+                        <span class="tag">Log4cpp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Markdown/">
                         <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PIMPL/">
+                        <span class="tag">PIMPL</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -757,6 +761,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Singleton/">
+                        <span class="tag">Singleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -783,8 +801,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Vim，GCC/">
-                        <span class="tag">Vim，GCC</span>
+                    <a class="tags has-addons" href="/tags/Vim/">
+                        <span class="tag">Vim</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -874,13 +892,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/指针-C/">
                         <span class="tag">指针(C)</span>
                         <span class="tag is-grey">1</span>
@@ -909,6 +920,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/流/">
+                        <span class="tag">流</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/类型转换-Java/">
                         <span class="tag">类型转换(Java)</span>
                         <span class="tag is-grey">1</span>
@@ -919,6 +937,13 @@
                     <a class="tags has-addons" href="/tags/线性结构-Java/">
                         <span class="tag">线性结构(Java)</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/设计模式/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -962,7 +987,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="C语言 指针" height="28">
+                    <img src="/images/logo.svg" alt="设计模式PIMPL" height="28">
                 
                 </a>
                 <p class="is-size-7">

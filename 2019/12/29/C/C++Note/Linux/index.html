@@ -2,24 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>C++基础 - Arnoldteams</title>
+<title>Linux基础 - Arnoldteams</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
     
-    <meta name="description" content="命名空间 using 编译指令 using namespace std; 引用std的全部实体 域限定符 namespace example {} using声明机制 using std::cout; 仅引用需要的实体   尽量使用const来替换define宏定义的使用 const 指针 const int *p //无法改所指内容，可以改指向 int * const p//可以改所指内容，无">
-<meta name="keywords" content="C++">
+    <meta name="description" content="Linux 命令  目录ls 详情ls -l 大小ls -lh 显示隐藏ls -a 条件ls |grep {name} 查看当前目录下的文件数量（不包含子目录中的文件）ls -l|grep &amp;quot;^-&amp;quot;| wc -l  查看当前目录下的文件数量（包含子目录,R代表子目录)ls -lR|grep &amp;quot;^-&amp;quot;| wc -l  查看当前目录下的文件夹目录个数（不包含子目">
+<meta name="keywords" content="linux命令,Vim,GCC,GDB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++基础">
-<meta property="og:url" content="http://yoursite.com/2019/12/31/C/C++Note/1231/index.html">
+<meta property="og:title" content="Linux基础">
+<meta property="og:url" content="http://yoursite.com/2019/12/29/C/C++Note/Linux/index.html">
 <meta property="og:site_name" content="Arnoldteams">
-<meta property="og:description" content="命名空间 using 编译指令 using namespace std; 引用std的全部实体 域限定符 namespace example {} using声明机制 using std::cout; 仅引用需要的实体   尽量使用const来替换define宏定义的使用 const 指针 const int *p //无法改所指内容，可以改指向 int * const p//可以改所指内容，无">
+<meta property="og:description" content="Linux 命令  目录ls 详情ls -l 大小ls -lh 显示隐藏ls -a 条件ls |grep {name} 查看当前目录下的文件数量（不包含子目录中的文件）ls -l|grep &amp;quot;^-&amp;quot;| wc -l  查看当前目录下的文件数量（包含子目录,R代表子目录)ls -lR|grep &amp;quot;^-&amp;quot;| wc -l  查看当前目录下的文件夹目录个数（不包含子目">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-02T08:18:08.048Z">
+<meta property="og:updated_time" content="2020-01-12T13:12:55.283Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++基础">
-<meta name="twitter:description" content="命名空间 using 编译指令 using namespace std; 引用std的全部实体 域限定符 namespace example {} using声明机制 using std::cout; 仅引用需要的实体   尽量使用const来替换define宏定义的使用 const 指针 const int *p //无法改所指内容，可以改指向 int * const p//可以改所指内容，无">
+<meta name="twitter:title" content="Linux基础">
+<meta name="twitter:description" content="Linux 命令  目录ls 详情ls -l 大小ls -lh 显示隐藏ls -a 条件ls |grep {name} 查看当前目录下的文件数量（不包含子目录中的文件）ls -l|grep &amp;quot;^-&amp;quot;| wc -l  查看当前目录下的文件数量（包含子目录,R代表子目录)ls -lR|grep &amp;quot;^-&amp;quot;| wc -l  查看当前目录下的文件夹目录个数（不包含子目">
 
 
 
@@ -93,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="C++基础" height="28">
+                <img src="/images/logo.svg" alt="Linux基础" height="28">
             
             </a>
         </div>
@@ -142,17 +142,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-31T01:23:21.078Z">2019-12-31</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-12-29T13:47:31.234Z">2019-12-29</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 476 个字)
+                    4 分钟 读完 (大约 595 个字)
                 </span>
                 
                 
@@ -161,46 +157,139 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                C++基础
+                Linux基础
             
         </h1>
         <div class="content">
-            <ul>
-<li><strong>命名空间</strong><ul>
-<li>using 编译指令 using namespace std; 引用std的全部实体</li>
-<li>域限定符 namespace example {}</li>
-<li>using声明机制 using std::cout; 仅引用需要的实体</li>
+            <h4><span id="linux-命令">Linux 命令</span></h4><hr>
+<ul>
+<li>目录ls<ul>
+<li>详情ls -l</li>
+<li>大小ls -lh</li>
+<li>显示隐藏ls -a</li>
+<li>条件ls |grep {name}</li>
+<li>查看当前目录下的文件数量（不包含子目录中的文件）<pre><code>ls -l|grep &quot;^-&quot;| wc -l
+</code></pre></li>
+<li>查看当前目录下的文件数量（包含子目录,R代表子目录)<pre><code>ls -lR|grep &quot;^-&quot;| wc -l
+</code></pre></li>
+<li>查看当前目录下的文件夹目录个数（不包含子目录中的目录）      ls -l|grep “^d”| wc -l</li>
+<li>树形目录tree {file}<ul>
+<li>安装apt install tree</li>
 </ul>
 </li>
-<li>尽量使用<strong>const</strong>来替换define宏定义的使用</li>
-<li>const 指针<ul>
-<li>const int *p //无法改所指内容，可以改指向</li>
-<li>int * const p//可以改所指内容，无法改指向</li>
-<li>const int * const p//数据指向均不能变</li>
 </ul>
 </li>
-<li>数组的指针 int (<em>p)[5]  指针的数组 int </em>p[5] </li>
-<li>函数的指针 int (<em>a)(void) 指针函数 int </em>a (void)</li>
-<li>函数内的未初始化的指针为<strong>野指针</strong>–被随机分配的</li>
-<li><strong>内存泄漏</strong>–分配的内存未回收</li>
-<li><strong>malloc / free</strong>是C/C++语言的标准库函数;管理动态内存</li>
-<li><strong>new / delete</strong>是C++的运算符或表达式;自动分配空间初始化;构造和析构函数的调用</li>
-<li><strong>引用</strong>即是变量的别名，必须初始化，初始化后指向不会改变</li>
-<li>普通函数的返回值是<strong>临时变量</strong>,不可取引用</li>
-<li>不要返回<strong>堆空间的引用</strong>，会引起内存泄漏</li>
-<li><strong>堆</strong>中空闲块组成的空闲链，<strong>malloc</strong>从链表头依次查找空闲块，符合申请空间的空闲块从链表取出进行分配；<strong>free</strong> 将需要释放的块加入空闲链表示回收</li>
-<li>A，B..，X <strong>逗号表达式</strong>，返回值为X,与A B .. 无关</li>
-<li>通过函数名的改编实现函数<strong>重载</strong></li>
-<li><p>C/C++混合编程</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> _cplusplus</span></span><br><span class="line"><span class="hljs-keyword">extern</span> <span class="hljs-string">"C"</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br><span class="line"><span class="hljs-comment">/* c/c++ 代码段</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> _cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数<strong>默认形参</strong><br>  fun(int a1,int a2 … int ak…int an);<br>  如果k设置了默认参数，则ak…an全部需要设置默认参数</p>
-</li>
-<li><strong>内联inline</strong> 仅可使用在函数<strong>实现</strong>的前面 inline int f(){}；写在定义前无效。<ul>
-<li>inline 函数中<strong>不要写循环</strong> </li>
+<li>路径pwd </li>
+<li>权限chmod 777 {file}<ul>
+<li>[拥有者][组用户][其他]</li>
 </ul>
 </li>
-<li><strong>数组</strong>大小 sizeof(a)-1</li>
+<li>查找find {name}<ul>
+<li>指定目录按名查找find /abc -name file</li>
+</ul>
+</li>
+<li>复制cp <ul>
+<li>文件夹cp -r {file1} {file2}</li>
+</ul>
+</li>
+<li>移动mv<ul>
+<li>重命名 mv {dir1} {dir2}</li>
+</ul>
+</li>
+<li>创建<ul>
+<li>文件夹mkdir</li>
+<li>文件touch {file}/echo -n&gt; {file}</li>
+</ul>
+</li>
+<li>查看cat<ul>
+<li>头部分head -n {n}</li>
+<li>尾部分tail -n {n}</li>
+<li>部分 more<ul>
+<li>f和b前向后翻页q退出</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>删除rm</li>
+<li>磁盘df -h<ul>
+<li>文件du -h –max-depth=0</li>
+</ul>
+</li>
+<li><p>链接li -s {file1} {file2}</p>
+</li>
+<li><p>用户 cat /etc/passwd</p>
+<ul>
+<li>切换su {user}</li>
+<li>退出exit  </li>
+<li>添加useradd {user}<ul>
+<li>添加到/home:useradd -m {user} -s /bin/bash</li>
+</ul>
+</li>
+<li>修改密码passwd {user}</li>
+<li>删除userdel {user} -r/f</li>
+</ul>
+</li>
+<li>首次登陆需设置sudo密码<ul>
+<li>sudo passwd</li>
+</ul>
+</li>
+</ul>
+<h4><span id="vim">Vim</span></h4><hr>
+<ul>
+<li>h j k l / w e b移动</li>
+<li>模式:i输入/v视图</li>
+<li>：q! 退出不保存/：w 保存/：q 退出/：</li>
+<li>多标签 e {file} <ul>
+<li>多标签切换Ctrl+^</li>
+</ul>
+</li>
+<li>复制{n}yy, 复制n行-&gt;按p粘贴</li>
+<li>删除{n}dd，删除n行-&gt;<strong>按u撤销</strong><ul>
+<li>{n}x，删除n个字母</li>
+<li>x,删除一个字母</li>
+</ul>
+</li>
+<li>行号 set nu</li>
+<li>选定<ul>
+<li>Ctrl+v/v</li>
+</ul>
+</li>
+<li>分屏<ul>
+<li>：vs/sp</li>
+<li>切换 Ctrl+ww</li>
+</ul>
+</li>
+<li>注释<br>选定 -&gt; shift+i -&gt; // -&gt; Esc</li>
+<li>普通模式gg=G 自动对齐</li>
+</ul>
+<h4><span id="gcc">GCC</span></h4><hr>
+<ul>
+<li>预处理-&gt;编译-&gt;汇编-&gt;链接</li>
+<li>静态库<em>.a/</em>.lib<ul>
+<li>必要文件<br>vim multi.c<br>vim multi.h<br>vim main.c</li>
+<li>建立静态库并移动到/usr/lib<br>编译 gcc -c multi.c<br>归档 ar crsv libmulti.a multi.o<br>sudo cp libmulti.a /usr/lib</li>
+<li>链接并执行<br>gcc -o main main.c -l multi<br>./main</li>
+</ul>
+</li>
+<li>动态库<em>.so/</em>.dll<ul>
+<li>必要文件(同上)</li>
+<li>建立动态库并移动到/usr/lib<br>gcc -fPIC -Wall -c multi.c -o multi2.o<br>gcc -shared -o libmulti2.so multi2.o<br>sudo cp libmulti2.so /usr/lib</li>
+<li>更新cache<br>sudo ldconfig</li>
+<li>链接并执行<br>gcc main main.c -l multi2</li>
+</ul>
+</li>
+</ul>
+<h4><span id="gdb">GDB</span></h4><hr>
+<ul>
+<li>gcc -g -o test test.c</li>
+<li>显示部分行l</li>
+<li>回车执行上一条命令</li>
+<li>断点 b {n}</li>
+<li>单步执行n</li>
+<li>运行r</li>
+<li>查看变量c的值 p c</li>
+<li>进入函数 s</li>
+<li>栈调用查看bt</li>
 </ul>
 
         </div>
@@ -209,7 +298,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/C/">C++</a>
+                    <a class="has-link-grey -link" href="/tags/GCC/">GCC</a>, <a class="has-link-grey -link" href="/tags/GDB/">GDB</a>, <a class="has-link-grey -link" href="/tags/Vim/">Vim</a>, <a class="has-link-grey -link" href="/tags/linux命令/">linux命令</a>
                 </div>
             </div>
         </div>
@@ -235,8 +324,8 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/29/C/C++Note/1229/">
-                <span class="level-item">Linux基础</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/23/Tools/Evermonkey/">
+                <span class="level-item">EverMonkey印象笔记插件</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -267,22 +356,6 @@
         <a class="level is-marginless" href="/categories/Algorithm/">
             <span class="level-start">
                 <span class="level-item">Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">5</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C/">
-            <span class="level-start">
-                <span class="level-item">C</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C-Notes/">
-            <span class="level-start">
-                <span class="level-item">C Notes</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">5</span>
@@ -352,8 +425,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:56:28.726Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/Now/" class="has-link-black-ter is-size-6"></a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -365,8 +438,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:45:55.755Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/C/C++Linux/" class="has-link-black-ter is-size-6">C/C++Linux 工作需求</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -378,10 +451,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T08:23:48.207Z">2020-01-02</time></div>
-                    <a href="/2020/01/02/C/C++Note/CppBasic/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:40:51.545Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Singleton/" class="has-link-black-ter is-size-6">单例模式</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -391,10 +464,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-01T08:47:14.103Z">2020-01-01</time></div>
-                    <a href="/2020/01/01/C/C++Note/String/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:27:27.141Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Stream/" class="has-link-black-ter is-size-6">流</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -404,8 +477,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-31T01:31:18.634Z">2019-12-31</time></div>
-                    <a href="/2019/12/31/Tools/vscode/" class="has-link-black-ter is-size-6">Vscode</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:00:02.855Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/CodeRule/" class="has-link-black-ter is-size-6">代码规范</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -431,7 +504,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -442,7 +515,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">29</span>
+                    <span class="level-item tag">27</span>
                 </span>
             </a>
         </li>
@@ -486,7 +559,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        33
+                        38
                     </p>
                 </div>
             </div>
@@ -496,7 +569,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        7
                     </p>
                 </div>
             </div>
@@ -506,7 +579,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        45
+                        53
                     </p>
                 </div>
             </div>
@@ -637,7 +710,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/GDB/" style="font-size: 10px;">GDB</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Linuxtips/" style="font-size: 10px;">Linuxtips</a> <a href="/tags/Log4cpp/" style="font-size: 10px;">Log4cpp</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PIMPL/" style="font-size: 10px;">PIMPL</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Singleton/" style="font-size: 10px;">Singleton</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/流/" style="font-size: 10px;">流</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -707,6 +780,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GDB/">
+                        <span class="tag">GDB</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
                         <span class="tag is-grey">1</span>
@@ -763,8 +850,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Linuxtips/">
+                        <span class="tag">Linuxtips</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Log4cpp/">
+                        <span class="tag">Log4cpp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Markdown/">
                         <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PIMPL/">
+                        <span class="tag">PIMPL</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -779,6 +887,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Singleton/">
+                        <span class="tag">Singleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -805,8 +927,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Vim，GCC/">
-                        <span class="tag">Vim，GCC</span>
+                    <a class="tags has-addons" href="/tags/Vim/">
+                        <span class="tag">Vim</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -896,13 +1018,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/指针-C/">
                         <span class="tag">指针(C)</span>
                         <span class="tag is-grey">1</span>
@@ -931,6 +1046,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/流/">
+                        <span class="tag">流</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/类型转换-Java/">
                         <span class="tag">类型转换(Java)</span>
                         <span class="tag is-grey">1</span>
@@ -941,6 +1063,13 @@
                     <a class="tags has-addons" href="/tags/线性结构-Java/">
                         <span class="tag">线性结构(Java)</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/设计模式/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -984,7 +1113,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="C++基础" height="28">
+                    <img src="/images/logo.svg" alt="Linux基础" height="28">
                 
                 </a>
                 <p class="is-size-7">

@@ -138,13 +138,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-03T00:56:28.726Z">2020-01-03</time>
+                <time class="level-item has-text-grey" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 23 个字)
+                    几秒 读完 (大约 0 个字)
                 </span>
                 
                 
@@ -153,21 +153,55 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/01/03/Job/Now/"></a>
+                <a class="has-link-black-ter" href="/2020/01/12/C/C++Note/TempNote/"></a>
+            
+        </h1>
+        <div class="content">
+            
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 210 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/01/12/C/C++Note/Design pattern/Pimpl/">设计模式PIMPL</a>
             
         </h1>
         <div class="content">
             <ul>
-<li>shell脚本</li>
-<li><p>gdb调试</p>
-</li>
-<li><p>编码风格</p>
-</li>
-<li>文档编写</li>
-<li>概要设计、详细设计</li>
-<li>-</li>
+<li>目的：实现信息隐藏–分离接口(接口层)和实现(实现层)；实现平滑库升级无需重新编译</li>
 </ul>
-
+<figure class="highlight c++ hljs"><figcaption><span>隐藏的内容--LineImp实现层</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Line</span>:</span>:LineImp&#123;</span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">	<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span>&#123;</span></span><br><span class="line">	<span class="hljs-keyword">public</span>:</span><br><span class="line">		Point(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y)</span><br><span class="line">		:_x(x)</span><br><span class="line">		,_y(y)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Point(int x,int y)"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		~Point()&#123;</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"~Point()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printpoint</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>&#123;</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"("</span> &lt;&lt; _x &lt;&lt; <span class="hljs-string">","</span> &lt;&lt;_y &lt;&lt; <span class="hljs-string">")"</span> ;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="hljs-keyword">private</span>:</span><br><span class="line">		<span class="hljs-keyword">int</span> _x;</span><br><span class="line">		<span class="hljs-keyword">int</span> _y;</span><br><span class="line">			</span><br><span class="line">	&#125;;</span><br><span class="line">	Point _p1;</span><br><span class="line">	Point _p2;</span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	LineImp(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y2);</span><br><span class="line">	~LineImp();</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printline</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-comment">//Line------------</span></span><br><span class="line">Line::Line(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y2)</span><br><span class="line">:line(<span class="hljs-keyword">new</span> LineImp(x1,y1,x2,y2))</span><br><span class="line">&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Line(int x1,int y1,int x2,int y2)"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">void</span> Line::destance() <span class="hljs-keyword">const</span>&#123;</span><br><span class="line">	line-&gt;printline();</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">//Line::LineImp------------</span></span><br><span class="line">Line::LineImp::LineImp(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y2)</span><br><span class="line">:_p1(x1,y1)</span><br><span class="line">,_p2(x2,y2)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"LineImp(Point p1,Point p2)"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Line::LineImp::~LineImp()&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"~LineImp()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">void</span> Line::LineImp::printline() <span class="hljs-keyword">const</span>&#123;</span><br><span class="line">	_p1.printpoint();</span><br><span class="line">	<span class="hljs-built_in">cout</span>&lt;&lt; <span class="hljs-string">"----&gt;"</span>;</span><br><span class="line">	_p2.printpoint();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++ hljs"><figcaption><span>展示的内容--Line接口层</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Line</span>&#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:	</span><br><span class="line">	Line(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y2);</span><br><span class="line">	~Line();</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">destance</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;	</span><br><span class="line">	<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LineImp</span>;</span>	</span><br><span class="line"><span class="hljs-keyword">private</span>:		</span><br><span class="line">	LineImp* line;	</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -188,13 +222,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-03T00:45:55.755Z">2020-01-03</time>
+                <time class="level-item has-text-grey" datetime="2020-01-12T12:40:51.545Z">2020-01-12</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 682 个字)
+                    1 分钟 读完 (大约 133 个字)
                 </span>
                 
                 
@@ -203,189 +237,12 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/01/03/Job/C/C++Linux/">C/C++Linux 工作需求</a>
+                <a class="has-link-black-ter" href="/2020/01/12/C/C++Note/Design pattern/Singleton/">单例模式</a>
             
         </h1>
         <div class="content">
-            <ol>
-<li></li>
-</ol>
-<ul>
-<li>linux下各种命令、<strong>shell脚本</strong>。</li>
-<li>linux C/C++编程，熟悉makefile，熟悉linux软件编译及调试过程</li>
-<li>使用QT开发界面工程。</li>
-<li>掌握<strong>数据结构，常用算法</strong>;</li>
-<li>擅长沟通和团队协作能力;</li>
-<li>具有较强的技术<strong>文档写作</strong>能力，能高质量完成开发、设计相关技术<strong>文档编写</strong>工作。</li>
-<li>熟悉linux下pam登录机制。</li>
-<li>熟悉linux下selinux安全机制。</li>
-</ul>
-<p><code>makefile  linux软件编译及调试   QT开发界面 pam登录机制 selinux安全机制</code></p>
-<hr>
-<ol start="2">
-<li></li>
-</ol>
-<ul>
-<li>精通c/c++的基本原理和语法；熟悉Linux系统编程开发， 熟悉<strong>gdb调试</strong>；</li>
-<li>熟悉DPDK的相关知识和编程，熟悉<strong>TCP/IP协议</strong>，熟悉协议分析和流量分析，具备信息安全领域技术经验者优先考虑；</li>
-<li>精通本领域的各种编程语言和开发工具，可以独立完成大型产品的独立模块或者小型产品的开发工作；</li>
-<li>具备较强的<strong>概要设计、详细设计和文档编写</strong>能力，能够独立查找、解决开发中出现的常见问题；</li>
-</ul>
-<p><code>DPDK  TCP/IP协议  协议分析  流量分析</code></p>
-<hr>
-<ol start="3">
-<li></li>
-</ol>
-<ul>
-<li>有linux c/c++开发经验，<strong>编码风格良好</strong>；</li>
-<li>熟悉常用算法及设计模式；具有linux下网络抓包分析的经验；</li>
-<li>熟悉http,https,smtp等常用网络协议知识；</li>
-<li>熟悉代理服务器，中间件开发优先；</li>
-<li>热爱编程、思路清晰、善于思考、能<strong>独立分析和解决问题</strong>；</li>
-<li>团队协作，抗压能力强，从事过协议解析优先。</li>
-</ul>
-<p><code>网络抓包  http,https,smtp协议 linux下网络抓包分析  代理服务器  中间件   协议解析</code></p>
-<hr>
-<ol start="4">
-<li></li>
-</ol>
-<ul>
-<li>熟悉Linux下的C/C++开发；熟悉相关开发工具；了解数据库开发；</li>
-<li>熟悉 linux系统编程、或内核编程、或linux文件过滤编程；</li>
-<li>了解设计模式，有一定设计经验者优先；</li>
-<li>良好的沟通协作能力。</li>
-</ul>
-<p><code>数据库开发   内核编程  linux文件过滤编程  设计模式</code></p>
-<hr>
-<ol start="5">
-<li></li>
-</ol>
-<ul>
-<li>熟悉Linux操作系统，熟悉 Linux 内核开发者优先</li>
-<li>熟悉docker的常用操作和相关解决方案</li>
-<li>有opencv实际开发经验懂docker容器优先，</li>
-<li>有较强的独立工作能力和解决问题的能力，做事<strong>认真负责</strong></li>
-<li>具备良好的<strong>分析能力、表达能力和人际沟通</strong>能力</li>
-<li>具有良好的<strong>英语</strong>文章阅读能</li>
-</ul>
-<p><code>内核开发  docker  opencv</code></p>
-<hr>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-02T08:23:48.207Z">2020-01-02</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 分钟 读完 (大约 991 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/01/02/C/C++Note/CppBasic/">C++基础</a>
-            
-        </h1>
-        <div class="content">
-            <h4><span id="代码规范">代码规范</span></h4><hr>
-<ul>
-<li>自定义类型名使用<strong>大写</strong>开头</li>
-<li>类内成员变量使用 <strong>_name</strong> 来区分</li>
-<li>成员函数，变量名<strong>驼峰</strong>命名E.g: setStudentName()</li>
-<li>定义类首先写<strong>功能接口</strong>，底部是<strong>数据成员</strong></li>
-</ul>
-<h4><span id="类和对象">类和对象</span></h4><hr>
-<ul>
-<li><strong>class</strong> 默认private ，<strong>struct</strong> 默认public</li>
-<li>类内的函数默认<strong>inline</strong>函数</li>
-<li><p>类外部定义成员函数需要在类内声明</p>
-</li>
-<li><p><strong>内存空间</strong>（高-&gt;低）</p>
-<ul>
-<li>内核区:操作系统运行区</li>
-<li>栈：函数，变量</li>
-<li>堆：new/delete 的对象</li>
-<li>读写段（静态常量区）:全局，静态变量；生命周期到main执行结束</li>
-<li>只读段：字符串，程序代码</li>
-</ul>
-</li>
-<li>拷贝<ul>
-<li>浅拷贝 仅copy地址</li>
-<li>深拷贝 新开空间+拷贝内容</li>
-</ul>
-</li>
-<li>左值&amp;右值<ul>
-<li>无法取地址的值为<strong>右值</strong> lvalue—常量、临时对象</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> num=<span class="hljs-number">1</span>;<span class="hljs-comment">//可以去地址：左值</span></span><br><span class="line"><span class="hljs-keyword">int</span> &amp;a=num;<span class="hljs-comment">//非const仅可左值引用</span></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;b=<span class="hljs-number">1</span>;<span class="hljs-comment">//仅const可以右值引用；1为右值</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;a)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cfun</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;a)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f0</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125; </span><br><span class="line">fun(<span class="hljs-number">1</span>)<span class="hljs-comment">//Error ,非const仅可左值引用；1为右值</span></span><br><span class="line">fun(f0())<span class="hljs-comment">//Error ,f0()返回右值</span></span><br><span class="line">cfun(f0())<span class="hljs-comment">//正确</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>this指针</strong>形态</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fun1</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//Entity const *this --隐含的this形态</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//const成员函数 ：只能读取数据成员，只能调用const成员函数</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fun2</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//const Entity const *this --隐含的this形态</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>构造函数</strong>初始化分配资源：malloc / new </p>
-<ul>
-<li>构造函数先执行初始化表达式,初始化的顺序与成员变量声明的顺序一致</li>
-</ul>
-</li>
-<li><strong>析构函数</strong><ul>
-<li>回收分配给对象的资源不是对象本身；对象本身需要由free/delete来销毁</li>
-<li>栈，全局，静态 对象在程序结束是自动调用析构；堆对象 需要手动调用free/delete来销毁对象，销毁过程自动调用析构。</li>
-</ul>
-</li>
-<li><strong>拷贝构造函数</strong>的调用：对<code>新对象</code>进行赋值时；传递参数为对象时<ul>
-<li>默认浅拷贝，因此涉及到内存空间操作时需要重写为深拷贝</li>
-<li>使用引用<code>&amp;符号</code>为了防止无限递归调用<ul>
-<li><code>注：仅在已有对象对新对象赋值才会调用，已经存在的对象之间赋值不调用</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>赋值运算符函数</strong>：已经存在的对象间赋值 [a=b] 操作(内存泄漏，double free)；必须显式定义重载(释放a空间；再深拷贝b)</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">String</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    String();<span class="hljs-comment">//构造函数 </span></span><br><span class="line">    String(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *);</span><br><span class="line">    </span><br><span class="line">    ~String();<span class="hljs-comment">//析构函数</span></span><br><span class="line">    </span><br><span class="line">    String(<span class="hljs-keyword">const</span> String &amp;rhs);<span class="hljs-comment">//拷贝构造函数 </span></span><br><span class="line">	</span><br><span class="line">    String &amp;<span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> String &amp;);<span class="hljs-comment">//赋值运算符函数</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    	<span class="hljs-built_in">cout</span>&lt;&lt;_pstr&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* c)</span></span>&#123;<span class="hljs-comment">//strlen</span></span><br><span class="line">		<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>,t=<span class="hljs-number">0</span>;;</span><br><span class="line">		<span class="hljs-keyword">while</span>(c[i]!=<span class="hljs-string">'\0'</span>)&#123;</span><br><span class="line">			i++;</span><br><span class="line">			t++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">return</span> t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cpy</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *ch, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *str)</span></span>&#123;<span class="hljs-comment">//strcpy</span></span><br><span class="line">		<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;</span><br><span class="line">		<span class="hljs-keyword">while</span>(str[i]!=<span class="hljs-string">'\0'</span>)&#123;</span><br><span class="line">			ch[i]=str[i];</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		ch[i+<span class="hljs-number">1</span>]=<span class="hljs-string">'\0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">    <span class="hljs-keyword">char</span> * _pstr;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-comment">//构造函数 -------------------- </span></span><br><span class="line">String::String()</span><br><span class="line">:_pstr(<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">1</span>])</span><br><span class="line">&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"构造函数 1"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    *_pstr=<span class="hljs-string">'\0'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">String::String(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* pstr)</span><br><span class="line">:_pstr(<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[size(pstr)+<span class="hljs-number">1</span>])</span><br><span class="line">&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"构造函数 2"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    cpy(_pstr,pstr);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">//拷贝构造函数 -------------------</span></span><br><span class="line">String::String(<span class="hljs-keyword">const</span> String &amp; rhs)</span><br><span class="line"><span class="hljs-comment">//引用&amp;防止循环递归调用；const是为了防止传递右值</span></span><br><span class="line">:_pstr(<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[size(rhs._pstr)+<span class="hljs-number">1</span>])</span><br><span class="line">&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"拷贝构造函数"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    cpy(_pstr,rhs._pstr);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">//析构函数-----------------------</span></span><br><span class="line">String::~String()&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"析构函数"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-keyword">delete</span> [] _pstr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//赋值运算符函数------------------ </span></span><br><span class="line">String &amp; String::<span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> String &amp;rhs)&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"赋值运算符函数"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span> != &amp;rhs)&#123;        <span class="hljs-comment">//自复制判断</span></span><br><span class="line">        <span class="hljs-keyword">delete</span> [] _pstr;     <span class="hljs-comment">//回收左操作数资源</span></span><br><span class="line">        _pstr=<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span> [size(rhs._pstr)+<span class="hljs-number">1</span>];<span class="hljs-comment">//深拷贝</span></span><br><span class="line">        cpy(_pstr,rhs._pstr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>静态成员函数</strong></p>
-<ul>
-<li><code>仅</code>可以操作静态函数</li>
-<li>可以直接通过类名调用，无需通过对象</li>
-<li>没有this指针</li>
-<li>虽然是静态的但是仍然放在代码段不是静态区   </li>
-<li>仅可以在全局初始化</li>
-</ul>
-</li>
-<li><strong>单例</strong><ul>
-<li>应用：全局对象；配置文件;词典库<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Entity</span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> Entity* <span class="hljs-title">getEntity</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(pEntity==<span class="hljs-literal">nullptr</span>)</span><br><span class="line">            pEntity=<span class="hljs-keyword">new</span> Entity();</span><br><span class="line">        <span class="hljs-keyword">return</span> pEntity;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">delEntity</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(pEntity!=<span class="hljs-literal">nullptr</span>)</span><br><span class="line">            <span class="hljs-keyword">delete</span> pEntity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line"></span><br><span class="line">    Entity()&#123;<span class="hljs-comment">//构造函数私有化</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    ~Entity()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">static</span> Entity* pEntity;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Entity::Entity* pEntity=<span class="hljs-literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    Entity e=Entity::getEntity();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">delete</span> e;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
+            <h4><span id="设计目的">设计目的</span></h4><ul>
+<li>避免对象的频繁创建和销毁节省空间和资源<figure class="highlight c++ hljs"><figcaption><span>带有自动销毁的单例模式</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>;</span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>;</span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleten</span>&#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">static</span> Singleten* <span class="hljs-title">getSingleten</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"getSingleten()"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">		<span class="hljs-keyword">if</span>(_singleton==<span class="hljs-literal">nullptr</span>)&#123;</span><br><span class="line">			_singleton = <span class="hljs-keyword">new</span> Singleten();</span><br><span class="line">			<span class="hljs-keyword">return</span> _singleton;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">else</span></span><br><span class="line">			<span class="hljs-keyword">return</span> _singleton;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="hljs-comment">//	void destory()&#123;</span></span><br><span class="line"><span class="hljs-comment">//		cout &lt;&lt; "destory()" &lt;&lt; endl;</span></span><br><span class="line"><span class="hljs-comment">//		if(_singleton!=nullptr)</span></span><br><span class="line"><span class="hljs-comment">//			delete _singleton;</span></span><br><span class="line"><span class="hljs-comment">//	&#125;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Autodestory</span>&#123;</span></span><br><span class="line">	<span class="hljs-keyword">public</span>:</span><br><span class="line">		Autodestory()&#123;</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Autodestory()"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		~Autodestory()&#123;			</span><br><span class="line">			<span class="hljs-keyword">if</span>(_singleton!=<span class="hljs-literal">nullptr</span>)&#123;</span><br><span class="line">				<span class="hljs-keyword">delete</span> _singleton;</span><br><span class="line">				<span class="hljs-built_in">cout</span> &lt;&lt;<span class="hljs-string">"~Autodestory()"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">			&#125;				</span><br><span class="line">		&#125;				</span><br><span class="line">	&#125;;	</span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">	<span class="hljs-keyword">static</span> Singleten* _singleton;</span><br><span class="line">	<span class="hljs-keyword">static</span> Autodestory _ao;</span><br><span class="line">	Singleten()&#123;</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Singleten()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	~Singleten()&#123;</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"~Singleten()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">	&#125;			</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Singleten* Singleten::_singleton = getSingleten();</span><br><span class="line">Singleten::Autodestory Singleten::_ao;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	Singleten *s1 = Singleten::getSingleten();</span><br><span class="line">	Singleten *s2 = Singleten::getSingleten();</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p,%p"</span>,s1,s2);</span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
         </div>
@@ -420,7 +277,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/11/">11</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/13/">13</a></li>
             
         </ul>
     </nav>
@@ -447,22 +304,6 @@
         <a class="level is-marginless" href="/categories/Algorithm/">
             <span class="level-start">
                 <span class="level-item">Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">5</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C/">
-            <span class="level-start">
-                <span class="level-item">C</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/C-Notes/">
-            <span class="level-start">
-                <span class="level-item">C Notes</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">5</span>
@@ -532,8 +373,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:56:28.726Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/Now/" class="has-link-black-ter is-size-6"></a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -545,8 +386,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-03T00:45:55.755Z">2020-01-03</time></div>
-                    <a href="/2020/01/03/Job/C/C++Linux/" class="has-link-black-ter is-size-6">C/C++Linux 工作需求</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -558,10 +399,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T08:23:48.207Z">2020-01-02</time></div>
-                    <a href="/2020/01/02/C/C++Note/CppBasic/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:40:51.545Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Design pattern/Singleton/" class="has-link-black-ter is-size-6">单例模式</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -571,10 +412,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-01T08:47:14.103Z">2020-01-01</time></div>
-                    <a href="/2020/01/01/C/C++Note/String/" class="has-link-black-ter is-size-6">C++基础</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:27:27.141Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/Stream/" class="has-link-black-ter is-size-6">流</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C-Notes/">C Notes</a>
+                        
                     </p>
                 </div>
             </div>
@@ -584,8 +425,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-31T01:31:18.634Z">2019-12-31</time></div>
-                    <a href="/2019/12/31/Tools/vscode/" class="has-link-black-ter is-size-6">Vscode</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:00:02.855Z">2020-01-12</time></div>
+                    <a href="/2020/01/12/C/C++Note/CodeRule/" class="has-link-black-ter is-size-6">代码规范</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -611,7 +452,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">11</span>
                 </span>
             </a>
         </li>
@@ -622,7 +463,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">29</span>
+                    <span class="level-item tag">27</span>
                 </span>
             </a>
         </li>
@@ -666,7 +507,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        33
+                        38
                     </p>
                 </div>
             </div>
@@ -676,7 +517,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        7
                     </p>
                 </div>
             </div>
@@ -686,7 +527,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        45
+                        53
                     </p>
                 </div>
             </div>
@@ -817,7 +658,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/GDB/" style="font-size: 10px;">GDB</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Linuxtips/" style="font-size: 10px;">Linuxtips</a> <a href="/tags/Log4cpp/" style="font-size: 10px;">Log4cpp</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PIMPL/" style="font-size: 10px;">PIMPL</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Singleton/" style="font-size: 10px;">Singleton</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/流/" style="font-size: 10px;">流</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -887,6 +728,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GDB/">
+                        <span class="tag">GDB</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
                         <span class="tag is-grey">1</span>
@@ -943,8 +798,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Linuxtips/">
+                        <span class="tag">Linuxtips</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Log4cpp/">
+                        <span class="tag">Log4cpp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Markdown/">
                         <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PIMPL/">
+                        <span class="tag">PIMPL</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -959,6 +835,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Singleton/">
+                        <span class="tag">Singleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -985,8 +875,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Vim，GCC/">
-                        <span class="tag">Vim，GCC</span>
+                    <a class="tags has-addons" href="/tags/Vim/">
+                        <span class="tag">Vim</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1076,13 +966,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/指针-C/">
                         <span class="tag">指针(C)</span>
                         <span class="tag is-grey">1</span>
@@ -1111,6 +994,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/流/">
+                        <span class="tag">流</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/类型转换-Java/">
                         <span class="tag">类型转换(Java)</span>
                         <span class="tag is-grey">1</span>
@@ -1121,6 +1011,13 @@
                     <a class="tags has-addons" href="/tags/线性结构-Java/">
                         <span class="tag">线性结构(Java)</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/设计模式/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1193,7 +1090,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        33
+                        38
                     </p>
                 </div>
             </div>
@@ -1203,7 +1100,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        7
                     </p>
                 </div>
             </div>
@@ -1213,7 +1110,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        45
+                        53
                     </p>
                 </div>
             </div>
@@ -1344,7 +1241,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim，GCC/" style="font-size: 10px;">Vim，GCC</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
+        <a href="/tags/ArrayList-Java/" style="font-size: 10px;">ArrayList(Java)</a> <a href="/tags/Arrays-Java/" style="font-size: 10px;">Arrays(Java)</a> <a href="/tags/BigDecimal/" style="font-size: 10px;">BigDecimal</a> <a href="/tags/BigInteger/" style="font-size: 10px;">BigInteger</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/DOS/" style="font-size: 10px;">DOS</a> <a href="/tags/EverMonkey/" style="font-size: 10px;">EverMonkey</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/GDB/" style="font-size: 10px;">GDB</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HashMap-Java/" style="font-size: 10px;">HashMap(Java)</a> <a href="/tags/Java-Math/" style="font-size: 10px;">Java_Math</a> <a href="/tags/Java-Search/" style="font-size: 10px;">Java_Search</a> <a href="/tags/Java-SequenceList/" style="font-size: 10px;">Java_SequenceList</a> <a href="/tags/Java-Sort/" style="font-size: 20px;">Java_Sort</a> <a href="/tags/Job/" style="font-size: 10px;">Job</a> <a href="/tags/LinkedList-Java/" style="font-size: 10px;">LinkedList(Java)</a> <a href="/tags/Linuxtips/" style="font-size: 10px;">Linuxtips</a> <a href="/tags/Log4cpp/" style="font-size: 10px;">Log4cpp</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PIMPL/" style="font-size: 10px;">PIMPL</a> <a href="/tags/Psy/" style="font-size: 10px;">Psy</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Singleton/" style="font-size: 10px;">Singleton</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/TreeMap-Java/" style="font-size: 10px;">TreeMap(Java)</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux命令/" style="font-size: 10px;">linux命令</a> <a href="/tags/函数-Js/" style="font-size: 10px;">函数(Js)</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/印象笔记/" style="font-size: 10px;">印象笔记</a> <a href="/tags/变量-Js/" style="font-size: 10px;">变量(Js)</a> <a href="/tags/字符串-Java/" style="font-size: 10px;">字符串(Java)</a> <a href="/tags/字符串-Js/" style="font-size: 10px;">字符串(Js)</a> <a href="/tags/对象-Js/" style="font-size: 10px;">对象(Js)</a> <a href="/tags/感动/" style="font-size: 10px;">感动</a> <a href="/tags/指针-C/" style="font-size: 10px;">指针(C)</a> <a href="/tags/排序-Java/" style="font-size: 20px;">排序(Java)</a> <a href="/tags/数组-Js/" style="font-size: 10px;">数组(Js)</a> <a href="/tags/查找-Java/" style="font-size: 10px;">查找(Java)</a> <a href="/tags/流/" style="font-size: 10px;">流</a> <a href="/tags/类型转换-Java/" style="font-size: 10px;">类型转换(Java)</a> <a href="/tags/线性结构-Java/" style="font-size: 10px;">线性结构(Java)</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/递归-Java/" style="font-size: 10px;">递归(Java)</a> <a href="/tags/顺序表-Java/" style="font-size: 10px;">顺序表(Java)</a> <a href="/tags/鸡汤/" style="font-size: 10px;">鸡汤</a>
     </div>
 </div>
 
@@ -1414,6 +1311,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GDB/">
+                        <span class="tag">GDB</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
                         <span class="tag is-grey">1</span>
@@ -1470,8 +1381,29 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Linuxtips/">
+                        <span class="tag">Linuxtips</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Log4cpp/">
+                        <span class="tag">Log4cpp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Markdown/">
                         <span class="tag">Markdown</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PIMPL/">
+                        <span class="tag">PIMPL</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1486,6 +1418,20 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Recursion/">
                         <span class="tag">Recursion</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Singleton/">
+                        <span class="tag">Singleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Stream/">
+                        <span class="tag">Stream</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1512,8 +1458,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Vim，GCC/">
-                        <span class="tag">Vim，GCC</span>
+                    <a class="tags has-addons" href="/tags/Vim/">
+                        <span class="tag">Vim</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1603,13 +1549,6 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/指针-C/">
                         <span class="tag">指针(C)</span>
                         <span class="tag is-grey">1</span>
@@ -1638,6 +1577,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/流/">
+                        <span class="tag">流</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/类型转换-Java/">
                         <span class="tag">类型转换(Java)</span>
                         <span class="tag is-grey">1</span>
@@ -1648,6 +1594,13 @@
                     <a class="tags has-addons" href="/tags/线性结构-Java/">
                         <span class="tag">线性结构(Java)</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/设计模式/">
+                        <span class="tag">设计模式</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
