@@ -8,18 +8,18 @@
 
 
     
-    <meta name="description" content="设计目的 避免对象的频繁创建和销毁节省空间和资源带有自动销毁的单例模式123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;iostream&amp;gt;using std::ci">
+    <meta name="description" content="设计目的 避免对象的频繁创建和销毁节省空间和资源带有自动销毁的单例模式12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;iostream&amp;gt;using std::">
 <meta name="keywords" content="设计模式,Singleton">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式">
 <meta property="og:url" content="http://yoursite.com/2020/01/12/C/C++Note/Design pattern/Singleton/index.html">
 <meta property="og:site_name" content="Arnoldteams">
-<meta property="og:description" content="设计目的 避免对象的频繁创建和销毁节省空间和资源带有自动销毁的单例模式123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;iostream&amp;gt;using std::ci">
+<meta property="og:description" content="设计目的 避免对象的频繁创建和销毁节省空间和资源带有自动销毁的单例模式12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;iostream&amp;gt;using std::">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-12T13:21:11.044Z">
+<meta property="og:updated_time" content="2020-01-13T03:01:46.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单例模式">
-<meta name="twitter:description" content="设计目的 避免对象的频繁创建和销毁节省空间和资源带有自动销毁的单例模式123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;iostream&amp;gt;using std::ci">
+<meta name="twitter:description" content="设计目的 避免对象的频繁创建和销毁节省空间和资源带有自动销毁的单例模式12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;iostream&amp;gt;using std::">
 
 
 
@@ -148,7 +148,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 133 个字)
+                    1 分钟 读完 (大约 153 个字)
                 </span>
                 
                 
@@ -162,7 +162,7 @@
         </h1>
         <div class="content">
             <h4><span id="设计目的">设计目的</span></h4><ul>
-<li>避免对象的频繁创建和销毁节省空间和资源<figure class="highlight c++ hljs"><figcaption><span>带有自动销毁的单例模式</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>;</span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>;</span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleten</span>&#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">static</span> Singleten* <span class="hljs-title">getSingleten</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"getSingleten()"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">		<span class="hljs-keyword">if</span>(_singleton==<span class="hljs-literal">nullptr</span>)&#123;</span><br><span class="line">			_singleton = <span class="hljs-keyword">new</span> Singleten();</span><br><span class="line">			<span class="hljs-keyword">return</span> _singleton;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">else</span></span><br><span class="line">			<span class="hljs-keyword">return</span> _singleton;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="hljs-comment">//	void destory()&#123;</span></span><br><span class="line"><span class="hljs-comment">//		cout &lt;&lt; "destory()" &lt;&lt; endl;</span></span><br><span class="line"><span class="hljs-comment">//		if(_singleton!=nullptr)</span></span><br><span class="line"><span class="hljs-comment">//			delete _singleton;</span></span><br><span class="line"><span class="hljs-comment">//	&#125;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Autodestory</span>&#123;</span></span><br><span class="line">	<span class="hljs-keyword">public</span>:</span><br><span class="line">		Autodestory()&#123;</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Autodestory()"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		~Autodestory()&#123;			</span><br><span class="line">			<span class="hljs-keyword">if</span>(_singleton!=<span class="hljs-literal">nullptr</span>)&#123;</span><br><span class="line">				<span class="hljs-keyword">delete</span> _singleton;</span><br><span class="line">				<span class="hljs-built_in">cout</span> &lt;&lt;<span class="hljs-string">"~Autodestory()"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">			&#125;				</span><br><span class="line">		&#125;				</span><br><span class="line">	&#125;;	</span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">	<span class="hljs-keyword">static</span> Singleten* _singleton;</span><br><span class="line">	<span class="hljs-keyword">static</span> Autodestory _ao;</span><br><span class="line">	Singleten()&#123;</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Singleten()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	~Singleten()&#123;</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"~Singleten()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">	&#125;			</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Singleten* Singleten::_singleton = getSingleten();</span><br><span class="line">Singleten::Autodestory Singleten::_ao;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	Singleten *s1 = Singleten::getSingleten();</span><br><span class="line">	Singleten *s2 = Singleten::getSingleten();</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p,%p"</span>,s1,s2);</span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>避免对象的频繁创建和销毁节省空间和资源<figure class="highlight c++ hljs"><figcaption><span>带有自动销毁的单例模式</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>;</span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>;</span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span>&#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">static</span> Singleton* <span class="hljs-title">getSingleton</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"getSingleton()"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">		<span class="hljs-keyword">if</span>(_singleton==<span class="hljs-literal">nullptr</span>)&#123;</span><br><span class="line">			_singleton = <span class="hljs-keyword">new</span> Singleton();</span><br><span class="line">			<span class="hljs-keyword">return</span> _singleton;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">else</span></span><br><span class="line">			<span class="hljs-keyword">return</span> _singleton;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="hljs-comment">//	void destory()&#123;</span></span><br><span class="line"><span class="hljs-comment">//		cout &lt;&lt; "destory()" &lt;&lt; endl;</span></span><br><span class="line"><span class="hljs-comment">//		if(_singleton!=nullptr)</span></span><br><span class="line"><span class="hljs-comment">//			delete _singleton;</span></span><br><span class="line"><span class="hljs-comment">//	&#125;</span></span><br><span class="line"><span class="hljs-keyword">private</span>: </span><br><span class="line"><span class="hljs-comment">// Autodestory只有限定为私有的内部类才不可以类外定义</span></span><br><span class="line">	<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Autodestory</span>&#123;</span></span><br><span class="line">	<span class="hljs-keyword">public</span>:</span><br><span class="line">		Autodestory()&#123;</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Autodestory()"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		~Autodestory()&#123;			</span><br><span class="line">			<span class="hljs-keyword">if</span>(_singleton!=<span class="hljs-literal">nullptr</span>)&#123;</span><br><span class="line">				<span class="hljs-keyword">delete</span> _singleton;</span><br><span class="line">				<span class="hljs-built_in">cout</span> &lt;&lt;<span class="hljs-string">"~Autodestory()"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">			&#125;				</span><br><span class="line">		&#125;				</span><br><span class="line">	&#125;;	</span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">	<span class="hljs-keyword">static</span> Singleton* _singleton;</span><br><span class="line">	<span class="hljs-keyword">static</span> Autodestory _ao;</span><br><span class="line">	Singleton()&#123;</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Singleton()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	~Singleton()&#123;</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"~Singleton()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">	&#125;			</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Singleton* Singleton::_singleton = getSingleton();</span><br><span class="line">Singleton::Autodestory Singleton::_ao;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	Singleton *s1 = Singleton::getSingleton();</span><br><span class="line">	Singleton *s2 = Singleton::getSingleton();</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p,%p"</span>,s1,s2);</span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
         </div>
@@ -298,19 +298,6 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
-                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
                     <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
@@ -359,6 +346,19 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-11T12:17:36.598Z">2020-01-11</time></div>
+                    <a href="/2020/01/11/Tools/Linux/" class="has-link-black-ter is-size-6">Linux</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -377,7 +377,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -432,7 +432,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        37
                     </p>
                 </div>
             </div>

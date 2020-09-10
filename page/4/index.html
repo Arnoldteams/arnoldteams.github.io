@@ -138,234 +138,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-02T08:23:48.207Z">2020-01-02</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    11 分钟 读完 (大约 1586 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/01/02/C/C++Note/CppBasic/">C++基础</a>
-            
-        </h1>
-        <div class="content">
-            <h3><span id="基本概念">基本概念</span></h3><hr>
-<ul>
-<li><strong>命名空间</strong><ul>
-<li>using 编译指令 using namespace std; 引用std的全部实体</li>
-<li>域限定符 namespace example {}</li>
-<li>using声明机制 using std::cout; 仅引用需要的实体</li>
-</ul>
-</li>
-<li><p>尽量使用<strong>const</strong>来替换<code>define</code>宏定义的使用</p>
-</li>
-<li><p>内存泄漏–分配的内存未回收</p>
-</li>
-<li><strong>malloc / free</strong>是C/C++语言的标准库函数;管理动态内存<ul>
-<li><strong>堆</strong>中空闲块组成的空闲链，<code>malloc</code>从链表头依次查找空闲块，符合申请空间的空闲块从链表取出进行分配； <code>free</code>将需要释放的块加入空闲链表示回收</li>
-</ul>
-</li>
-<li><strong>new / delete</strong>是C++的运算符或表达式</li>
-<li><p>引用即是变量的别名，<code>必须初始化</code>，初始化后指向不会改变</p>
-</li>
-<li><p><code>不要返回堆空间的引用</code>，会引起内存泄漏</p>
-</li>
-<li><p>A，B..，X <strong>逗号表达式</strong>，返回值为X,与A B .. 无关</p>
-</li>
-<li>C++ 通过函数名的改编实现函数<strong>重载</strong></li>
-<li><p>C/C++混合编程（）</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> _cplusplus</span></span><br><span class="line"><span class="hljs-keyword">extern</span> <span class="hljs-string">"C"</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br><span class="line"><span class="hljs-comment">/* c/c++ 代码段</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> _cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>默认形参<br>  fun(int a1,int a2 … int ak…int an);<br>  如果ak设置了默认参数，则ak…an全部需要设置默认参数</p>
-</li>
-<li><p>内联inline</p>
-<ul>
-<li>仅可使用在函数<strong>实现</strong>的前面 inline int f(){}；写在定义前<code>无效</code>。</li>
-<li>inline 函数中<strong>不要写循环</strong> </li>
-<li>类内的函数默认<strong>inline</strong>函数</li>
-</ul>
-</li>
-<li><p>内存空间（高-&gt;低）</p>
-<ul>
-<li>内核区:操作系统运行区</li>
-<li>栈：函数，变量</li>
-<li>堆：new/delete 的对象</li>
-<li>读写段（静态常量区）:全局，静态变量；生命周期到main执行结束</li>
-<li>只读段：字符串，程序代码</li>
-</ul>
-</li>
-<li>拷贝<ul>
-<li>浅拷贝 仅copy地址</li>
-<li>深拷贝 判断自复制==&gt;销毁旧空间==&gt;新开空间==&gt;拷贝内容</li>
-</ul>
-</li>
-<li><p>左值&amp;右值</p>
-<ul>
-<li>无法取地址的值为<strong>右值</strong> lvalue—常量、临时对象</li>
-<li>引用类型函数返回的不能是右值==&gt; 需要返回<code>静态</code>变量</li>
-<li>普通函数的返回值是<strong>临时变量</strong>,不可取引用<figure class="highlight c++ hljs"><figcaption><span>左值&右值</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> num=<span class="hljs-number">1</span>;<span class="hljs-comment">//可以取地址：左值</span></span><br><span class="line"><span class="hljs-keyword">int</span> &amp;a=num;<span class="hljs-comment">//非const仅可左值引用</span></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;b=<span class="hljs-number">1</span>;<span class="hljs-comment">//仅const可以右值引用；1为右值</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;a)</span></span>&#123;<span class="hljs-comment">//形参仅可左值</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cfun</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;a)</span></span>&#123;<span class="hljs-comment">//形参可左值或右值</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">f0</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125; </span><br><span class="line">fun(<span class="hljs-number">1</span>)<span class="hljs-comment">//Error ,非const仅可左值引用；1为右值</span></span><br><span class="line">fun(f0())<span class="hljs-comment">//Error ,f0()返回右值</span></span><br><span class="line">cfun(f0())<span class="hljs-comment">//正确</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>容器 vector (代替数组)</p>
-<ul>
-<li>动态扩容：size == capacity 时扩容（新开翻倍空间==&gt;复制原来数据==&gt; 回收原空间 ==&gt; 在新空间添加新元素</li>
-</ul>
-</li>
-<li><p>短路求值特性</p>
-<ul>
-<li>if(0 &amp;&amp; a++); //a++ 不计算</li>
-<li>if(1 || a++); //a++ 不计算</li>
-</ul>
-</li>
-<li><p>后置型表达式</p>
-<ul>
-<li><code>a++</code> ==&gt; 先返回a 在对a+1</li>
-<li>重载： Student opreator++(int){} — <code>int</code> 仅做区分不传参数</li>
-<li>返回临时变量不可取地址</li>
-</ul>
-</li>
-<li>前置型(性能高)<ul>
-<li><code>++a</code> ==&gt; 先+1 在返回(a+1)</li>
-<li>重载： Student&amp; opreator++(){}</li>
-<li>效率<code>高</code>于后置</li>
-<li>可取地址</li>
-</ul>
-</li>
-<li>函数调用<ul>
-<li>通过对象调用函数–函数对象：携带状态(记忆性)</li>
-<li>直接通过函数名调用—全局(匿名)函数：无记忆性</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>函数类型<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dis</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">typedef</span> <span class="hljs-title">void</span> <span class="hljs-params">(*FunType)</span><span class="hljs-params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    FunType f1;</span><br><span class="line">    f1=dis;</span><br><span class="line">    f1(); <span class="hljs-comment">//f1(); &lt;==&gt; dis();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3><span id="类和对象">类和对象</span></h3><hr>
-<ul>
-<li><p><strong>class</strong> 默认private ，<strong>struct</strong> 默认public</p>
-</li>
-<li><p><strong>构造函数</strong>初始化分配资源</p>
-<ul>
-<li>构造函数先执行初始化表达式,初始化的顺序与成员变量声明的顺序一致</li>
-<li>以下仅可以初始化列表初始化<ul>
-<li>const成员变量</li>
-<li>引用</li>
-<li>对象成员（括号内为复制，调用拷贝构造）<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//栈区</span></span><br><span class="line"><span class="hljs-comment">//构造-&gt;析构</span></span><br><span class="line"><span class="hljs-function">Student <span class="hljs-title">s</span><span class="hljs-params">(<span class="hljs-string">"xiaoming"</span>,<span class="hljs-number">15101120</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//堆区</span></span><br><span class="line"><span class="hljs-comment">//new运算符函数-&gt;构造-&gt;拷贝构造</span></span><br><span class="line">Student *s=<span class="hljs-keyword">new</span> Student(<span class="hljs-string">"xiaoming"</span>,<span class="hljs-number">15101120</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>拷贝构造函数</strong></p>
-<ul>
-<li>对<code>新对象</code>进行赋值时调用；传递参数为对象时调用</li>
-<li>默认浅拷贝，因此涉及到内存空间操作时需要重写为深拷贝</li>
-<li>使用引用<code>&amp;符号</code>为了防止无限递归调用<ul>
-<li><code>注：仅在已有对象对新对象赋值才会调用，已经存在的对象之间赋值不调用</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>析构函数</strong></p>
-<ul>
-<li>回收分配给对象的资源不是对象本身；对象本身需要由free/delete来销毁</li>
-<li>栈，全局，静态 对象在程序结束是自动调用析构；堆对象 需要手动调用<code>free/delete</code>来销毁对象，销毁过程自动调用析构。</li>
-</ul>
-</li>
-<li><p><strong>赋值运算符函数</strong></p>
-<ul>
-<li>已经存在的对象间赋值 [ a = b ] 操作</li>
-<li>可能导致内存泄漏，double free；必须显式定义重载(释放a空间；再深拷贝b)<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">String</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    String();<span class="hljs-comment">//构造函数 </span></span><br><span class="line">    String(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *);</span><br><span class="line">    String(<span class="hljs-keyword">const</span> String &amp;rhs);<span class="hljs-comment">//拷贝构造函数 </span></span><br><span class="line"></span><br><span class="line">    ~String();<span class="hljs-comment">//析构函数 </span></span><br><span class="line">	</span><br><span class="line">    String &amp;<span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> String &amp;);<span class="hljs-comment">//赋值运算符函数</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">    <span class="hljs-keyword">char</span> * _pstr;</span><br><span class="line">&#125;;</span><br><span class="line">...</span><br><span class="line"><span class="hljs-comment">//拷贝构造函数 -------------------</span></span><br><span class="line">String::String(<span class="hljs-keyword">const</span> String &amp; rhs)</span><br><span class="line"><span class="hljs-comment">//引用&amp;防止循环递归调用；const是为了防止传递右值</span></span><br><span class="line">:_pstr(<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[size(rhs._pstr)+<span class="hljs-number">1</span>])</span><br><span class="line">&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"拷贝构造函数"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    cpy(_pstr,rhs._pstr);</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="hljs-comment">//赋值运算符函数------------------ </span></span><br><span class="line">String &amp; String::<span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> String &amp;rhs)&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"赋值运算符函数"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span> != &amp;rhs)&#123;        <span class="hljs-comment">//自复制判断</span></span><br><span class="line">        <span class="hljs-keyword">delete</span> [] _pstr;     <span class="hljs-comment">//回收左操作数资源</span></span><br><span class="line">        _pstr=<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span> [size(rhs._pstr)+<span class="hljs-number">1</span>];<span class="hljs-comment">//深拷贝</span></span><br><span class="line">        cpy(_pstr,rhs._pstr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><strong>静态成员函数</strong></p>
-<ul>
-<li><code>仅</code>可以操作静态函数</li>
-<li>可以直接通过类名调用[Student::show()]，无需通过对象</li>
-<li><code>没有</code>this指针</li>
-<li>虽然是静态的但是仍然放在代码段不是静态区   </li>
-<li>仅可以在全局初始化,存储在全局静态区</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>注：区分<br>    Student::show() //静态调用不会产生对象<br>    Student().show() //匿名类调用，生成匿名对象，语句执行结束立即销毁</p>
-</blockquote>
-<ul>
-<li><strong>this指针</strong>形态<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fun1</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//Entity const *this --隐含的this形态</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//const成员函数 ：只能读取数据成员，只能调用const成员函数</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fun2</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//const Entity const *this --隐含的this形态，不能修改</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3><span id="运算符重载">运算符重载</span></h3><hr>
-<ul>
-<li>友元（单向，不传递，不继承，不受public..的限制）</li>
-<li>内置类型运算符无法重载</li>
-<li><code>.  .*  ?:  ::  sizeof</code>不可重载</li>
-<li>不能有默认参数，操作数个数不会改变</li>
-<li>至少有1个枚举或自定义类型</li>
-<li>仅可以重载存在的运算符</li>
-<li><p>3 种重载方式</p>
-<ul>
-<li>普通函数(数据为public)</li>
-<li>成员函数<blockquote>
-<p>  可重载操作符：=  ++  –  +=  -&gt;  *  ()  []<br>  类型转换函数必须用成员函数<br>  输出流操作数不能使用成员函数重载</p>
-</blockquote>
-</li>
-<li>友元函数(数据为private)<blockquote>
-<p>  可重载操作符：==  ！=  &lt;  &gt;  &lt;=   &gt;=  &lt;&lt;   &gt;&gt;<br>  友元函数无this；成员函数有this</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>类型转换函数</p>
-<ul>
-<li>成员函数</li>
-<li>没有参数，返回值</li>
-<li>函数内return 自身类型的对象</li>
-<li>尽量少用 </li>
-</ul>
-</li>
-<li>new 分配堆空间==&gt; 调用构造初始化 ==&gt; 对象返回指针</li>
-<li>delete 调析构回收成员变量空间 ==&gt; 回收对象本身的空间</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-01-01T08:47:14.103Z">2020-01-01</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 321 个字)
+                    3 分钟 读完 (大约 494 个字)
                 </span>
                 
                 
@@ -424,14 +203,14 @@
 </tr>
 </tbody>
 </table>
+<h3><span id="写时复制copy-on-write">写时复制（Copy on Write）</span></h3><pre><code>引用计数  | 引用内容
+------- | -------
+</code></pre><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">String</span>&#123;</span></span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">    <span class="hljs-keyword">char</span>* _ch;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    String()</span><br><span class="line">    :_ch(<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">5</span>]()+<span class="hljs-number">4</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"String()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line">    String(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* str)</span><br><span class="line">    :_ch(<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-built_in">strlen</span>(str)+<span class="hljs-number">5</span>]()+<span class="hljs-number">4</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"String(const char* str)"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        <span class="hljs-built_in">strcpy</span>(_ch,str);</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line">    String(<span class="hljs-keyword">const</span> String&amp; str)</span><br><span class="line">    :_ch(str._ch)</span><br><span class="line">    &#123;</span><br><span class="line">        increase();</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"String(const String&amp; str)"</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~String()&#123;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"~String()"</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">        release();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    String &amp;<span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> String &amp;str)&#123;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"String&amp; oprator=(const String&amp; str)"</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">        <span class="hljs-keyword">if</span>(&amp;str!=<span class="hljs-keyword">this</span>)&#123;</span><br><span class="line">            release();</span><br><span class="line">            _ch = str._ch;</span><br><span class="line">            increase();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-comment">// inline类型编译替换，不会影响效率</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"init()"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        *(<span class="hljs-keyword">int</span>*)(_ch - <span class="hljs-number">4</span>) = <span class="hljs-number">1</span>;<span class="hljs-comment">// 引用次数 = 1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getcount</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> *(<span class="hljs-keyword">int</span>*)(_ch - <span class="hljs-number">4</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">size_t</span> getsize()&#123;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-built_in">strlen</span>(_ch);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">increase</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        ++*(<span class="hljs-keyword">int</span>*)(_ch - <span class="hljs-number">4</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">decrease</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        --*(<span class="hljs-keyword">int</span>*)(_ch - <span class="hljs-number">4</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">release</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        decrease();</span><br><span class="line">        <span class="hljs-keyword">if</span>(getcount()==<span class="hljs-number">0</span>)&#123;</span><br><span class="line">            <span class="hljs-keyword">delete</span> [] (_ch - <span class="hljs-number">4</span>);</span><br><span class="line">            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"del data"</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* <span class="hljs-title">c_str</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> _ch;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">friend</span> ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream &amp;os , <span class="hljs-keyword">const</span> String&amp; str);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ostream&amp; <span class="hljs-keyword">operator</span>&lt;&lt;(ostream&amp; os, <span class="hljs-keyword">const</span> String&amp; str)&#123;</span><br><span class="line">    os &lt;&lt; str._ch ;</span><br><span class="line">    <span class="hljs-keyword">return</span> os;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>浅拷贝+写时复制</p>
-<p>  引用计数  | 引用内容<br>  ——- | ——-</p>
-</li>
 <li><p>短字符优化</p>
 <ul>
-<li>长度&lt;= 15 存栈</li>
-<li>长度&gt; 15 存堆</li>
+<li>长度&lt;= 15 存栈 –浅拷贝</li>
+<li>长度&gt; 15 存堆 –深拷贝</li>
 </ul>
 </li>
 <li><p><code>const String&amp; str</code> 拷贝构造函数</p>
@@ -497,6 +276,176 @@
 <li>Alt + Shift + 0 切换窗口排列</li>
 </ul>
 </li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-29T13:47:31.234Z">2019-12-29</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 595 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/29/C/C++Note/Linux/">Linux基础</a>
+            
+        </h1>
+        <div class="content">
+            <h4><span id="linux-命令">Linux 命令</span></h4><hr>
+<ul>
+<li>目录ls<ul>
+<li>详情ls -l</li>
+<li>大小ls -lh</li>
+<li>显示隐藏ls -a</li>
+<li>条件ls |grep {name}</li>
+<li>查看当前目录下的文件数量（不包含子目录中的文件）<pre><code>ls -l|grep &quot;^-&quot;| wc -l
+</code></pre></li>
+<li>查看当前目录下的文件数量（包含子目录,R代表子目录)<pre><code>ls -lR|grep &quot;^-&quot;| wc -l
+</code></pre></li>
+<li>查看当前目录下的文件夹目录个数（不包含子目录中的目录）      ls -l|grep “^d”| wc -l</li>
+<li>树形目录tree {file}<ul>
+<li>安装apt install tree</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>路径pwd </li>
+<li>权限chmod 777 {file}<ul>
+<li>[拥有者][组用户][其他]</li>
+</ul>
+</li>
+<li>查找find {name}<ul>
+<li>指定目录按名查找find /abc -name file</li>
+</ul>
+</li>
+<li>复制cp <ul>
+<li>文件夹cp -r {file1} {file2}</li>
+</ul>
+</li>
+<li>移动mv<ul>
+<li>重命名 mv {dir1} {dir2}</li>
+</ul>
+</li>
+<li>创建<ul>
+<li>文件夹mkdir</li>
+<li>文件touch {file}/echo -n&gt; {file}</li>
+</ul>
+</li>
+<li>查看cat<ul>
+<li>头部分head -n {n}</li>
+<li>尾部分tail -n {n}</li>
+<li>部分 more<ul>
+<li>f和b前向后翻页q退出</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>删除rm</li>
+<li>磁盘df -h<ul>
+<li>文件du -h –max-depth=0</li>
+</ul>
+</li>
+<li><p>链接li -s {file1} {file2}</p>
+</li>
+<li><p>用户 cat /etc/passwd</p>
+<ul>
+<li>切换su {user}</li>
+<li>退出exit  </li>
+<li>添加useradd {user}<ul>
+<li>添加到/home:useradd -m {user} -s /bin/bash</li>
+</ul>
+</li>
+<li>修改密码passwd {user}</li>
+<li>删除userdel {user} -r/f</li>
+</ul>
+</li>
+<li>首次登陆需设置sudo密码<ul>
+<li>sudo passwd</li>
+</ul>
+</li>
+</ul>
+<h4><span id="vim">Vim</span></h4><hr>
+<ul>
+<li>h j k l / w e b移动</li>
+<li>模式:i输入/v视图</li>
+<li>：q! 退出不保存/：w 保存/：q 退出/：</li>
+<li>多标签 e {file} <ul>
+<li>多标签切换Ctrl+^</li>
+</ul>
+</li>
+<li>复制{n}yy, 复制n行-&gt;按p粘贴</li>
+<li>删除{n}dd，删除n行-&gt;<strong>按u撤销</strong><ul>
+<li>{n}x，删除n个字母</li>
+<li>x,删除一个字母</li>
+</ul>
+</li>
+<li>行号 set nu</li>
+<li>选定<ul>
+<li>Ctrl+v/v</li>
+</ul>
+</li>
+<li>分屏<ul>
+<li>：vs/sp</li>
+<li>切换 Ctrl+ww</li>
+</ul>
+</li>
+<li>注释<br>选定 -&gt; shift+i -&gt; // -&gt; Esc</li>
+<li>普通模式gg=G 自动对齐</li>
+</ul>
+<h4><span id="gcc">GCC</span></h4><hr>
+<ul>
+<li>预处理-&gt;编译-&gt;汇编-&gt;链接</li>
+<li>静态库<em>.a/</em>.lib<ul>
+<li>必要文件<br>vim multi.c<br>vim multi.h<br>vim main.c</li>
+<li>建立静态库并移动到/usr/lib<br>编译 gcc -c multi.c<br>归档 ar crsv libmulti.a multi.o<br>sudo cp libmulti.a /usr/lib</li>
+<li>链接并执行<br>gcc -o main main.c -l multi<br>./main</li>
+</ul>
+</li>
+<li>动态库<em>.so/</em>.dll<ul>
+<li>必要文件(同上)</li>
+<li>建立动态库并移动到/usr/lib<br>gcc -fPIC -Wall -c multi.c -o multi2.o<br>gcc -shared -o libmulti2.so multi2.o<br>sudo cp libmulti2.so /usr/lib</li>
+<li>更新cache<br>sudo ldconfig</li>
+<li>链接并执行<br>gcc main main.c -l multi2</li>
+</ul>
+</li>
+</ul>
+<h4><span id="gdb">GDB</span></h4><hr>
+<ul>
+<li>gcc -g -o test test.c</li>
+<li>显示部分行l</li>
+<li>回车执行上一条命令</li>
+<li>断点 b {n}</li>
+<li>单步执行n</li>
+<li>运行r</li>
+<li>查看变量c的值 p c</li>
+<li>进入函数 s</li>
+<li>栈调用查看bt</li>
 </ul>
 
         </div>
@@ -633,19 +582,6 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
-                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
                     <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
@@ -694,6 +630,19 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-11T12:17:36.598Z">2020-01-11</time></div>
+                    <a href="/2020/01/11/Tools/Linux/" class="has-link-black-ter is-size-6">Linux</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -712,7 +661,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -767,7 +716,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        37
                     </p>
                 </div>
             </div>
@@ -1350,7 +1299,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        37
                     </p>
                 </div>
             </div>

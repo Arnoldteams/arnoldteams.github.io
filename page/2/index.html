@@ -138,123 +138,6 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-12T12:27:27.141Z">2020-01-12</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 237 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/01/12/C/C++Note/Stream/">流</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-<ul>
-<li>流的状态<ul>
-<li>badbit</li>
-<li>failbit</li>
-<li>eofbit</li>
-<li>goodbit</li>
-</ul>
-</li>
-<li>流的状态需要有效才可以工作<ul>
-<li>清空状态cin.clear()</li>
-</ul>
-</li>
-<li>流的输入会保存到缓存<ul>
-<li>清空缓冲区<code>cin.ignore(std::numeric limits&lt;std::streamsize&gt;::max(),&#39;\n&#39;);</code></li>
-</ul>
-</li>
-<li>Ctrl + D (Linux) == &gt; cin.eof=1</li>
-<li><p>Ctrl + Z (Linux) == &gt; 挂起</p>
-<ul>
-<li>fg {n}  #恢复n号任务</li>
-<li>ps -elf |grep {file} 查看后台任务</li>
-<li>kill {num} //销毁进程号为num的进程</li>
-</ul>
-</li>
-<li><p>文件输出流 ofstream</p>
-<ul>
-<li>文件不存在创建新文件</li>
-<li>文件存在，清空写入</li>
-</ul>
-</li>
-<li><p>unistd.h   ==&gt; sleep();</p>
-</li>
-<li><p>explicet 禁用隐式类型转换</p>
-</li>
-</ul>
-<ul>
-<li><p>缓冲区</p>
-<ul>
-<li>全缓冲，行缓冲，非缓冲</li>
-</ul>
-</li>
-<li><p>流的状态</p>
-<ul>
-<li>badbit</li>
-<li>failbit –可恢复</li>
-<li>eofbit</li>
-<li>goodbit</li>
-</ul>
-</li>
-<li><p>stream流(流对象不能进行复制，使用引用进行传递)</p>
-<ul>
-<li><iostream>
-</iostream></li>
-<li><p><fstream></fstream></p>
-<ul>
-<li><p>ifstream</p>
-<p>  文件必须存在才能使用流</p>
-<p>  使用完close关闭</p>
-<p>  运算符<code>&gt;&gt;</code>默认空格隔开</p>
-<p>  seekg 读文件的光标</p>
-<p>  getline 获取一行</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>    - ofstream
-
-        tellp
-
-        seekp
-
-- &lt;sstream&gt;
-    - 字符串类对象或者字符数组为操作对象
-    - 格式转换 string &lt;--&gt; other type
-</code></pre>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-01-12T12:00:02.855Z">2020-01-12</time>
                 
                 
@@ -328,6 +211,65 @@
 <li>sz -+  //发送本地文件到Linux</li>
 <li>rz -+ {file} //传输file到本地</li>
 </ul>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-07T11:37:20.951Z">2020-01-07</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 171 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/01/07/C/C++Note/log4cpp/">日志库 Log4cpp</a>
+            
+        </h1>
+        <div class="content">
+            <ul>
+<li>Layout 布局–日志输出格式</li>
+<li>Appender 输出源–控制输出的方式（文件，控制台）<ul>
+<li>Appender 绑定 Layout</li>
+</ul>
+</li>
+<li>Category 日志级别–设置输出的级别<ul>
+<li>DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL</li>
+<li>Category 绑定 Appender</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/Category.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/PatternLayout.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/OstreamAppender.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/FileAppender.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/RollingFileAppender.hh&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;log4cpp/Priority.hh&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> log4cpp;</span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line">...</span><br><span class="line">	PatternLayout * ptLayout = <span class="hljs-keyword">new</span> PatternLayout();</span><br><span class="line">	ptLayout1-&gt;setConversionPattern(<span class="hljs-string">"%d %c [%p] %m%n"</span>); <span class="hljs-comment">//设置布局</span></span><br><span class="line"></span><br><span class="line">	RollingFileAppender * rollAppender = <span class="hljs-keyword">new</span> RollingFileAppender(<span class="hljs-comment">//设置输出文件</span></span><br><span class="line">		<span class="hljs-string">"rollAppender"</span>, <span class="hljs-comment">//操作名</span></span><br><span class="line">		<span class="hljs-string">"rollwd.log"</span>, <span class="hljs-comment">//输出文件名</span></span><br><span class="line">		<span class="hljs-number">1024</span> * <span class="hljs-number">5</span>,       <span class="hljs-comment">//文件长度最大值</span></span><br><span class="line">		<span class="hljs-number">3</span>);             <span class="hljs-comment">//最多输出3个文件</span></span><br><span class="line">	rollAppender-&gt;setLayout(ptLayout);<span class="hljs-comment">//Appender 绑定 Layout</span></span><br><span class="line"></span><br><span class="line">	Category &amp; root = Category::getRoot().getInstance(<span class="hljs-string">"mycat"</span>);<span class="hljs-comment">//操作名</span></span><br><span class="line">	root.setPriority(Priority::DEBUG);<span class="hljs-comment">//设置优先级</span></span><br><span class="line">	root.addAppender(rollAppender);<span class="hljs-comment">//Category 绑定 Appender</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">root.warn(msg);<span class="hljs-comment">//string msg;</span></span><br><span class="line">root.error(msg);</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">Category::shutdown();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Linux 编译<blockquote>
+<p>g++ log4test.cpp -l log4cpp -l pthread</p>
+</blockquote>
 </li>
 </ul>
 
@@ -461,19 +403,6 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
-                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
                     <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
@@ -522,6 +451,19 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-11T12:17:36.598Z">2020-01-11</time></div>
+                    <a href="/2020/01/11/Tools/Linux/" class="has-link-black-ter is-size-6">Linux</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -540,7 +482,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -595,7 +537,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        37
                     </p>
                 </div>
             </div>
@@ -1178,7 +1120,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        37
                     </p>
                 </div>
             </div>

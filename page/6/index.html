@@ -138,122 +138,6 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:17.574Z">2019-12-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Tools/">Tools</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 分钟 读完 (大约 691 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/12/23/Tools/Git/">Git Start!</a>
-            
-        </h1>
-        <div class="content">
-            <h3><span id="常用命令">常用命令</span></h3><hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pwd         用于显示当前目录</span><br><span class="line">mkdir       建立目录</span><br><span class="line">touch       建立文件</span><br></pre></td></tr></table></figure>
-<h3><span id="git">Git</span></h3><p><img src="https://i.loli.net/2019/04/02/5ca30dedb5b1f.png" alt="git 原理示意图"></p>
-<h3><span id="git-基本操作">Git 基本操作</span></h3><ol>
-<li><code>git init</code> 选择一个空目录初始化</li>
-<li>创建指定目录learngit并加入readme</li>
-</ol>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span> mkdir learngit</span><br><span class="line"><span class="hljs-meta">$</span> cd learngit/</span><br><span class="line"><span class="hljs-meta">$</span> touch readme.txt</span><br><span class="line"><span class="hljs-meta">$</span> git add readme.txt //可反复多次使用，添加多个文件到暂存区</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li><code>git status</code> 查看添加到工作区与暂存区的内容是否一致</li>
-<li>当在本地发生了修改可以通过<code>git diff</code>查看修改的变化<br><code>$ git diff readme.txt</code>    </li>
-<li>提交所有暂存区的内容到仓库+提交说明（方便管理）<br><code>$ git commit -m &quot;wrote a readme file&quot;</code></li>
-<li>可以使用<code>git log</code>查看提交的日志，通过commit后的版本号回退版本<br><code>commit 461a4c83a94bc47621c873d30b9165db9e48c78d</code><ul>
-<li>查看日志图表<br> <code>$ git log --graph</code></li>
-<li>查看简洁版日志图表<br> <code>$ git log --graph --pretty=oneline --abbrev-commit</code></li>
-</ul>
-</li>
-<li>回退<ul>
-<li>回退暂存区的特定文件（暂存区-&gt;工作区）<br><code>$ git reset -- filename</code></li>
-<li>回退到前一个版本<br><code>$ git reset --hard HEAD^</code></li>
-<li>回退到特定版本（使用版本号不发生重复的前n位&gt;3）<br><code>$ git reset --hard 461a</code></li>
-<li>查询恢复版本的记录<br><code>$ git reflog</code></li>
-<li>撤销工作区的修改（暂存区-&gt;工作区）<br><code>$ git checkout -- readme.txt</code></li>
-<li>撤销暂存区的修改（仓库-&gt;暂存区）<br><code>$ git reset HEAD readme.txt</code></li>
-</ul>
-</li>
-<li>删除文件使用<code>git rm</code>将修改保存到暂存区<br><code>$ git rm readme.txt</code></li>
-<li>连接本地仓库到<strong>GitHub</strong><ul>
-<li>创建SSH Key<br><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></li>
-<li>将<strong>id_rsa.pub</strong> 添加到<strong>GitHub</strong><blockquote>
-<p>登陆GitHub-&gt;“Account settings”-&gt;“SSH Keys”添加“SSH Key”，任意Title，在Key文本框里粘贴id_rsa.pub文件的内容</p>
-</blockquote>
-</li>
-<li><strong>GitHub</strong>上建立新仓库<code>learngit</code></li>
-<li>本地与在线仓库关联<br><code>$ git remote add origin git@github.com:arnoldteams/learngit.git</code><blockquote>
-<p>远程库的名字是origin<br>关联仓库为arnoldteams/learngit</p>
-</blockquote>
-</li>
-<li>将本地推送到GitHub仓库<br><code>$ git push -u origin master</code><br><strong>推送失败可以先进行合并</strong><br><code>$ git pull --rebase origin master</code></li>
-</ul>
-</li>
-<li>连接完成后若本地仓库发生修改进行推送<br><code>$ git push origin master</code></li>
-<li>GitHub 仓库克隆到本地<br><code>$ git clone git@github.com:arnoldteams/learngit.git</code><br>或者<br><code>$ git clone https://github.com/Arnoldteams/learngit</code></li>
-</ol>
-<h3><span id="分支">分支</span></h3><hr>
-<ol>
-<li><p>初始只有<code>master</code>分支<br><img src="https://i.loli.net/2019/04/04/5ca5b6506cedd.png" alt="HEAD-&gt;master"></p>
-</li>
-<li><p>添加<code>dev</code>分支</p>
-<ul>
-<li><p>创建及切换分支</p>
-<figure class="highlight shell hljs"><figcaption><span>方法1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span> git branch dev</span><br><span class="line"><span class="hljs-meta">$</span> git checkout dev</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell hljs"><figcaption><span>方法2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">$</span> git checkout -b dev</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看所有分支<code>git branch</code></p>
-</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://i.loli.net/2019/04/04/5ca5b6a8bb680.png" alt="HEAD-&gt;dev"></p>
-<ol start="3">
-<li>向<code>dev</code>提交<br><img src="https://i.loli.net/2019/04/04/5ca5b700eee1a.png" alt="HEAD-&gt;dev"></li>
-<li>合并分支<ul>
-<li>合并<code>dev</code>到当前分支<br><code>$ git merge dev</code></li>
-<li>保留新分支进行合并<br><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; dev</code> </li>
-</ul>
-</li>
-</ol>
-<p><img src="https://i.loli.net/2019/04/04/5ca5b73d78e82.png" alt="HEAD-&gt;master"></p>
-<ol>
-<li>删除分支<br><code>$ git branch -d dev</code></li>
-</ol>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-12-23T01:23:17.380Z">2019-12-23</time>
                 
                 <div class="level-item">
@@ -362,6 +246,50 @@ content
 <li>rmdir /s path  删除非空目录</li>
 </ul>
 
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-23T01:23:17.105Z">2019-12-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Psy/">Psy</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    几秒 读完 (大约 0 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/23/PositivePsy/L11/">Positive Psychology Lesson11</a>
+            
+        </h1>
+        <div class="content">
+            
         </div>
         
         
@@ -496,19 +424,6 @@ content
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
-                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
                     <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
@@ -557,6 +472,19 @@ content
             </div>
         </article>
         
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-11T12:17:36.598Z">2020-01-11</time></div>
+                    <a href="/2020/01/11/Tools/Linux/" class="has-link-black-ter is-size-6">Linux</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -575,7 +503,7 @@ content
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -630,7 +558,7 @@ content
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        37
                     </p>
                 </div>
             </div>
@@ -1213,7 +1141,7 @@ content
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        37
                     </p>
                 </div>
             </div>

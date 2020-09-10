@@ -202,7 +202,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    11 分钟 读完 (大约 1586 个字)
+                    11 分钟 读完 (大约 1628 个字)
                 </span>
                 
                 
@@ -372,8 +372,7 @@
 <li>不能有默认参数，操作数个数不会改变</li>
 <li>至少有1个枚举或自定义类型</li>
 <li>仅可以重载存在的运算符</li>
-<li><p>3 种重载方式</p>
-<ul>
+<li>3 种重载方式<ul>
 <li>普通函数(数据为public)</li>
 <li>成员函数<blockquote>
 <p>  可重载操作符：=  ++  –  +=  -&gt;  *  ()  []<br>  类型转换函数必须用成员函数<br>  输出流操作数不能使用成员函数重载</p>
@@ -385,14 +384,20 @@
 </li>
 </ul>
 </li>
-<li><p>类型转换函数</p>
-<ul>
+<li>构造函数的隐式转换(其他类型==&gt;自定义类型)<ul>
+<li>explicit 禁用隐式转换</li>
+</ul>
+</li>
+<li>类型转换函数(由自定义==&gt; 其他类型)<ul>
 <li>成员函数</li>
 <li>没有参数，返回值</li>
 <li>函数内return 自身类型的对象</li>
 <li>尽量少用 </li>
 </ul>
 </li>
+</ul>
+<figure class="highlight c++ hljs"><figcaption><span>类型转换函数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">operator</span> <span class="hljs-title">type</span> <span class="hljs-params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
 <li>new 分配堆空间==&gt; 调用构造初始化 ==&gt; 对象返回指针</li>
 <li>delete 调析构回收成员变量空间 ==&gt; 回收对象本身的空间</li>
 </ul>
@@ -502,19 +507,6 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T13:06:00.609Z">2020-01-12</time></div>
-                    <a href="/2020/01/12/C/C++Note/TempNote/" class="has-link-black-ter is-size-6"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T12:42:03.373Z">2020-01-12</time></div>
                     <a href="/2020/01/12/C/C++Note/Design pattern/Pimpl/" class="has-link-black-ter is-size-6">设计模式PIMPL</a>
                     <p class="is-size-7 is-uppercase">
@@ -563,6 +555,19 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-11T12:17:36.598Z">2020-01-11</time></div>
+                    <a href="/2020/01/11/Tools/Linux/" class="has-link-black-ter is-size-6">Linux</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -581,7 +586,7 @@
                     <span class="level-item">一月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -636,7 +641,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        37
                     </p>
                 </div>
             </div>
@@ -1219,7 +1224,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        37
                     </p>
                 </div>
             </div>
